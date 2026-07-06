@@ -10,8 +10,7 @@
             --text-light: #f8fafc;
             --text-muted: #94a3b8;
             --primary-glow: rgba(99, 102, 241, 0.15);
-            /* Couleurs de la nébuleuse Profico */
-            --gradient-nebula: linear-gradient(135deg, #4c1d95 0%, #0f172a 40%, #1e1b4b 70%, #701a75 100%);
+            --border-alpha: rgba(255, 255, 255, 0.08);
         }
 
         * {
@@ -30,85 +29,67 @@
             min-height: 100vh;
         }
 
-        /* Effet Nébuleuse Cosmique en fond (comme sur l'image) */
+        /* Effet Nébuleuse Cosmique Profico */
         body::before {
             content: '';
             position: absolute;
             top: -10%;
             left: -10%;
             width: 120%;
-            height: 700px;
-            background: radial-gradient(circle at 30% 20%, #2e1065 0%, transparent 40%),
-                        radial-gradient(circle at 80% 40%, #0369a1 0%, transparent 50%),
-                        radial-gradient(circle at 50% 80%, #701a75 0%, transparent 45%);
-            filter: blur(80px);
+            height: 800px;
+            background: radial-gradient(circle at 20% 30%, #2e1065 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, #0369a1 0%, transparent 50%),
+                        radial-gradient(circle at 60% 70%, #701a75 0%, transparent 45%);
+            filter: blur(90px);
             z-index: -1;
-            opacity: 0.6;
+            opacity: 0.65;
         }
 
-        header {
-            text-align: center;
-            padding: 8rem 2rem 4rem 2rem;
+        /* Menu de Navigation en Haut Fige (Glassmorphism) */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            background: rgba(3, 7, 18, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        .badge {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: #a5b4fc;
-            padding: 0.5rem 1.2rem;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            display: inline-block;
-            backdrop-filter: blur(5px);
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        header h1 {
-            font-size: 4rem;
+        .logo {
             font-weight: 800;
-            letter-spacing: -0.04em;
-            margin-top: 1.5rem;
-            margin-bottom: 0.5rem;
-            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            font-size: 1.2rem;
+            background: linear-gradient(to right, #ffffff, #a5b4fc);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            letter-spacing: -0.02em;
         }
 
-        header p {
-            font-size: 1.25rem;
-            color: var(--text-muted);
-            font-weight: 400;
-        }
-
-        main {
-            max-width: 1100px;
-            margin: 0 auto 6rem auto;
-            padding: 0 1.5rem;
-        }
-
-        /* Menu Onglets épuré style Profico */
-        .tabs-menu {
+        .nav-menu {
             display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 3rem;
-            background: rgba(255, 255, 255, 0.02);
-            padding: 0.5rem;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 0.3rem;
             border-radius: 100px;
             border: 1px solid rgba(255, 255, 255, 0.05);
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            backdrop-filter: blur(10px);
         }
 
         .tab-btn {
-            padding: 0.75rem 1.5rem;
+            padding: 0.6rem 1.2rem;
             background: none;
             border: none;
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 500;
             color: var(--text-muted);
             cursor: pointer;
@@ -123,31 +104,123 @@
         .tab-btn.active {
             color: var(--text-light);
             background: rgba(255, 255, 255, 0.1);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
 
+        main {
+            max-width: 1100px;
+            margin: 10rem auto 6rem auto; /* Ajusté pour laisser la place au menu du haut */
+            padding: 0 1.5rem;
+        }
+
+        /* Animation d'entree globale */
         .tab-content {
             display: none;
-            animation: fadeIn 0.5s ease forwards;
+            animation: cosmicFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
         .tab-content.active {
             display: block;
         }
 
+        /* Section Accueil & Présentation */
+        .profile-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-alpha);
+            padding: 3.5rem;
+            border-radius: 24px;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+
+        @media (max-width: 768px) {
+            .profile-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 2rem;
+                text-align: center;
+            }
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        .profile-image-wrapper {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1;
+            max-width: 280px;
+            margin: 0 auto;
+        }
+
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        /* Effet de lueur derrière la photo */
+        .profile-image-wrapper::before {
+            content: '';
+            position: absolute;
+            inset: -10px;
+            background: linear-gradient(135deg, #6366f1, #a855f7);
+            border-radius: 24px;
+            z-index: -1;
+            opacity: 0.3;
+            filter: blur(15px);
+        }
+
+        .profile-info h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .profile-info h2 {
+            font-size: 1.25rem;
+            color: #a5b4fc;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .profile-info p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Titre des autres onglets */
         .tab-header {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
         }
 
         .tab-header h2 {
-            font-size: 2.2rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
+            font-size: 3rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
             margin-bottom: 0.5rem;
+            background: linear-gradient(to right, #ffffff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        /* Grille & Cartes à effet de verre (Glassmorphism) */
+        /* Grille & Cartes de Projets */
         .project-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -155,8 +228,8 @@
         }
 
         .project-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-alpha);
             border-radius: 16px;
             padding: 2.5rem;
             backdrop-filter: blur(16px);
@@ -164,29 +237,13 @@
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             display: flex;
             flex-direction: column;
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Lueur discrète au survol */
-        .project-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at top right, rgba(165, 180, 252, 0.1), transparent 50%);
-            opacity: 0;
-            transition: opacity 0.4s ease;
         }
 
         .project-card:hover {
             transform: translateY(-8px);
-            border-color: rgba(255, 255, 255, 0.2);
-            background: rgba(255, 255, 255, 0.05);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        .project-card:hover::before {
-            opacity: 1;
+            border-color: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.04);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
         }
 
         .project-card h3 {
@@ -194,9 +251,6 @@
             font-weight: 600;
             margin-bottom: 1rem;
             color: var(--text-light);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
         }
 
         .project-card p {
@@ -210,14 +264,13 @@
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
-            z-index: 2;
         }
 
         .tag {
             font-size: 0.75rem;
             font-weight: 600;
             padding: 0.35rem 0.75rem;
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.04);
             color: #cbd5e1;
             border-radius: 6px;
             border: 1px solid rgba(255, 255, 255, 0.05);
@@ -226,56 +279,78 @@
         footer {
             text-align: center;
             padding: 4rem 2rem;
-            color: rgba(255, 255, 255, 0.2);
+            color: rgba(255, 255, 255, 0.15);
             font-size: 0.85rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.03);
-            background: rgba(0, 0, 0, 0.2);
+            border-top: 1px solid rgba(255, 255, 255, 0.02);
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+        /* Déclaration de l'animation cosmique */
+        @keyframes cosmicFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px) scale(0.98);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <span class="badge">B2 Cybersécurité</span>
-        <h1>Bianca PONS</h1>
-        <p>Cybersécurité & Réseaux — Bordeaux Ynov Campus</p>
-    </header>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">BP . PORTFOLIO</div>
+            <div class="nav-menu">
+                <button class="tab-btn active" onclick="openTab(event, 'accueil')">👤 Présentation</button>
+                <button class="tab-btn" onclick="openTab(event, 'ecole')">🏫 Projets École</button>
+                <button class="tab-btn" onclick="openTab(event, 'labs')">🧪 Labs Perso</button>
+                <button class="tab-btn" onclick="openTab(event, 'ctf')">🏁 CTF</button>
+            </div>
+        </div>
+    </nav>
 
     <main>
-        <div class="tabs-menu">
-            <button class="tab-btn active" onclick="openTab(event, 'ctf')">🏁 CTF</button>
-            <button class="tab-btn" onclick="openTab(event, 'labs')">🧪 Labs Perso</button>
-            <button class="tab-btn" onclick="openTab(event, 'ecole')">🏫 Projets École</button>
+        <div id="accueil" class="tab-content active">
+            <div class="profile-container">
+                <div class="profile-image-wrapper">
+                    <img src="moi.jpg" alt="Bianca PONS" class="profile-image">
+                </div>
+                <div class="profile-info">
+                    <h1>Bianca PONS</h1>
+                    <h2>Étudiante en B2 Cybersécurité & Réseaux</h2>
+                    <p>Passionnée par la sécurité des infrastructures, le hacking éthique et l'analyse système. Actuellement en cursus au sein de Bordeaux Ynov Campus, je développe mes compétences techniques à travers des déploiements de architectures sécurisées et la résolution constante de challenges CTF. Objectif : mettre cette rigueur au service de grands projets d'ingénierie et de technologies de pointe.</p>
+                    <div class="tech-tags">
+                        <span class="tag" style="color: #a5b4fc; border-color: rgba(165, 180, 252, 0.2)">Bordeaux Ynov Campus</span>
+                        <span class="tag" style="color: #38bdf8; border-color: rgba(56, 189, 248, 0.2)">Recherche de Stage 2027</span>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div id="ctf" class="tab-content active">
+        <div id="ecole" class="tab-content">
             <div class="tab-header">
-                <h2>Challenges & Capture The Flag</h2>
-                <p style="color: var(--text-muted);">Résolutions, plateformes d'entraînement et démarche logique.</p>
+                <h2>Projets Académiques</h2>
+                <p style="color: var(--text-muted);">Livrables et infrastructures réalisés dans le cadre de mon cursus.</p>
             </div>
-            
             <div class="project-grid">
                 <div class="project-card">
-                    <h3>TryHackMe <span>PrivEsc</span></h3>
-                    <p>Compte-rendu d'exploitation et d'élévation de privilèges sur une machine Linux vulnérable.</p>
+                    <h3>Architecture Réseau Sécurisée</h3>
+                    <p>Maquettage complet d'une infrastructure d'entreprise avec segmentation VLAN, routage et ACL de filtrage.</p>
                     <div class="tech-tags">
-                        <span class="tag">Linux</span>
-                        <span class="tag">SUID</span>
-                        <span class="tag">Exploitation</span>
+                        <span class="tag">Cisco Packet Tracer</span>
+                        <span class="tag">VLAN</span>
+                        <span class="tag">Routing</span>
                     </div>
                 </div>
                 <div class="project-card">
-                    <h3>Root-Me <span>Cracking</span></h3>
-                    <p>Challenges d'ingénierie inverse et de crackme (analyse de binaires basiques).</p>
+                    <h3>Outil de Port-Scanning Python</h3>
+                    <p>Développement d'un script automatisé de scan de ports réseaux avec analyse des bannières applicatives.</p>
                     <div class="tech-tags">
-                        <span class="tag">Reverse</span>
-                        <span class="tag">GDB</span>
-                        <span class="tag">Ghidra</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Sockets</span>
+                        <span class="tag">Automation</span>
                     </div>
                 </div>
             </div>
@@ -286,7 +361,6 @@
                 <h2>Laboratoires Personnels</h2>
                 <p style="color: var(--text-muted);">Infrastructures réseaux et environnements de tests de vulnérabilités.</p>
             </div>
-            
             <div class="project-grid">
                 <div class="project-card">
                     <h3>Home Lab Active Directory</h3>
@@ -309,29 +383,28 @@
             </div>
         </div>
 
-        <div id="ecole" class="tab-content">
+        <div id="ctf" class="tab-content">
             <div class="tab-header">
-                <h2>Projets Académiques</h2>
-                <p style="color: var(--text-muted);">Livrables techniques et projets d'infrastructures réalisés à Ynov.</p>
+                <h2>Challenges & Capture The Flag</h2>
+                <p style="color: var(--text-muted);">Résolutions, plateformes d'entraînement et démarche logique.</p>
             </div>
-            
             <div class="project-grid">
                 <div class="project-card">
-                    <h3>Architecture Réseau Sécurisée</h3>
-                    <p>Maquettage complet d'une infrastructure d'entreprise avec segmentation VLAN, routage et ACL de filtrage.</p>
+                    <h3>TryHackMe <span>PrivEsc</span></h3>
+                    <p>Compte-rendu d'exploitation et d'élévation de privilèges sur une machine Linux vulnérable.</p>
                     <div class="tech-tags">
-                        <span class="tag">Cisco Packet Tracer</span>
-                        <span class="tag">VLAN</span>
-                        <span class="tag">Routing</span>
+                        <span class="tag">Linux</span>
+                        <span class="tag">SUID</span>
+                        <span class="tag">Exploitation</span>
                     </div>
                 </div>
                 <div class="project-card">
-                    <h3>Outil de Port-Scanning Python</h3>
-                    <p>Développement d'un script automatisé de scan de ports réseaux avec analyse des bannières applicatives.</p>
+                    <h3>Root-Me <span>Cracking</span></h3>
+                    <p>Challenges d'ingénierie inverse et de crackme (analyse de binaires basiques).</p>
                     <div class="tech-tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">Sockets</span>
-                        <span class="tag">Automation</span>
+                        <span class="tag">Reverse</span>
+                        <span class="tag">GDB</span>
+                        <span class="tag">Ghidra</span>
                     </div>
                 </div>
             </div>
@@ -355,6 +428,9 @@
             }
             document.getElementById(tabName).classList.add("active");
             evt.currentTarget.classList.add("active");
+            
+            // Fait remonter doucement la page quand on change d'onglet
+            window.scrollTo({top: 0, behavior: 'smooth'});
         }
     </script>
 </body>
