@@ -29,7 +29,6 @@
             min-height: 100vh;
         }
 
-        /* Effet Nébuleuse Cosmique Profico */
         body::before {
             content: '';
             position: absolute;
@@ -45,7 +44,6 @@
             opacity: 0.65;
         }
 
-        /* Menu de Navigation en Haut Fige (Glassmorphism) */
         nav {
             position: fixed;
             top: 0;
@@ -109,11 +107,10 @@
 
         main {
             max-width: 1100px;
-            margin: 10rem auto 6rem auto; /* Ajusté pour laisser la place au menu du haut */
+            margin: 10rem auto 6rem auto;
             padding: 0 1.5rem;
         }
 
-        /* Animation d'entree globale */
         .tab-content {
             display: none;
             animation: cosmicFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
@@ -123,7 +120,6 @@
             display: block;
         }
 
-        /* Section Accueil & Présentation */
         .profile-container {
             display: grid;
             grid-template-columns: 1fr 2fr;
@@ -167,7 +163,6 @@
             background: rgba(255, 255, 255, 0.05);
         }
 
-        /* Effet de lueur derrière la photo */
         .profile-image-wrapper::before {
             content: '';
             position: absolute;
@@ -204,7 +199,6 @@
             margin-bottom: 2rem;
         }
 
-        /* Titre des autres onglets */
         .tab-header {
             text-align: center;
             margin-bottom: 4rem;
@@ -220,7 +214,6 @@
             -webkit-text-fill-color: transparent;
         }
 
-        /* Grille & Cartes de Projets */
         .project-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -284,7 +277,6 @@
             border-top: 1px solid rgba(255, 255, 255, 0.02);
         }
 
-        /* Déclaration de l'animation cosmique */
         @keyframes cosmicFadeIn {
             from {
                 opacity: 0;
@@ -429,9 +421,8 @@
             document.getElementById(tabName).classList.add("active");
             evt.currentTarget.classList.add("active");
             
-            // Fait remonter doucement la page quand on change d'onglet
             window.scrollTo({top: 0, behavior: 'smooth'});
         }
     </script>
 </body>
-</html> 
+</html>
