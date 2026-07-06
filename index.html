@@ -1,11 +1,317 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-    <meta charset="utf-8">
-    <title>Portfolio Bianca</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bianca PONS | Portfolio Cybersécurité</title>
+    <style>
+        :root {
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --primary: #0284c7; /* Bleu Tech/Spatial */
+            --primary-light: #e0f2fe;
+            --accent: #7c3aed; /* Violet Cyber */
+            --border: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+
+        .header-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            letter-spacing: -0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.25rem;
+            color: #94a3b8;
+            margin-bottom: 1.5rem;
+        }
+
+        .badge {
+            background-color: rgba(2ba, 255, 255, 0.1);
+            border: 1px solid var(--primary);
+            color: #38bdf8;
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Système d'onglets */
+        .tabs-container {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+
+        .tabs-menu {
+            display: flex;
+            background-color: #f1f5f9;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .tab-btn {
+            flex: 1;
+            padding: 1.25rem;
+            background: none;
+            border: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: center;
+        }
+
+        .tab-btn:hover {
+            color: var(--primary);
+            background-color: #e2e8f0;
+        }
+
+        .tab-btn.active {
+            color: var(--primary);
+            background-color: var(--card-bg);
+            border-bottom: 3px solid var(--primary);
+        }
+
+        .tab-content {
+            display: none;
+            padding: 2.5rem;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Grille de projets */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .project-card {
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            background-color: var(--bg-color);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+            border-color: var(--primary);
+        }
+
+        .project-card h3 {
+            margin-bottom: 0.5rem;
+            color: #1e293b;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .project-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            padding: 0.25rem 0.6rem;
+            background-color: var(--primary-light);
+            color: var(--primary);
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        footer {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
 <body>
-    <h1>Portfolio de Bianca PONS</h1>
-    <p>Site en cours de construction.</p>
+
+    <header>
+        <div class="header-content">
+            <span class="badge">B2 Cybersécurité</span>
+            <h1 style="margin-top: 1rem;">Bianca PONS</h1>
+            <p>Étudiante en Cybersécurité & Réseaux — Bordeaux Ynov Campus</p>
+        </div>
+    </header>
+
+    <main>
+        <div class="tabs-container">
+            <!-- Les Onglets -->
+            <div class="tabs-menu">
+                <button class="tab-btn active" onclick="openTab(event, 'ctf')">🏁 Onglet CTF</button>
+                <button class="tab-btn" onclick="openTab(event, 'labs')">🧪 Labs Perso</button>
+                <button class="tab-btn" onclick="openTab(event, 'ecole')">🏫 Projets d'École</button>
+            </div>
+
+            <!-- Contenu : CTF -->
+            <div id="ctf" class="tab-content active">
+                <h2>Challenges & Capture The Flag</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Mes résolutions de challenges, plateformes d'entraînement et write-ups.</p>
+                
+                <div class="project-grid">
+                    <div class="project-card">
+                        <h3>TryHackMe <span>PrivEsc</span></h3>
+                        <p>Compte-rendu d'exploitation et d'élévation de privilèges sur une machine Linux vulnérable.</p>
+                        <div class="tech-tags">
+                            <span class="tag">Linux</span>
+                            <span class="tag">SUID</span>
+                            <span class="tag">Exploitation</span>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <h3>Root-Me <span>Cracking</span></h3>
+                        <p>Résolution de challenges d'ingénierie inverse et de crackme (analyse de binaires basiques).</p>
+                        <div class="tech-tags">
+                            <span class="tag">Reverse</span>
+                            <span class="tag">GDB</span>
+                            <span class="tag">Ghidra</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contenu : Labs Perso -->
+            <div id="labs" class="tab-content">
+                <h2>Laboratoires Personnels</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Infrastructures et environnements de test déployés à la maison.</p>
+                
+                <div class="project-grid">
+                    <div class="project-card">
+                        <h3>Home Lab Active Directory</h3>
+                        <p>Déploiement d'un contrôleur de domaine Windows Server avec deux machines clientes pour tester des attaques de type Kerberoasting.</p>
+                        <div class="tech-tags">
+                            <span class="tag">Windows Server</span>
+                            <span class="tag">Active Directory</span>
+                            <span class="tag">VMware</span>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <h3>Analyseur de Tapis Réseau (SIEM)</h3>
+                        <p>Mise en place d'une stack ELK pour centraliser et analyser les logs d'un pare-feu pfSense virtuel.</p>
+                        <div class="tech-tags">
+                            <span class="tag">pfSense</span>
+                            <span class="tag">ELK Stack</span>
+                            <span class="tag">SIEM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contenu : Projets d'École -->
+            <div id="ecole" class="tab-content">
+                <h2>Projets Académiques (Ynov)</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Projets de groupe et livrables techniques réalisés durant mon cursus.</p>
+                
+                <div class="project-grid">
+                    <div class="project-card">
+                        <h3>Architecture Réseau Sécurisée</h3>
+                        <p>Maquettage complet d'une infrastructure d'entreprise avec segmentation VLAN, routage inter-VLAN et ACL de filtrage.</p>
+                        <div class="tech-tags">
+                            <span class="tag">Cisco Packet Tracer</span>
+                            <span class="tag">VLAN</span>
+                            <span class="tag">Routing</span>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <h3>Scripting de Scan Réseau</h3>
+                        <p>Développement en Python d'un outil de scan de ports automatisé avec détection de bannières de services.</p>
+                        <div class="tech-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Sockets</span>
+                            <span class="tag">Automation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Bianca PONS. Site hébergé via GitHub Pages.</p>
+    </footer>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+            tablinks = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
 </body>
 </html>
