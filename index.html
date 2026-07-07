@@ -74,6 +74,12 @@
             letter-spacing: -0.02em;
         }
 
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
         .nav-menu {
             display: flex;
             gap: 0.5rem;
@@ -103,6 +109,23 @@
             color: var(--text-light);
             background: rgba(255, 255, 255, 0.1);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .lang-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-light);
+            padding: 0.5rem 0.9rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .lang-btn:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.2);
         }
 
         main {
@@ -141,6 +164,10 @@
                 text-align: center;
             }
             .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .nav-right {
                 flex-direction: column;
                 gap: 1rem;
             }
@@ -294,12 +321,15 @@
     <nav>
         <div class="nav-container">
             <div class="logo">BP . PORTFOLIO</div>
-            <div class="nav-menu">
-                <button class="tab-btn active" onclick="openTab(event, 'accueil')">  Présentation  </button>
-                <button class="tab-btn" onclick="openTab(event, 'ecole')">  Projets École  </button>
-                <button class="tab-btn" onclick="openTab(event, 'labs')">  Labs Perso  </button>
-                <button class="tab-btn" onclick="openTab(event, 'ctf')">  CTF  </button>
-                <button class="tab-btn" onclick="openTab(event, 'parcours')">  Parcours  </button>
+            <div class="nav-right">
+                <div class="nav-menu">
+                    <button class="tab-btn active" id="btn-accueil" onclick="openTab(event, 'accueil')">Présentation</button>
+                    <button class="tab-btn" id="btn-ecole" onclick="openTab(event, 'ecole')">Projets École</button>
+                    <button class="tab-btn" id="btn-labs" onclick="openTab(event, 'labs')">Labs Perso</button>
+                    <button class="tab-btn" id="btn-ctf" onclick="openTab(event, 'ctf')">CTF</button>
+                    <button class="tab-btn" id="btn-parcours" onclick="openTab(event, 'parcours')">Parcours</button>
+                </div>
+                <button class="lang-btn" onclick="toggleLanguage()" id="lang-switcher">EN</button>
             </div>
         </div>
     </nav>
@@ -312,11 +342,11 @@
                 </div>
                 <div class="profile-info">
                     <h1>Bianca PONS</h1>
-                    <h2>Étudiante en B2 Cybersécurité & Réseaux</h2>
-                    <p>Passionnée par la sécurité des infrastructures, le hacking éthique et l'analyse système. Actuellement en cursus au sein de Bordeaux Ynov Campus, je développe mes compétences techniques à travers des déploiements de architectures sécurisées et la résolution constante de challenges CTF. Objectif : mettre cette rigueur au service de grands projets d'ingénierie et de technologies de pointe.</p>
+                    <h2 id="hero-title">Étudiante en B2 Cybersécurité & Réseaux</h2>
+                    <p id="hero-desc">Passionnée par la sécurité des infrastructures, le hacking éthique et l'analyse système. Actuellement en cursus au sein de Bordeaux Ynov Campus, je développe mes compétences techniques à travers des déploiements de architectures sécurisées et la résolution constante de challenges CTF. Objectif : mettre cette rigueur au service de grands projets d'ingénierie et de technologies de pointe.</p>
                     <div class="tech-tags">
                         <span class="tag" style="color: #a5b4fc; border-color: rgba(165, 180, 252, 0.2)">Bordeaux Ynov Campus</span>
-                        <span class="tag" style="color: #38bdf8; border-color: rgba(56, 189, 248, 0.2)">Recherche de Stage 2027</span>
+                        <span class="tag" id="tag-search" style="color: #38bdf8; border-color: rgba(56, 189, 248, 0.2)">Recherche de Stage 2027</span>
                     </div>
                 </div>
             </div>
@@ -324,13 +354,13 @@
 
         <div id="ecole" class="tab-content">
             <div class="tab-header">
-                <h2>Projets Académiques</h2>
-                <p style="color: var(--text-muted);">Livrables et infrastructures réalisés dans le cadre de mon cursus.</p>
+                <h2 id="ecole-title">Projets Académiques</h2>
+                <p id="ecole-subtitle" style="color: var(--text-muted);">Livrables et infrastructures réalisés dans le cadre de mon cursus.</p>
             </div>
             <div class="project-grid">
                 <div class="project-card">
-                    <h3>Architecture Réseau Sécurisée</h3>
-                    <p>Maquettage complet d'une infrastructure d'entreprise avec segmentation VLAN, routage et ACL de filtrage.</p>
+                    <h3 id="p1-title">Architecture Réseau Sécurisée</h3>
+                    <p id="p1-desc">Maquettage complet d'une infrastructure d'entreprise avec segmentation VLAN, routage et ACL de filtrage.</p>
                     <div class="tech-tags">
                         <span class="tag">Cisco Packet Tracer</span>
                         <span class="tag">VLAN</span>
@@ -338,8 +368,8 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <h3>Outil de Port-Scanning Python</h3>
-                    <p>Développement d'un script automatisé de scan de ports réseaux avec analyse des bannières applicatives.</p>
+                    <h3 id="p2-title">Outil de Port-Scanning Python</h3>
+                    <p id="p2-desc">Développement d'un script automatisé de scan de ports réseaux avec analyse des bannières applicatives.</p>
                     <div class="tech-tags">
                         <span class="tag">Python</span>
                         <span class="tag">Sockets</span>
@@ -351,13 +381,13 @@
 
         <div id="labs" class="tab-content">
             <div class="tab-header">
-                <h2>Laboratoires Personnels</h2>
-                <p style="color: var(--text-muted);">Infrastructures réseaux et environnements de tests de vulnérabilités.</p>
+                <h2 id="labs-title">Laboratoires Personnels</h2>
+                <p id="labs-subtitle" style="color: var(--text-muted);">Infrastructures réseaux et environnements de tests de vulnérabilités.</p>
             </div>
             <div class="project-grid">
                 <div class="project-card">
-                    <h3>Home Lab Active Directory</h3>
-                    <p>Déploiement d'un contrôleur de domaine Windows Server avec deux machines clientes pour simuler des scénarios d'attaques.</p>
+                    <h3 id="l1-title">Home Lab Active Directory</h3>
+                    <p id="l1-desc">Déploiement d'un contrôleur de domaine Windows Server avec deux machines clientes pour simuler des scénarios d'attaques.</p>
                     <div class="tech-tags">
                         <span class="tag">Windows Server</span>
                         <span class="tag">Active Directory</span>
@@ -365,8 +395,8 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <h3>Analyseur SIEM (ELK Stack)</h3>
-                    <p>Mise en place d'une stack ELK pour centraliser et analyser en temps réel les logs d'un pare-feu pfSense.</p>
+                    <h3 id="l2-title">Analyseur SIEM (ELK Stack)</h3>
+                    <p id="l2-desc">Mise en place d'une stack ELK pour centraliser et analyser en temps réel les logs d'un pare-feu pfSense.</p>
                     <div class="tech-tags">
                         <span class="tag">pfSense</span>
                         <span class="tag">ELK Stack</span>
@@ -378,13 +408,13 @@
 
         <div id="ctf" class="tab-content">
             <div class="tab-header">
-                <h2>Challenges & Capture The Flag</h2>
-                <p style="color: var(--text-muted);">Résolutions, plateformes d'entraînement et démarche logique.</p>
+                <h2 id="ctf-title">Challenges & Capture The Flag</h2>
+                <p id="ctf-subtitle" style="color: var(--text-muted);">Résolutions, plateformes d'entraînement et démarche logique.</p>
             </div>
             <div class="project-grid">
                 <div class="project-card">
                     <h3>TryHackMe <span>PrivEsc</span></h3>
-                    <p>Compte-rendu d'exploitation et d'élévation de privilèges sur une machine Linux vulnérable.</p>
+                    <p id="c1-desc">Compte-rendu d'exploitation et d'élévation de privilèges sur une machine Linux vulnérable.</p>
                     <div class="tech-tags">
                         <span class="tag">Linux</span>
                         <span class="tag">SUID</span>
@@ -393,7 +423,7 @@
                 </div>
                 <div class="project-card">
                     <h3>Root-Me <span>Cracking</span></h3>
-                    <p>Challenges d'ingénierie inverse et de crackme (analyse de binaires basiques).</p>
+                    <p id="c2-desc">Challenges d'ingénierie inverse et de crackme (analyse de binaires basiques).</p>
                     <div class="tech-tags">
                         <span class="tag">Reverse</span>
                         <span class="tag">GDB</span>
@@ -405,30 +435,30 @@
 
         <div id="parcours" class="tab-content">
             <div class="tab-header">
-                <h2>Expérience & Certifications</h2>
-                <p style="color: var(--text-muted);">Mon parcours professionnel et mes validations de compétences techniques.</p>
+                <h2 id="parcours-title">Expérience & Certifications</h2>
+                <p id="parcours-subtitle" style="color: var(--text-muted);">Mon parcours professionnel et mes validations de compétences techniques.</p>
             </div>
             <div class="project-grid">
                 <div class="project-card">
-                    <h3>Stage – Intitulé du Poste</h3>
-                    <p>Description de tes missions durant ce stage, des technologies manipulées et des problématiques résolues.</p>
+                    <h3 id="exp-title">Stage – Intitulé du Poste</h3>
+                    <p id="exp-desc">Description de tes missions durant ce stage, des technologies manipulées et des problématiques résolues.</p>
                     <div class="tech-tags">
-                        <span class="tag">Nom Entreprise</span>
-                        <span class="tag">Durée / Dates</span>
+                        <span class="tag" id="exp-company">Nom Entreprise</span>
+                        <span class="tag" id="exp-date">Durée / Dates</span>
                     </div>
                 </div>
                 <div class="project-card">
-                    <h3>Certification 1</h3>
-                    <p>Détails sur les compétences évaluées par cette certification et sa valeur dans le domaine de la sécurité ou des réseaux.</p>
+                    <h3 id="cert1-title">Certification 1</h3>
+                    <p id="cert1-desc">Détails sur les compétences évaluées par cette certification et sa valeur dans le domaine de la sécurité ou des réseaux.</p>
                     <div class="tech-tags">
-                        <span class="tag" style="color: #a5b4fc; border-color: rgba(165, 180, 252, 0.2)">En cours de préparation</span>
+                        <span class="tag class-status-prep" style="color: #a5b4fc; border-color: rgba(165, 180, 252, 0.2)">En cours de préparation</span>
                     </div>
                 </div>
                 <div class="project-card">
-                    <h3>Certification 2</h3>
-                    <p>Détails sur le périmètre technique couvert par cette seconde certification et les objectifs d'apprentissage visés.</p>
+                    <h3 id="cert2-title">Certification 2</h3>
+                    <p id="cert2-desc">Détails sur le périmètre technique couvert par cette seconde certification et les objectifs d'apprentissage visés.</p>
                     <div class="tech-tags">
-                        <span class="tag" style="color: #a5b4fc; border-color: rgba(165, 180, 252, 0.2)">En cours de préparation</span>
+                        <span class="tag class-status-prep" style="color: #a5b4fc; border-color: rgba(165, 180, 252, 0.2)">En cours de préparation</span>
                     </div>
                 </div>
             </div>
@@ -440,6 +470,135 @@
     </footer>
 
     <script>
+        const translations = {
+            fr: {
+                btnAccueil: "Présentation",
+                btnEcole: "Projets École",
+                btnLabs: "Labs Perso",
+                btnCtf: "CTF",
+                btnParcours: "Parcours",
+                heroTitle: "Étudiante en B2 Cybersécurité & Réseaux",
+                heroDesc: "Passionnée par la sécurité des infrastructures, le hacking éthique et l'analyse système. Actuellement en cursus au sein de Bordeaux Ynov Campus, je développe mes compétences techniques à travers des déploiements de architectures sécurisées et la résolution constante de challenges CTF. Objectif : mettre cette rigueur au service de grands projets d'ingénierie et de technologies de pointe.",
+                tagSearch: "Recherche de Stage 2027",
+                ecoleTitle: "Projets Académiques",
+                ecoleSubtitle: "Livrables et infrastructures réalisés dans le cadre de mon cursus.",
+                p1Title: "Architecture Réseau Sécurisée",
+                p1Desc: "Maquettage complet d'une infrastructure d'entreprise avec segmentation VLAN, routage et ACL de filtrage.",
+                p2Title: "Outil de Port-Scanning Python",
+                p2Desc: "Développement d'un script automatisé de scan de ports réseaux avec analyse des bannières applicatives.",
+                labsTitle: "Laboratoires Personnels",
+                labsSubtitle: "Infrastructures réseaux et environnements de tests de vulnérabilités.",
+                l1Title: "Home Lab Active Directory",
+                l1Desc: "Déploiement d'un contrôleur de domaine Windows Server avec deux machines clientes pour simuler des scénarios d'attaques.",
+                l2Title: "Analyseur SIEM (ELK Stack)",
+                l2Desc: "Mise en place d'une stack ELK pour centraliser et analyser en temps réel les logs d'un pare-feu pfSense.",
+                ctfTitle: "Challenges & Capture The Flag",
+                ctfSubtitle: "Résolutions, plateformes d'entraînement et démarche logique.",
+                c1Desc: "Compte-rendu d'exploitation et d'élévation de privilèges sur une machine Linux vulnérable.",
+                c2Desc: "Challenges d'ingénierie inverse et de crackme (analyse de binaires basiques).",
+                parcoursTitle: "Expérience & Certifications",
+                parcoursSubtitle: "Mon parcours professionnel et mes validations de compétences techniques.",
+                expTitle: "Stage – Intitulé du Poste",
+                expDesc: "Description de tes missions durant ce stage, des technologies manipulées et des problématiques résolues.",
+                expCompany: "Nom Entreprise",
+                expDate: "Durée / Dates",
+                cert1Title: "Certification 1",
+                cert1Desc: "Détails sur les compétences évaluées par cette certification et sa valeur dans le domaine de la sécurité ou des réseaux.",
+                cert2Title: "Certification 2",
+                cert2Desc: "Détails sur le périmètre technique couvert par cette seconde certification et les objectifs d'apprentissage visés.",
+                statusPrep: "En cours de préparation"
+            },
+            en: {
+                btnAccueil: "Overview",
+                btnEcole: "Academic Projects",
+                btnLabs: "Personal Labs",
+                btnCtf: "CTF Challenges",
+                btnParcours: "Background",
+                heroTitle: "Cybersecurity & Networks Student (B2)",
+                heroDesc: "Passionate about infrastructure security, ethical hacking, and systems analysis. Currently studying at Bordeaux Ynov Campus, I build technical skills by deploying secure network architectures and actively solving CTF challenges. Goal: bring this rigorous approach to large-scale engineering projects and cutting-edge technologies.",
+                tagSearch: "Looking for Internship 2027",
+                ecoleTitle: "Academic Projects",
+                ecoleSubtitle: "Deliverables and infrastructures built during my coursework.",
+                p1Title: "Secure Network Architecture",
+                p1Desc: "Complete enterprise network blueprinting with VLAN segmentation, routing, and filtering ACLs.",
+                p2Title: "Python Port-Scanning Tool",
+                p2Desc: "Development of an automated network port scanning script with application banner analysis.",
+                labsTitle: "Personal Laboratories",
+                labsSubtitle: "Network environments and sandboxes built for vulnerability testing.",
+                l1Title: "Active Directory Home Lab",
+                l1Desc: "Deployment of a Windows Server domain controller with two client machines to simulate attack scenarios.",
+                l2Title: "SIEM Analyzer (ELK Stack)",
+                l2Desc: "Implementation of an ELK stack to centralize and analyze logs from a pfSense firewall in real time.",
+                ctfTitle: "Challenges & Capture The Flag",
+                ctfSubtitle: "Write-ups, training platforms, and logical troubleshooting methodology.",
+                c1Desc: "Privilege escalation and exploitation write-up on a vulnerable Linux machine.",
+                c2Desc: "Reverse engineering and crackme challenges (basic binary analysis).",
+                parcoursTitle: "Experience & Certifications",
+                parcoursSubtitle: "My professional journey and technical validations.",
+                expTitle: "Internship – Job Title",
+                expDesc: "Description of your responsibilities during this internship, core technologies used, and security issues resolved.",
+                expCompany: "Company Name",
+                expDate: "Duration / Dates",
+                cert1Title: "Certification 1",
+                cert1Desc: "Details on the skills evaluated by this certification and its importance in the network or security space.",
+                cert2Title: "Certification 2",
+                cert2Desc: "Details on the technical scope covered by this second certification and learning milestones.",
+                statusPrep: "Currently preparing"
+            }
+        };
+
+        let currentLang = 'fr';
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'fr' ? 'en' : 'fr';
+            document.getElementById('lang-switcher').innerText = currentLang === 'fr' ? 'EN' : 'FR';
+            
+            document.getElementById('btn-accueil').innerText = translations[currentLang].btnAccueil;
+            document.getElementById('btn-ecole').innerText = translations[currentLang].btnEcole;
+            document.getElementById('btn-labs').innerText = translations[currentLang].btnLabs;
+            document.getElementById('btn-ctf').innerText = translations[currentLang].btnCtf;
+            document.getElementById('btn-parcours').innerText = translations[currentLang].btnParcours;
+            
+            document.getElementById('hero-title').innerText = translations[currentLang].heroTitle;
+            document.getElementById('hero-desc').innerText = translations[currentLang].heroDesc;
+            document.getElementById('tag-search').innerText = translations[currentLang].tagSearch;
+            
+            document.getElementById('ecole-title').innerText = translations[currentLang].ecoleTitle;
+            document.getElementById('ecole-subtitle').innerText = translations[currentLang].ecoleSubtitle;
+            document.getElementById('p1-title').innerText = translations[currentLang].p1Title;
+            document.getElementById('p1-desc').innerText = translations[currentLang].p1Desc;
+            document.getElementById('p2-title').innerText = translations[currentLang].p2Title;
+            document.getElementById('p2-desc').innerText = translations[currentLang].p2Desc;
+            
+            document.getElementById('labs-title').innerText = translations[currentLang].labsTitle;
+            document.getElementById('labs-subtitle').innerText = translations[currentLang].labsSubtitle;
+            document.getElementById('l1-title').innerText = translations[currentLang].l1Title;
+            document.getElementById('l1-desc').innerText = translations[currentLang].l1Desc;
+            document.getElementById('l2-title').innerText = translations[currentLang].l2Title;
+            document.getElementById('l2-desc').innerText = translations[currentLang].l2Desc;
+            
+            document.getElementById('ctf-title').innerText = translations[currentLang].ctfTitle;
+            document.getElementById('ctf-subtitle').innerText = translations[currentLang].ctfSubtitle;
+            document.getElementById('c1-desc').innerText = translations[currentLang].c1Desc;
+            document.getElementById('c2-desc').innerText = translations[currentLang].c2Desc;
+            
+            document.getElementById('parcours-title').innerText = translations[currentLang].parcoursTitle;
+            document.getElementById('parcours-subtitle').innerText = translations[currentLang].parcoursSubtitle;
+            document.getElementById('exp-title').innerText = translations[currentLang].expTitle;
+            document.getElementById('exp-desc').innerText = translations[currentLang].expDesc;
+            document.getElementById('exp-company').innerText = translations[currentLang].expCompany;
+            document.getElementById('exp-date').innerText = translations[currentLang].expDate;
+            document.getElementById('cert1-title').innerText = translations[currentLang].cert1Title;
+            document.getElementById('cert1-desc').innerText = translations[currentLang].cert1Desc;
+            document.getElementById('cert2-title').innerText = translations[currentLang].cert2Title;
+            document.getElementById('cert2-desc').innerText = translations[currentLang].cert2Desc;
+            
+            const badges = document.getElementsByClassName('class-status-prep');
+            for (let b of badges) {
+                b.innerText = translations[currentLang].statusPrep;
+            }
+        }
+
         function openTab(evt, tabName) {
             var i, tabcontent, tablinks;
             tabcontent = document.getElementsByClassName("tab-content");
