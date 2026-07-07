@@ -440,23 +440,23 @@
             </div>
             <div class="project-grid">
                 <div class="project-card">
-                    <h3 id="exp-title">Stage – Intitulé du Poste</h3>
-                    <p id="exp-desc">Description de tes missions durant ce stage, des technologies manipulées et des problématiques résolues.</p>
+                    <h3 id="exp-title">Stage Immersif – Sécurisation des Infrastructures & Réseaux</h3>
+                    <p id="exp-desc">Stage optionnel réalisé par initiative personnelle. Immersion au sein de l'équipe Cybersécurité : observation et pratique autour de l'administration réseau sécurisée, de la gestion Active Directory (AD) et de la détection de malwares. Compréhension des enjeux de sécurité et de la gouvernance IT au sein d'un grand groupe international.</p>
                     <div class="tech-tags">
                         <span class="tag" id="exp-company">DEKRA (Bordeaux)</span>
-                        <span class="tag" id="exp-date">1 semaine (Optionnel / Initiative personnelle)</span>
+                        <span class="tag" id="exp-date">1 semaine (Initiative personnelle)</span>
                     </div>
                 </div>
                 <div class="project-card">
-                    <h3 id="cert1-title">Certification HTB CJCA</h3>
-                    <p id="cert1-desc">Détails sur les compétences évaluées par cette certification et sa valeur dans le domaine de la sécurité ou des réseaux.</p>
+                    <h3 id="cert1-title">HTB Certified Junior Cybersecurity Analyst (CJCA)</h3>
+                    <p id="cert1-desc">Certification pratique axée sur les fondamentaux de la sécurité : analyse de logs, réponse aux incidents de premier niveau, détection de logiciels malveillants et sécurité réseau. <br><i>Passage de la certification prévu cet été.</i></p>
                     <div class="tech-tags">
                         <span class="tag class-status-prep" style="color: #a5b4fc; border-color: rgba(165, 180, 252, 0.2)">En cours de préparation</span>
                     </div>
                 </div>
                 <div class="project-card">
-                    <h3 id="cert2-title">Certification 2</h3>
-                    <p id="cert2-desc">Détails sur le périmètre technique couvert par cette seconde certification et les objectifs d'apprentissage visés.</p>
+                    <h3 id="cert2-title">HTB Certified SOC Analyst (CDSA)</h3>
+                    <p id="cert2-desc">En cours de préparation. Approfondissement logique du cursus CJCA, axé sur l'analyse avancée au sein d'un SOC, la chasse aux menaces (Threat Hunting), l'analyse d'artefacts et la gestion d'alertes de sécurité complexes.</p>
                     <div class="tech-tags">
                         <span class="tag class-status-prep" style="color: #a5b4fc; border-color: rgba(165, 180, 252, 0.2)">En cours de préparation</span>
                     </div>
@@ -506,7 +506,8 @@
                 cert1Desc: "Certification pratique axée sur les fondamentaux de la sécurité : analyse de logs, réponse aux incidents de premier niveau, détection de logiciels malveillants et sécurité réseau. <br><i>Passage de la certification prévu cet été.</i>",
                 cert2Title: "HTB Certified SOC Analyst (CDSA)",
                 cert2Desc: "En cours de préparation. Approfondissement logique du cursus CJCA, axé sur l'analyse avancée au sein d'un SOC, la chasse aux menaces (Threat Hunting), l'analyse d'artefacts et la gestion d'alertes de sécurité complexes.",
-                statusPrep: "En cours de préparation"
+                statusPrep: "En cours de préparation",
+                langText: "EN"
             },
             en: {
                 btnAccueil: "Overview",
@@ -543,15 +544,15 @@
                 cert1Desc: "Practical certification focusing on security fundamentals: log analysis, tier-1 incident response, malware detection, and network security hands-on labs. <br><i>Exam scheduled for this summer.</i>",
                 cert2Title: "HTB Certified SOC Analyst (CDSA)",
                 cert2Desc: "Currently preparing. Natural progression from the CJCA curriculum, focusing on advanced SOC operations, Threat Hunting, artifact analysis, and complex security alert triaging.",
-                statusPrep: "Currently preparing"
+                statusPrep: "Currently preparing",
+                langText: "FR"
             }
         };
 
         let currentLang = 'fr';
 
-        function toggleLanguage() {
-            currentLang = currentLang === 'fr' ? 'en' : 'fr';
-            document.getElementById('lang-switcher').innerText = currentLang === 'fr' ? 'EN' : 'FR';
+        function updateDOM() {
+            document.getElementById('lang-switcher').innerText = translations[currentLang].langText;
             
             document.getElementById('btn-accueil').innerText = translations[currentLang].btnAccueil;
             document.getElementById('btn-ecole').innerText = translations[currentLang].btnEcole;
@@ -599,6 +600,11 @@
             }
         }
 
+        function toggleLanguage() {
+            currentLang = currentLang === 'fr' ? 'en' : 'fr';
+            updateDOM();
+        }
+
         function openTab(evt, tabName) {
             var i, tabcontent, tablinks;
             tabcontent = document.getElementsByClassName("tab-content");
@@ -614,6 +620,10 @@
             
             window.scrollTo({top: 0, behavior: 'smooth'});
         }
+        
+        window.addEventListener('DOMContentLoaded', () => {
+            updateDOM(); 
+        });
     </script>
 </body>
 </html>
