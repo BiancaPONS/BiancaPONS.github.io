@@ -280,10 +280,51 @@
             flex-grow: 1;
         }
 
+        .card-header-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .card-header-flex h3 {
+            margin-bottom: 0;
+        }
+
+        .badge {
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 0.25rem 0.6rem;
+            border-radius: 100px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            white-space: nowrap;
+        }
+
+        .badge-done {
+            color: #4ade80;
+            background: rgba(22, 163, 74, 0.15);
+            border: 1px solid rgba(22, 163, 74, 0.3);
+        }
+
+        .badge-progress {
+            color: #6366f1;
+            background: rgba(99, 102, 241, 0.15);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+        }
+
+        .badge-future {
+            color: #f59e0b;
+            background: rgba(245, 158, 11, 0.15);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+        }
+
         .tech-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
+            margin-top: auto;
         }
 
         .tag {
@@ -294,6 +335,24 @@
             color: #cbd5e1;
             border-radius: 6px;
             border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .lab-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+            font-size: 0.85rem;
+        }
+
+        .lab-links a {
+            color: #a5b4fc;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .lab-links a:hover {
+            color: #e0e7ff;
         }
 
         footer {
@@ -365,6 +424,7 @@
                         <span class="tag">Cisco Packet Tracer</span>
                         <span class="tag">VLAN</span>
                         <span class="tag">Routing</span>
+                        <span class="tag">Filtering</span>
                     </div>
                 </div>
                 <div class="project-card">
@@ -386,21 +446,79 @@
             </div>
             <div class="project-grid">
                 <div class="project-card">
-                    <h3 id="l1-title">Home Lab Active Directory</h3>
-                    <p id="l1-desc">Déploiement d'un contrôleur de domaine Windows Server avec deux machines clientes pour simuler des scénarios d'attaques.</p>
+                    <div class="card-header-flex">
+                        <h3 id="lbl-aws-title">Sécurisation d'Infrastructures Cloud AWS</h3>
+                        <span class="badge badge-done" id="lbl-status-done1">Terminé</span>
+                    </div>
+                    <p id="lbl-aws-desc">Conception et durcissement d'une infrastructure AWS respectant le principe du moindre privilège : profils IAM limités, instance EC2 Ubuntu cloisonnée (UFW, Security Groups) et traçabilité CloudTrail complète.</p>
                     <div class="tech-tags">
-                        <span class="tag">Windows Server</span>
-                        <span class="tag">Active Directory</span>
-                        <span class="tag">VMware</span>
+                        <span class="tag">AWS IAM</span>
+                        <span class="tag">EC2</span>
+                        <span class="tag">S3 Private</span>
+                        <span class="tag">CloudTrail</span>
+                    </div>
+                    <div class="lab-links">
+                        <a href="#" target="_blank" id="lnk-git1">GitHub ↗</a>
+                        <a href="#" target="_blank" id="lnk-arch1">Architecture 🖼️</a>
                     </div>
                 </div>
+
                 <div class="project-card">
-                    <h3 id="l2-title">Analyseur SIEM (ELK Stack)</h3>
-                    <p id="l2-desc">Mise en place d'une stack ELK pour centraliser et analyser en temps réel les logs d'un pare-feu pfSense.</p>
+                    <div class="card-header-flex">
+                        <h3 id="lbl-linux-title">Durcissement Système Linux</h3>
+                        <span class="badge badge-done" id="lbl-status-done2">Terminé</span>
+                    </div>
+                    <p id="lbl-linux-desc">Mise en place de mécanismes fondamentaux de défense OS sur serveur Ubuntu : gestion des privilèges (chmod/chown), cloisonnement SSH, pare-feu UFW et corrélation des journaux système auth.log.</p>
                     <div class="tech-tags">
-                        <span class="tag">pfSense</span>
+                        <span class="tag">Linux Ubuntu</span>
+                        <span class="tag">SSH Hardening</span>
+                        <span class="tag">UFW Firewall</span>
+                        <span class="tag">Log Analysis</span>
+                    </div>
+                    <div class="lab-links">
+                        <a href="#" target="_blank" id="lnk-git2">GitHub ↗</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="card-header-flex">
+                        <h3 id="lbl-siem-title">Déploiement SIEM & Mini-SOC Domestique</h3>
+                        <span class="badge badge-progress" id="lbl-status-prog">En cours</span>
+                    </div>
+                    <p id="lbl-siem-desc">Centralisation des événements de sécurité à l'aide de la stack Wazuh (SIEM open-source). Configuration d'agents de collecte, création de règles de détection (Brute-force, élévation de privilèges) et création de tableaux de bord d'analyse.</p>
+                    <div class="tech-tags">
+                        <span class="tag">Wazuh SIEM</span>
                         <span class="tag">ELK Stack</span>
-                        <span class="tag">SIEM</span>
+                        <span class="tag">SOC Analyst</span>
+                        <span class="tag">Threat Detection</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="card-header-flex">
+                        <h3 id="lbl-devsecops-title">Sécurisation de Pipelines CI/CD (DevSecOps)</h3>
+                        <span class="badge badge-future" id="lbl-status-fut1">À venir</span>
+                    </div>
+                    <p id="lbl-devsecops-desc">Intégration d'outils de sécurité automatisés au sein de workflows GitHub Actions : scanners de vulnérabilités (Trivy), détection de secrets fuis (Gitleaks) et audit de code statique (SonarQube).</p>
+                    <div class="tech-tags">
+                        <span class="tag">GitHub Actions</span>
+                        <span class="tag">DevSecOps</span>
+                        <span class="tag">Trivy</span>
+                        <span class="tag">Securing Code</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="card-header-flex">
+                        <h3 id="lbl-malware-title">Laboratoire d'Analyse de Menaces & Sandbox</h3>
+                        <span class="badge badge-future" id="lbl-status-fut2">À venir</span>
+                    </div>
+                    <p id="lbl-malware-desc">Mise en place d'un environnement virtualisé isolé (Sandbox) pour l'observation comportementale sécurisée de scripts hostiles et l'extraction d'Indicateurs de Compromission (IOCs).</p>
+                    <div class="tech-tags">
+                        <span class="tag">Malware Analysis</span>
+                        <span class="tag">Malware Sandbox</span>
+                        <span class="tag">Reverse Engineering</span>
+                        <span class="tag">IOCs</span>
                     </div>
                 </div>
             </div>
@@ -463,14 +581,14 @@
                     <h3 id="cert1-title">HTB Certified Junior Cybersecurity Analyst (CJCA)</h3>
                     <p id="cert1-desc">Certification pratique axée sur les fondamentaux de la sécurité : analyse de logs, réponse aux incidents de premier niveau, détection de logiciels malveillants et sécurité réseau. <br><i>Passage de la certification prévu cet été.</i></p>
                     <div class="tech-tags">
-                        <span class="tag class-status-prep" style="color: #a5b4fc; border-color: rgba(165, 180, 252, 0.2)">En cours de préparation</span>
+                        <span class="tag class-status-prep-1" style="color: #a5b4fc; border-color: rgba(165, 180, 252, 0.2)">En cours de préparation</span>
                     </div>
                 </div>
                 <div class="project-card">
                     <h3 id="cert2-title">HTB Certified SOC Analyst (CDSA)</h3>
                     <p id="cert2-desc">En cours de préparation. Approfondissement logique du cursus CJCA, axé sur l'analyse avancée au sein d'un SOC, la chasse aux menaces (Threat Hunting), l'analyse d'artefacts et la gestion d'alertes de sécurité complexes.</p>
                     <div class="tech-tags">
-                        <span class="tag class-status-prep" style="color: #a5b4fc; border-color: rgba(165, 180, 252, 0.2)">En cours de préparation</span>
+                        <span class="tag class-status-prep-2" style="color: #a5b4fc; border-color: rgba(165, 180, 252, 0.2)">En cours de préparation</span>
                     </div>
                 </div>
             </div>
@@ -500,10 +618,25 @@
                 p2Desc: "Développement d'un script automatisé de scan de ports réseaux avec analyse des bannières applicatives.",
                 labsTitle: "Laboratoires Personnels",
                 labsSubtitle: "Infrastructures réseaux et environnements de tests de vulnérabilités.",
-                l1Title: "Home Lab Active Directory",
-                l1Desc: "Déploiement d'un contrôleur de domaine Windows Server avec deux machines clientes pour simuler des scénarios d'attaques.",
-                l2Title: "Analyseur SIEM (ELK Stack)",
-                l2Desc: "Mise en place d'une stack ELK pour centraliser et analyser en temps réel les logs d'un pare-feu pfSense.",
+                
+                // Nouveaux Labs de la section
+                lblAwsTitle: "Sécurisation d'Infrastructures Cloud AWS",
+                lblAwsDesc: "Conception et durcissement d'une infrastructure AWS respectant le principe du moindre privilège : profils IAM limités, instance EC2 Ubuntu cloisonnée (UFW, Security Groups) et traçabilité CloudTrail complète.",
+                lblLinuxTitle: "Durcissement Système Linux",
+                lblLinuxDesc: "Mise en place de mécanismes fondamentaux de défense OS sur serveur Ubuntu : gestion des privilèges (chmod/chown), cloisonnement SSH, pare-feu UFW et corrélation des journaux système auth.log.",
+                lblSiemTitle: "Déploiement SIEM & Mini-SOC Domestique",
+                lblSiemDesc: "Centralisation des événements de sécurité à l'aide de la stack Wazuh (SIEM open-source). Configuration d'agents de collecte, création de règles de détection (Brute-force, élévation de privilèges) et création de tableaux de bord d'analyse.",
+                lblDevsecopsTitle: "Sécurisation de Pipelines CI/CD (DevSecOps)",
+                lblDevsecopsDesc: "Intégration d'outils de sécurité automatisés au sein de workflows GitHub Actions : scanners de vulnérabilités (Trivy), détection de secrets fuis (Gitleaks) et audit de code statique (SonarQube).",
+                lblMalwareTitle: "Laboratoire d'Analyse de Menaces & Sandbox",
+                lblMalwareDesc: "Mise en place d'un environnement virtualisé isolé (Sandbox) pour l'observation comportementale sécurisée de scripts hostiles et l'extraction d'Indicateurs de Compromission (IOCs).",
+                
+                lblStatusDone1: "Terminé",
+                lblStatusDone2: "Terminé",
+                lblStatusProg: "En cours",
+                lblStatusFut1: "À venir",
+                lblStatusFut2: "À venir",
+
                 ctfTitle: "Challenges & Capture The Flag",
                 ctfSubtitle: "Résolutions, plateformes d'entraînement et démarche logique.",
                 ctf1Title: "CTF Forensic & OSINT — Investigation Judiciaire (48h)",
@@ -542,10 +675,25 @@
                 p2Desc: "Development of an automated network port scanning script with application banner analysis.",
                 labsTitle: "Personal Laboratories",
                 labsSubtitle: "Network environments and sandboxes built for vulnerability testing.",
-                l1Title: "Active Directory Home Lab",
-                l1Desc: "Deployment of a Windows Server domain controller with two client machines to simulate attack scenarios.",
-                l2Title: "SIEM Analyzer (ELK Stack)",
-                l2Desc: "Implementation of an ELK stack to centralize and analyze logs from a pfSense firewall in real time.",
+                
+                // Labs Translation
+                lblAwsTitle: "AWS Cloud Infrastructure Hardening",
+                lblAwsDesc: "Designing and securing an AWS environment adhering to the principle of least privilege: restricted IAM policies, isolated Ubuntu EC2 instance (UFW, Security Groups), and full CloudTrail logging.",
+                lblLinuxTitle: "Linux Server Hardening & Auditing",
+                lblLinuxDesc: "Implementation of core OS-level defensive mechanisms on an Ubuntu server: strict privilege management (chmod/chown), SSH configuration hardening, UFW firewall rules, and auth.log analysis.",
+                lblSiemTitle: "SIEM & Mini-SOC Home Lab Deplomyent",
+                lblSiemDesc: "Centralizing security events using the open-source Wazuh SIEM stack. Configuring endpoint log agents, deploying detection rules (Brute-force alerts, privilege escalations), and building analytic dashboards.",
+                lblDevsecopsTitle: "CI/CD Pipeline Hardening (DevSecOps)",
+                lblDevsecopsDesc: "Integrating automated defensive testing mechanisms within GitHub Actions workflows: software vulnerability mapping (Trivy), secret leak tracking (Gitleaks), and static code analysis (SonarQube).",
+                lblMalwareTitle: "Threat Analysis & Controlled Sandbox Lab",
+                lblMalwareDesc: "Setting up a fully isolated virtual playground (Sandbox) to monitor malicious script behaviors and extract real-world Indicators of Compromise (IOCs).",
+                
+                lblStatusDone1: "Completed",
+                lblStatusDone2: "Completed",
+                lblStatusProg: "In Progress",
+                lblStatusFut1: "Upcoming",
+                lblStatusFut2: "Upcoming",
+
                 ctfTitle: "Challenges & Capture The Flag",
                 ctfSubtitle: "Write-ups, training platforms, and logical troubleshooting methodology.",
                 ctf1Title: "Forensic & OSINT CTF — Digital Investigation (48h)",
@@ -593,10 +741,24 @@
             
             document.getElementById('labs-title').innerText = translations[currentLang].labsTitle;
             document.getElementById('labs-subtitle').innerText = translations[currentLang].labsSubtitle;
-            document.getElementById('l1-title').innerText = translations[currentLang].l1Title;
-            document.getElementById('l1-desc').innerText = translations[currentLang].l1Desc;
-            document.getElementById('l2-title').innerText = translations[currentLang].l2Title;
-            document.getElementById('l2-desc').innerText = translations[currentLang].l2Desc;
+            
+            // Dom Update pour les nouveaux labs
+            document.getElementById('lbl-aws-title').innerText = translations[currentLang].lblAwsTitle;
+            document.getElementById('lbl-aws-desc').innerText = translations[currentLang].lblAwsDesc;
+            document.getElementById('lbl-linux-title').innerText = translations[currentLang].lblLinuxTitle;
+            document.getElementById('lbl-linux-desc').innerText = translations[currentLang].lblLinuxDesc;
+            document.getElementById('lbl-siem-title').innerText = translations[currentLang].lblSiemTitle;
+            document.getElementById('lbl-siem-desc').innerText = translations[currentLang].lblSiemDesc;
+            document.getElementById('lbl-devsecops-title').innerText = translations[currentLang].lblDevsecopsTitle;
+            document.getElementById('lbl-devsecops-desc').innerText = translations[currentLang].lblDevsecopsDesc;
+            document.getElementById('lbl-malware-title').innerText = translations[currentLang].lblMalwareTitle;
+            document.getElementById('lbl-malware-desc').innerText = translations[currentLang].lblMalwareDesc;
+
+            document.getElementById('lbl-status-done1').innerText = translations[currentLang].lblStatusDone1;
+            document.getElementById('lbl-status-done2').innerText = translations[currentLang].lblStatusDone2;
+            document.getElementById('lbl-status-prog').innerText = translations[currentLang].lblStatusProg;
+            document.getElementById('lbl-status-fut1').innerText = translations[currentLang].lblStatusFut1;
+            document.getElementById('lbl-status-fut2').innerText = translations[currentLang].lblStatusFut2;
             
             document.getElementById('ctf-title').innerText = translations[currentLang].ctfTitle;
             document.getElementById('ctf-subtitle').innerText = translations[currentLang].ctfSubtitle;
@@ -616,12 +778,12 @@
             document.getElementById('cert1-title').innerText = translations[currentLang].cert1Title;
             document.getElementById('cert1-desc').innerHTML = translations[currentLang].cert1Desc;
             document.getElementById('cert2-title').innerText = translations[currentLang].cert2Title;
-            document.getElementById('cert2-desc').innerText = translations[currentLang].cert2Desc;
-            
-            const badges = document.getElementsByClassName('class-status-prep');
-            for (let b of badges) {
-                b.innerText = translations[currentLang].statusPrep;
-            }
+            document.getElementById('cert2-desc').innerHTML = translations[currentLang].cert2Desc;
+
+            const prepTags = [document.querySelector('.class-status-prep-1'), document.querySelector('.class-status-prep-2')];
+            prepTags.forEach(tag => {
+                if(tag) tag.innerText = translations[currentLang].statusPrep;
+            });
         }
 
         function toggleLanguage() {
@@ -630,24 +792,19 @@
         }
 
         function openTab(evt, tabName) {
-            var i, tabcontent, tablinks;
-            tabcontent = document.getElementsByClassName("tab-content");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].classList.remove("active");
+            const tabContents = document.getElementsByClassName("tab-content");
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove("active");
             }
-            tablinks = document.getElementsByClassName("tab-btn");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].classList.remove("active");
+
+            const tabBtns = document.getElementsByClassName("tab-btn");
+            for (let i = 0; i < tabBtns.length; i++) {
+                tabBtns[i].classList.remove("active");
             }
+
             document.getElementById(tabName).classList.add("active");
             evt.currentTarget.classList.add("active");
-            
-            window.scrollTo({top: 0, behavior: 'smooth'});
         }
-        
-        window.addEventListener('DOMContentLoaded', () => {
-            updateDOM(); 
-        });
     </script>
 </body>
 </html>
