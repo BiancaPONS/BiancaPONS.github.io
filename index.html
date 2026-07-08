@@ -406,7 +406,6 @@
     </nav>
 
     <main>
-        <!-- ONGLET : ACCUEIL / PRÉSENTATION -->
         <div id="accueil" class="tab-content active">
             <div class="profile-container">
                 <div class="profile-image-wrapper">
@@ -424,7 +423,6 @@
             </div>
         </div>
 
-        <!-- ONGLET : PROJETS ÉCOLE -->
         <div id="ecole" class="tab-content">
             <div class="tab-header">
                 <h2 id="ecole-title">Projets Académiques</h2>
@@ -432,11 +430,10 @@
             </div>
             <div class="project-grid">
                 
-                <!-- PROJET 1 : CYBERCLASH -->
                 <div class="project-card">
                     <div class="card-header-flex">
                         <h3 id="p1-title">CyberClash — Messagerie Locale</h3>
-                        <span class="badge badge-done">Fil Rouge</span>
+                        <span class="badge badge-done" id="p1-status">Terminé</span>
                     </div>
                     <p id="p1-desc">Création en binôme d'une application de messagerie sécurisée fonctionnant exclusivement sur réseau local, pensée pour le milieu d'entreprise.</p>
                     <ul id="p1-list">
@@ -452,11 +449,10 @@
                     </div>
                 </div>
 
-                <!-- PROJET 2 : GAME FINDER -->
                 <div class="project-card">
                     <div class="card-header-flex">
                         <h3 id="p2-title">Forum Gaming & Matchmaking</h3>
-                        <span class="badge badge-progress">Équipe de 4</span>
+                        <span class="badge badge-progress" id="p2-status">En cours</span>
                     </div>
                     <p id="p2-desc">Développement d'une plateforme communautaire Web pour connecter les joueurs selon leurs jeux préférés et leurs styles.</p>
                     <ul id="p2-list">
@@ -472,11 +468,10 @@
                     </div>
                 </div>
 
-                <!-- PROJET 3 : RPG TERMINAL GOLANG -->
                 <div class="project-card">
                     <div class="card-header-flex">
                         <h3 id="p3-title">RPG Textuel en Terminal</h3>
-                        <span class="badge badge-done">Hackathon</span>
+                        <span class="badge badge-done" id="p3-status">Terminé</span>
                     </div>
                     <p id="p3-desc">Projet de groupe (3 personnes) réalisé en une semaine pour concevoir un jeu de rôle complet jouable en ligne de commande.</p>
                     <ul id="p3-list">
@@ -495,7 +490,6 @@
             </div>
         </div>
 
-        <!-- ONGLET : LABS PERSONNELS -->
         <div id="labs" class="tab-content">
             <div class="tab-header">
                 <h2 id="labs-title">Laboratoires Personnels</h2>
@@ -581,7 +575,6 @@
             </div>
         </div>
 
-        <!-- ONGLET : CTF -->
         <div id="ctf" class="tab-content">
             <div class="tab-header">
                 <h2 id="ctf-title">Challenges & Capture The Flag</h2>
@@ -621,7 +614,6 @@
             </div>
         </div>
 
-        <!-- ONGLET : PARCOURS -->
         <div id="parcours" class="tab-content">
             <div class="tab-header">
                 <h2 id="parcours-title">Expérience & Certifications</h2>
@@ -674,12 +666,15 @@
                 p1Title: "CyberClash — Messagerie Locale",
                 p1Desc: "Création en binôme d'une application de messagerie sécurisée fonctionnant exclusivement sur réseau local, pensée pour le milieu d'entreprise.",
                 p1List: "<li>Double authentification (2FA) par mail</li><li>Lecture d'une clé USB contenant un token chiffré</li><li>Stockage des utilisateurs sur base SQLite</li>",
+                p1Status: "Terminé",
                 p2Title: "Forum Gaming & Matchmaking",
                 p2Desc: "Développement d'une plateforme communautaire Web pour connecter les joueurs selon leurs jeux préférés et leurs styles.",
                 p2List: "<li>Système de 'Match & Swipe' entre profils</li><li>Connexion via Google SSO et API Steam</li><li><i>Idée future :</i> Algorithme de score anti-toxicité</li>",
+                p2Status: "En cours",
                 p3Title: "RPG Textuel en Terminal",
                 p3Desc: "Projet de groupe (3 personnes) réalisé en une semaine pour concevoir un jeu de rôle complet jouable en ligne de commande.",
                 p3List: "<li>Arbres de choix logiques et scénario dynamique</li><li>Gestion des combats au tour par tour</li><li>Système d'inventaire et de fabrication (craft)</li>",
+                p3Status: "Terminé",
                 labsTitle: "Laboratoires Personnels",
                 labsSubtitle: "Infrastructures réseaux et environnements de tests de vulnérabilités.",
                 lblAwsTitle: "Sécurisation d'Infrastructures Cloud AWS",
@@ -732,12 +727,15 @@
                 p1Title: "CyberClash — Local Messaging",
                 p1Desc: "Co-developed a secure messaging application designed to operate exclusively on a local network for enterprise use cases.",
                 p1List: "<li>Email-based two-factor authentication (2FA)</li><li>USB drive authentication using encrypted tokens</li><li>User management powered by SQLite database</li>",
+                p1Status: "Completed",
                 p2Title: "Gaming Forum & Matchmaking",
                 p2Desc: "A community web platform designed to connect gamers based on their favorite titles and playstyles.",
                 p2List: "<li>Profile-based 'Match & Swipe' mechanics</li><li>Authentication via Google SSO and Steam API</li><li><i>Future idea:</i> Trust score algorithm against toxicity</li>",
+                p2Status: "In Progress",
                 p3Title: "Text-Based Terminal RPG",
                 p3Desc: "A week-long team hackathon project (3 people) to design a complete role-playing game running entirely in the command line.",
                 p3List: "<li>Complex choice trees and interactive storytelling</li><li>Turn-based combat encounter management</li><li>In-game inventory and crafting recipe system</li>",
+                p3Status: "Completed",
                 labsTitle: "Personal Laboratories",
                 labsSubtitle: "Network infrastructures and vulnerability testing environments.",
                 lblAwsTitle: "Securing AWS Cloud Infrastructures",
@@ -818,12 +816,17 @@
             document.getElementById('p1-title').textContent = langData.p1Title;
             document.getElementById('p1-desc').textContent = langData.p1Desc;
             document.getElementById('p1-list').innerHTML = langData.p1List;
+            document.getElementById('p1-status').textContent = langData.p1Status;
+            
             document.getElementById('p2-title').textContent = langData.p2Title;
             document.getElementById('p2-desc').textContent = langData.p2Desc;
             document.getElementById('p2-list').innerHTML = langData.p2List;
+            document.getElementById('p2-status').textContent = langData.p2Status;
+            
             document.getElementById('p3-title').textContent = langData.p3Title;
             document.getElementById('p3-desc').textContent = langData.p3Desc;
             document.getElementById('p3-list').innerHTML = langData.p3List;
+            document.getElementById('p3-status').textContent = langData.p3Status;
 
             // Labs
             document.getElementById('labs-title').textContent = langData.labsTitle;
