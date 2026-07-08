@@ -413,21 +413,33 @@
             </div>
             <div class="project-grid">
                 <div class="project-card">
-                    <h3>TryHackMe <span>PrivEsc</span></h3>
-                    <p id="c1-desc">Compte-rendu d'exploitation et d'élévation de privilèges sur une machine Linux vulnérable.</p>
+                    <h3 id="ctf1-title">CTF Forensic & OSINT — Investigation Judiciaire (48h)</h3>
+                    <p id="ctf1-desc">Scénario d'espionnage industriel (Drones militaires). Analyse de dumps de 3 smartphones cibles via le logiciel de criminalistique Autopsy. Recherche de preuves, analyse d'artefacts et timeline d'infection dans un cadre calqué sur les enquêtes du Parquet.</p>
                     <div class="tech-tags">
-                        <span class="tag">Linux</span>
-                        <span class="tag">SUID</span>
-                        <span class="tag">Exploitation</span>
+                        <span class="tag">Autopsy</span>
+                        <span class="tag">Digital Forensics</span>
+                        <span class="tag">OSINT</span>
+                        <span class="tag">Investigation</span>
                     </div>
                 </div>
                 <div class="project-card">
-                    <h3>Root-Me <span>Cracking</span></h3>
-                    <p id="c2-desc">Challenges d'ingénierie inverse et de crackme (analyse de binaires basiques).</p>
+                    <h3 id="ctf2-title">CTF La Stack 2026</h3>
+                    <p id="ctf2-desc">Participation à la compétition phare de l'école réunissant de nombreux challenges techniques. Résolution d'épreuves variées en équipe, gestion du temps et application directe des concepts réseau et système.</p>
                     <div class="tech-tags">
-                        <span class="tag">Reverse</span>
-                        <span class="tag">GDB</span>
-                        <span class="tag">Ghidra</span>
+                        <span class="tag">La Stack 2026</span>
+                        <span class="tag">Jeopardy</span>
+                        <span class="tag">Compétition</span>
+                        <span class="tag">Teamwork</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3 id="ctf3-title">Membre du Labo SSI (Ynov Bordeaux)</h3>
+                    <p id="ctf3-desc">Intégration de l'équipe du laboratoire de Sécurité des Systèmes d'Information. Entraînements hebdomadaires, partages de connaissances sur les vulnérabilités courantes et entraide sur les plateformes de CTF.</p>
+                    <div class="tech-tags">
+                        <span class="tag">Labo SSI</span>
+                        <span class="tag">Hacking Éthique</span>
+                        <span class="tag">Partage de Veille</span>
+                        <span class="tag">Blue/Red Team</span>
                     </div>
                 </div>
             </div>
@@ -494,8 +506,12 @@
                 l2Desc: "Mise en place d'une stack ELK pour centraliser et analyser en temps réel les logs d'un pare-feu pfSense.",
                 ctfTitle: "Challenges & Capture The Flag",
                 ctfSubtitle: "Résolutions, plateformes d'entraînement et démarche logique.",
-                c1Desc: "Compte-rendu d'exploitation et d'élévation de privilèges sur une machine Linux vulnérable.",
-                c2Desc: "Challenges d'ingénierie inverse et de crackme (analyse de binaires basiques).",
+                ctf1Title: "CTF Forensic & OSINT — Investigation Judiciaire (48h)",
+                ctf1Desc: "Scénario d'espionnage industriel (Drones militaires). Analyse de dumps de 3 smartphones cibles via le logiciel de criminalistique Autopsy. Recherche de preuves, analyse d'artefacts et timeline d'infection dans un cadre calqué sur les enquêtes du Parquet.",
+                ctf2Title: "CTF La Stack 2026",
+                ctf2Desc: "Participation à la compétition phare de l'école réunissant de nombreux challenges techniques. Résolution d'épreuves variées en équipe, gestion du temps et application directe des concepts réseau et système.",
+                ctf3Title: "Membre du Labo SSI (Ynov Bordeaux)",
+                ctf3Desc: "Intégration de l'équipe du laboratoire de Sécurité des Systèmes d'Information. Entraînements hebdomadaires, partages de connaissances sur les vulnérabilités courantes et entraide sur les plateformes de CTF.",
                 parcoursTitle: "Expérience & Certifications",
                 parcoursSubtitle: "Mon parcours professionnel et mes validations de compétences techniques.",
                 expTitle: "Stage Immersif – Sécurisation des Infrastructures & Réseaux",
@@ -532,8 +548,12 @@
                 l2Desc: "Implementation of an ELK stack to centralize and analyze logs from a pfSense firewall in real time.",
                 ctfTitle: "Challenges & Capture The Flag",
                 ctfSubtitle: "Write-ups, training platforms, and logical troubleshooting methodology.",
-                c1Desc: "Privilege escalation and exploitation write-up on a vulnerable Linux machine.",
-                c2Desc: "Reverse engineering and crackme challenges (basic binary analysis).",
+                ctf1Title: "Forensic & OSINT CTF — Digital Investigation (48h)",
+                ctf1Desc: "Industrial espionage scenario involving military drone blueprints. Analyzed filesystem dumps from 3 target smartphones using the forensic tool Autopsy. Conducted timeline analysis, artifact extraction, and evidence gathering based on real-world law enforcement workflows.",
+                ctf2Title: "La Stack 2026 CTF",
+                ctf2Desc: "Participated in the school's flagship annual cybersecurity competition. Solved diverse technical challenges in a time-constrained team environment, applying network security and systems knowledge.",
+                ctf3Title: "SSI Lab Member (Ynov Bordeaux)",
+                ctf3Desc: "Active member of the Information Systems Security Laboratory. Weekly training sessions, knowledge sharing on modern vulnerabilities, and collaborative training on CTF platforms.",
                 parcoursTitle: "Experience & Certifications",
                 parcoursSubtitle: "My professional journey and technical validations.",
                 expTitle: "Immersive Internship – Infrastructure & Network Security",
@@ -580,8 +600,12 @@
             
             document.getElementById('ctf-title').innerText = translations[currentLang].ctfTitle;
             document.getElementById('ctf-subtitle').innerText = translations[currentLang].ctfSubtitle;
-            document.getElementById('c1-desc').innerText = translations[currentLang].c1Desc;
-            document.getElementById('c2-desc').innerText = translations[currentLang].c2Desc;
+            document.getElementById('ctf1-title').innerText = translations[currentLang].ctf1Title;
+            document.getElementById('ctf1-desc').innerText = translations[currentLang].ctf1Desc;
+            document.getElementById('ctf2-title').innerText = translations[currentLang].ctf2Title;
+            document.getElementById('ctf2-desc').innerText = translations[currentLang].ctf2Desc;
+            document.getElementById('ctf3-title').innerText = translations[currentLang].ctf3Title;
+            document.getElementById('ctf3-desc').innerText = translations[currentLang].ctf3Desc;
             
             document.getElementById('parcours-title').innerText = translations[currentLang].parcoursTitle;
             document.getElementById('parcours-subtitle').innerText = translations[currentLang].parcoursSubtitle;
