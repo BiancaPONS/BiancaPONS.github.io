@@ -414,28 +414,52 @@
         <div id="ecole" class="tab-content">
             <div class="tab-header">
                 <h2 id="ecole-title">Projets Académiques</h2>
-                <p id="ecole-subtitle" style="color: var(--text-muted);">Livrables et infrastructures réalisés dans le cadre de mon cursus.</p>
+                <p id="ecole-subtitle" style="color: var(--text-muted);">Livrables et applications développés au cours de mon cursus informatique.</p>
             </div>
             <div class="project-grid">
+                
                 <div class="project-card">
-                    <h3 id="p1-title">Architecture Réseau Sécurisée</h3>
-                    <p id="p1-desc">Maquettage complet d'une infrastructure d'entreprise avec segmentation VLAN, routage et ACL de filtrage.</p>
+                    <div class="card-header-flex">
+                        <h3 id="p1-title">CyberClash — Messagerie Sécurisée Locale</h3>
+                        <span class="badge badge-done">Fil Rouge</span>
+                    </div>
+                    <p id="p1-desc">Conception en duo d'une messagerie souveraine pour environnements sensibles (militaire/corporate). Fonctionne à 100% sur réseau local. Intègre une double authentification (2FA) par mail transactionnel temporisé ainsi qu'un système d'authentification hardware unique via la lecture d'un token d'entreprise chiffré sur clé USB.</p>
                     <div class="tech-tags">
-                        <span class="tag">Cisco Packet Tracer</span>
-                        <span class="tag">VLAN</span>
-                        <span class="tag">Routing</span>
-                        <span class="tag">Filtering</span>
+                        <span class="tag">Sécurité Applicative</span>
+                        <span class="tag">Authentification USB</span>
+                        <span class="tag">2FA OTP</span>
+                        <span class="tag">SQLite</span>
                     </div>
                 </div>
+
                 <div class="project-card">
-                    <h3 id="p2-title">Outil de Port-Scanning Python</h3>
-                    <p id="p2-desc">Développement d'un script automatisé de scan de ports réseaux avec analyse des bannières applicatives.</p>
+                    <div class="card-header-flex">
+                        <h3 id="p2-title">Forum Gaming & Algorithme Finder</h3>
+                        <span class="badge badge-progress">Équipe de 4</span>
+                    </div>
+                    <p id="p2-desc">Plateforme communautaire visant à connecter les joueurs selon leurs profils de jeux (FPS, MMO...). Implémentation d'une fonctionnalité de Match & Swipe ("Tinder du gaming") reposant sur l'intégration d'API tierces (Steam, Google SSO). R&D sur un algorithme de score de confiance anti-toxicité provoquant la suspension automatique du compte.</p>
                     <div class="tech-tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">Sockets</span>
-                        <span class="tag">Automation</span>
+                        <span class="tag">Intégration API</span>
+                        <span class="tag">OAuth / SSO</span>
+                        <span class="tag">Algorithmique</span>
+                        <span class="tag">Modération</span>
                     </div>
                 </div>
+
+                <div class="project-card">
+                    <div class="card-header-flex">
+                        <h3 id="p3-title">RPG Textuel en Terminal (Projet RED)</h3>
+                        <span class="badge badge-done">Hackathon</span>
+                    </div>
+                    <p id="p3-desc">Sprint de rentrée d'une semaine en équipe de 3. Développement intégral en Golang d'un jeu de rôle jouable en console via des arbres de choix logiques. Gestion algorithmique complète du cycle de jeu : équilibrage des classes (Humain, Ogre), système de combat au tour par tour, moteur de craft et inventaire dynamique.</p>
+                    <div class="tech-tags">
+                        <span class="tag">Golang</span>
+                        <span class="tag">Algorithmique Pure</span>
+                        <span class="tag">Git Workflow</span>
+                        <span class="tag">Méthode Agile</span>
+                    </div>
+                </div>
+
             </div>
         </div>
 
@@ -611,15 +635,15 @@
                 heroDesc: "Passionnée par la sécurité des infrastructures, le hacking éthique et l'analyse système. Actuellement en cursus au sein de Bordeaux Ynov Campus, je développe mes compétences techniques à travers des déploiements de architectures sécurisées et la résolution constante de challenges CTF. Objectif : mettre cette rigueur au service de grands projets d'ingénierie et de technologies de pointe.",
                 tagSearch: "Recherche de Stage 2027",
                 ecoleTitle: "Projets Académiques",
-                ecoleSubtitle: "Livrables et infrastructures réalisés dans le cadre de mon cursus.",
-                p1Title: "Architecture Réseau Sécurisée",
-                p1Desc: "Maquettage complet d'une infrastructure d'entreprise avec segmentation VLAN, routage et ACL de filtrage.",
-                p2Title: "Outil de Port-Scanning Python",
-                p2Desc: "Développement d'un script automatisé de scan de ports réseaux avec analyse des bannières applicatives.",
+                ecoleSubtitle: "Livrables et applications développés au cours de mon cursus informatique.",
+                p1Title: "CyberClash — Messagerie Sécurisée Locale",
+                p1Desc: "Conception en duo d'une messagerie souveraine pour environnements sensibles (militaire/corporate). Fonctionne à 100% sur réseau local. Intègre une double authentification (2FA) par mail transactionnel temporisé ainsi qu'un système d'authentification hardware unique via la lecture d'un token d'entreprise chiffré sur clé USB.",
+                p2Title: "Forum Gaming & Algorithme Finder",
+                p2Desc: "Plateforme communautaire visant à connecter les joueurs selon leurs profils de jeux (FPS, MMO...). Implémentation d'une fonctionnalité de Match & Swipe ('Tinder du gaming') reposant sur l'intégration d'API tierces (Steam, Google SSO). R&D sur un algorithme de score de confiance anti-toxicité provoquant la suspension automatique du compte.",
+                p3Title: "RPG Textuel en Terminal (Projet RED)",
+                p3Desc: "Sprint de rentrée d'une semaine en équipe de 3. Développement intégral en Golang d'un jeu de rôle jouable en console via des arbres de choix logiques. Gestion algorithmique complète du cycle de jeu : équilibrage des classes (Humain, Ogre), système de combat au tour par tour, moteur de craft et inventaire dynamique.",
                 labsTitle: "Laboratoires Personnels",
                 labsSubtitle: "Infrastructures réseaux et environnements de tests de vulnérabilités.",
-                
-                // Nouveaux Labs de la section
                 lblAwsTitle: "Sécurisation d'Infrastructures Cloud AWS",
                 lblAwsDesc: "Conception et durcissement d'une infrastructure AWS respectant le principe du moindre privilège : profils IAM limités, instance EC2 Ubuntu cloisonnée (UFW, Security Groups) et traçabilité CloudTrail complète.",
                 lblLinuxTitle: "Durcissement Système Linux",
@@ -630,13 +654,11 @@
                 lblDevsecopsDesc: "Intégration d'outils de sécurité automatisés au sein de workflows GitHub Actions : scanners de vulnérabilités (Trivy), détection de secrets fuis (Gitleaks) et audit de code statique (SonarQube).",
                 lblMalwareTitle: "Laboratoire d'Analyse de Menaces & Sandbox",
                 lblMalwareDesc: "Mise en place d'un environnement virtualisé isolé (Sandbox) pour l'observation comportementale sécurisée de scripts hostiles et l'extraction d'Indicateurs de Compromission (IOCs).",
-                
                 lblStatusDone1: "Terminé",
                 lblStatusDone2: "Terminé",
                 lblStatusProg: "En cours",
                 lblStatusFut1: "À venir",
                 lblStatusFut2: "À venir",
-
                 ctfTitle: "Challenges & Capture The Flag",
                 ctfSubtitle: "Résolutions, plateformes d'entraînement et démarche logique.",
                 ctf1Title: "CTF Forensic & OSINT — Investigation Judiciaire (48h)",
@@ -668,128 +690,54 @@
                 heroDesc: "Passionate about infrastructure security, ethical hacking, and systems analysis. Currently studying at Bordeaux Ynov Campus, I build technical skills by deploying secure network architectures and actively solving CTF challenges. Goal: bring this rigorous approach to large-scale engineering projects and cutting-edge technologies.",
                 tagSearch: "Looking for Internship 2027",
                 ecoleTitle: "Academic Projects",
-                ecoleSubtitle: "Deliverables and infrastructures built during my coursework.",
-                p1Title: "Secure Network Architecture",
-                p1Desc: "Complete enterprise network blueprinting with VLAN segmentation, routing, and filtering ACLs.",
-                p2Title: "Python Port-Scanning Tool",
-                p2Desc: "Development of an automated network port scanning script with application banner analysis.",
+                ecoleSubtitle: "Applications and deliverables built during my academic coursework.",
+                p1Title: "CyberClash — Secure Local Messaging",
+                p1Desc: "Co-developed a sovereign messaging application designed for highly sensitive environments (military/corporate). Runs 100% on a local network. Implements a time-based 2FA via transactional emails and a unique hardware authentication method reading encrypted enterprise tokens from USB drives.",
+                p2Title: "Gaming Forum & Finder Algorithm",
+                p2Desc: "A community platform to connect gamers based on their gaming profiles (FPS, MMO...). Implemented a 'Match & Swipe' matchmaking system driven by third-party APIs (Steam, Google SSO). Features research on a behavior-driven trust score algorithm triggering automated account suspensions.",
+                p3Title: "Text-Based Terminal RPG (Project RED)",
+                p3Desc: "A one-week intensive team hackathon. Built a full text-based RPG in Golang running purely in the terminal via complex choice trees. Managed core gameplay algorithms: character class balancing (Human, Ogre), turn-based combat systems, crafting engines, and dynamic inventories.",
                 labsTitle: "Personal Laboratories",
-                labsSubtitle: "Network environments and sandboxes built for vulnerability testing.",
-                
-                // Labs Translation
-                lblAwsTitle: "AWS Cloud Infrastructure Hardening",
-                lblAwsDesc: "Designing and securing an AWS environment adhering to the principle of least privilege: restricted IAM policies, isolated Ubuntu EC2 instance (UFW, Security Groups), and full CloudTrail logging.",
-                lblLinuxTitle: "Linux Server Hardening & Auditing",
-                lblLinuxDesc: "Implementation of core OS-level defensive mechanisms on an Ubuntu server: strict privilege management (chmod/chown), SSH configuration hardening, UFW firewall rules, and auth.log analysis.",
-                lblSiemTitle: "SIEM & Mini-SOC Home Lab Deplomyent",
-                lblSiemDesc: "Centralizing security events using the open-source Wazuh SIEM stack. Configuring endpoint log agents, deploying detection rules (Brute-force alerts, privilege escalations), and building analytic dashboards.",
-                lblDevsecopsTitle: "CI/CD Pipeline Hardening (DevSecOps)",
-                lblDevsecopsDesc: "Integrating automated defensive testing mechanisms within GitHub Actions workflows: software vulnerability mapping (Trivy), secret leak tracking (Gitleaks), and static code analysis (SonarQube).",
-                lblMalwareTitle: "Threat Analysis & Controlled Sandbox Lab",
-                lblMalwareDesc: "Setting up a fully isolated virtual playground (Sandbox) to monitor malicious script behaviors and extract real-world Indicators of Compromise (IOCs).",
-                
+                labsSubtitle: "Network infrastructures and vulnerability testing environments.",
+                lblAwsTitle: "Securing AWS Cloud Infrastructures",
+                lblAwsDesc: "Design and hardening of an AWS infrastructure following the least privilege principle: restricted IAM profiles, isolated Ubuntu EC2 instance (UFW, Security Groups), and full CloudTrail logging tracking.",
+                lblLinuxTitle: "Linux System Hardening",
+                lblLinuxDesc: "Implementation of basic OS defense mechanisms on an Ubuntu server: privilege management (chmod/chown), SSH isolation, UFW firewall configuration, and auth.log system log correlation.",
+                lblSiemTitle: "SIEM Deployment & Home Mini-SOC",
+                lblSiemDesc: "Centralizing security events using the Wazuh stack (open-source SIEM). Configured log collection agents, built detection rules (Brute-force, privilege escalation), and designed analysis dashboards.",
+                lblDevsecopsTitle: "Securing CI/CD Pipelines (DevSecOps)",
+                lblDevsecopsDesc: "Integrating automated security tools within GitHub Actions workflows: vulnerability scanners (Trivy), leaked secret detection (Gitleaks), and static code analysis (SonarQube).",
+                lblMalwareTitle: "Threat Analysis Lab & Sandbox",
+                lblMalwareDesc: "Setting up an isolated virtual environment (Sandbox) for the secure behavioral monitoring of malicious scripts and Indicators of Compromise (IOCs) extraction.",
                 lblStatusDone1: "Completed",
                 lblStatusDone2: "Completed",
                 lblStatusProg: "In Progress",
                 lblStatusFut1: "Upcoming",
                 lblStatusFut2: "Upcoming",
-
                 ctfTitle: "Challenges & Capture The Flag",
-                ctfSubtitle: "Write-ups, training platforms, and logical troubleshooting methodology.",
+                ctfSubtitle: "Write-ups, training platforms, and logical problem-solving.",
                 ctf1Title: "Forensic & OSINT CTF — Digital Investigation (48h)",
-                ctf1Desc: "Industrial espionage scenario involving military drone blueprints. Analyzed filesystem dumps from 3 target smartphones using the forensic tool Autopsy. Conducted timeline analysis, artifact extraction, and evidence gathering based on real-world law enforcement workflows.",
+                ctf1Desc: "Industrial espionage scenario involving military drones. Analyzed dumps from 3 target smartphones using Autopsy forensic software. Extracted evidence, processed artifacts, and built an infection timeline modeled on actual law enforcement workflows.",
                 ctf2Title: "La Stack 2026 CTF",
-                ctf2Desc: "Participated in the school's flagship annual cybersecurity competition. Solved diverse technical challenges in a time-constrained team environment, applying network security and systems knowledge.",
+                ctf2Desc: "Participated in the school's flagship competition featuring numerous technical challenges. Solved complex challenges in a team, handled time constraints, and applied core networking and system concepts.",
                 ctf3Title: "SSI Lab Member (Ynov Bordeaux)",
-                ctf3Desc: "Active member of the Information Systems Security Laboratory. Weekly training sessions, knowledge sharing on modern vulnerabilities, and collaborative training on CTF platforms.",
+                ctf3Desc: "Joined the school's Information Systems Security laboratory team. Participated in weekly training sessions, shared insights on common vulnerabilities, and collaborated on global CTF platforms.",
                 parcoursTitle: "Experience & Certifications",
-                parcoursSubtitle: "My professional journey and technical validations.",
+                parcoursSubtitle: "My professional path and technical skill validations.",
                 expTitle: "Immersive Internship – Infrastructure & Network Security",
-                expDesc: "Optional internship completed on personal initiative. Embedded within the Cybersecurity team: hands-on learning of secure network administration, Active Directory (AD) management, and malware analysis. Gained insights into IT governance and security challenges inside a major global corporation.",
+                expDesc: "Optional internship completed on personal initiative. Immersed within the Cybersecurity team: observed and practiced secure network administration, Active Directory (AD) management, and malware detection. Gained insight into IT security stakes and governance within a major international group.",
                 expCompany: "DEKRA (Bordeaux)",
-                expDate: "1 week (Personal Initiative)",
+                expDate: "1 week (Personal initiative)",
                 cert1Title: "HTB Certified Junior Cybersecurity Analyst (CJCA)",
-                cert1Desc: "Practical certification focusing on security fundamentals: log analysis, tier-1 incident response, malware detection, and network security hands-on labs. <br><i>Exam scheduled for this summer.</i>",
+                cert1Desc: "Practical certification focused on security fundamentals: log analysis, first-level incident response, malware detection, and network security. <br><i>Exam planned for this summer.</i>",
                 cert2Title: "HTB Certified SOC Analyst (CDSA)",
-                cert2Desc: "Currently preparing. Natural progression from the CJCA curriculum, focusing on advanced SOC operations, Threat Hunting, artifact analysis, and complex security alert triaging.",
-                statusPrep: "Currently preparing",
+                cert2Desc: "Currently preparing. A logical advancement from the CJCA curriculum, focusing on advanced SOC operations, Threat Hunting, artifact analysis, and managing complex security alerts.",
+                statusPrep: "Currently Preparing",
                 langText: "FR"
             }
         };
 
         let currentLang = 'fr';
-
-        function updateDOM() {
-            document.getElementById('lang-switcher').innerText = translations[currentLang].langText;
-            
-            document.getElementById('btn-accueil').innerText = translations[currentLang].btnAccueil;
-            document.getElementById('btn-ecole').innerText = translations[currentLang].btnEcole;
-            document.getElementById('btn-labs').innerText = translations[currentLang].btnLabs;
-            document.getElementById('btn-ctf').innerText = translations[currentLang].btnCtf;
-            document.getElementById('btn-parcours').innerText = translations[currentLang].btnParcours;
-            
-            document.getElementById('hero-title').innerText = translations[currentLang].heroTitle;
-            document.getElementById('hero-desc').innerText = translations[currentLang].heroDesc;
-            document.getElementById('tag-search').innerText = translations[currentLang].tagSearch;
-            
-            document.getElementById('ecole-title').innerText = translations[currentLang].ecoleTitle;
-            document.getElementById('ecole-subtitle').innerText = translations[currentLang].ecoleSubtitle;
-            document.getElementById('p1-title').innerText = translations[currentLang].p1Title;
-            document.getElementById('p1-desc').innerText = translations[currentLang].p1Desc;
-            document.getElementById('p2-title').innerText = translations[currentLang].p2Title;
-            document.getElementById('p2-desc').innerText = translations[currentLang].p2Desc;
-            
-            document.getElementById('labs-title').innerText = translations[currentLang].labsTitle;
-            document.getElementById('labs-subtitle').innerText = translations[currentLang].labsSubtitle;
-            
-            // Dom Update pour les nouveaux labs
-            document.getElementById('lbl-aws-title').innerText = translations[currentLang].lblAwsTitle;
-            document.getElementById('lbl-aws-desc').innerText = translations[currentLang].lblAwsDesc;
-            document.getElementById('lbl-linux-title').innerText = translations[currentLang].lblLinuxTitle;
-            document.getElementById('lbl-linux-desc').innerText = translations[currentLang].lblLinuxDesc;
-            document.getElementById('lbl-siem-title').innerText = translations[currentLang].lblSiemTitle;
-            document.getElementById('lbl-siem-desc').innerText = translations[currentLang].lblSiemDesc;
-            document.getElementById('lbl-devsecops-title').innerText = translations[currentLang].lblDevsecopsTitle;
-            document.getElementById('lbl-devsecops-desc').innerText = translations[currentLang].lblDevsecopsDesc;
-            document.getElementById('lbl-malware-title').innerText = translations[currentLang].lblMalwareTitle;
-            document.getElementById('lbl-malware-desc').innerText = translations[currentLang].lblMalwareDesc;
-
-            document.getElementById('lbl-status-done1').innerText = translations[currentLang].lblStatusDone1;
-            document.getElementById('lbl-status-done2').innerText = translations[currentLang].lblStatusDone2;
-            document.getElementById('lbl-status-prog').innerText = translations[currentLang].lblStatusProg;
-            document.getElementById('lbl-status-fut1').innerText = translations[currentLang].lblStatusFut1;
-            document.getElementById('lbl-status-fut2').innerText = translations[currentLang].lblStatusFut2;
-            
-            document.getElementById('ctf-title').innerText = translations[currentLang].ctfTitle;
-            document.getElementById('ctf-subtitle').innerText = translations[currentLang].ctfSubtitle;
-            document.getElementById('ctf1-title').innerText = translations[currentLang].ctf1Title;
-            document.getElementById('ctf1-desc').innerText = translations[currentLang].ctf1Desc;
-            document.getElementById('ctf2-title').innerText = translations[currentLang].ctf2Title;
-            document.getElementById('ctf2-desc').innerText = translations[currentLang].ctf2Desc;
-            document.getElementById('ctf3-title').innerText = translations[currentLang].ctf3Title;
-            document.getElementById('ctf3-desc').innerText = translations[currentLang].ctf3Desc;
-            
-            document.getElementById('parcours-title').innerText = translations[currentLang].parcoursTitle;
-            document.getElementById('parcours-subtitle').innerText = translations[currentLang].parcoursSubtitle;
-            document.getElementById('exp-title').innerText = translations[currentLang].expTitle;
-            document.getElementById('exp-desc').innerText = translations[currentLang].expDesc;
-            document.getElementById('exp-company').innerText = translations[currentLang].expCompany;
-            document.getElementById('exp-date').innerText = translations[currentLang].expDate;
-            document.getElementById('cert1-title').innerText = translations[currentLang].cert1Title;
-            document.getElementById('cert1-desc').innerHTML = translations[currentLang].cert1Desc;
-            document.getElementById('cert2-title').innerText = translations[currentLang].cert2Title;
-            document.getElementById('cert2-desc').innerHTML = translations[currentLang].cert2Desc;
-
-            const prepTags = [document.querySelector('.class-status-prep-1'), document.querySelector('.class-status-prep-2')];
-            prepTags.forEach(tag => {
-                if(tag) tag.innerText = translations[currentLang].statusPrep;
-            });
-        }
-
-        function toggleLanguage() {
-            currentLang = currentLang === 'fr' ? 'en' : 'fr';
-            updateDOM();
-        }
 
         function openTab(evt, tabName) {
             const tabContents = document.getElementsByClassName("tab-content");
@@ -804,6 +752,80 @@
 
             document.getElementById(tabName).classList.add("active");
             evt.currentTarget.classList.add("active");
+        }
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'fr' ? 'en' : 'fr';
+            const langData = translations[currentLang];
+
+            
+            document.getElementById('btn-accueil').textContent = langData.btnAccueil;
+            document.getElementById('btn-ecole').textContent = langData.btnEcole;
+            document.getElementById('btn-labs').textContent = langData.btnLabs;
+            document.getElementById('btn-ctf').textContent = langData.btnCtf;
+            document.getElementById('btn-parcours').textContent = langData.btnParcours;
+            document.getElementById('lang-switcher').textContent = langData.langText;
+
+        
+            document.getElementById('hero-title').textContent = langData.heroTitle;
+            document.getElementById('hero-desc').textContent = langData.heroDesc;
+            document.getElementById('tag-search').textContent = langData.tagSearch;
+
+            
+            document.getElementById('ecole-title').textContent = langData.ecoleTitle;
+            document.getElementById('ecole-subtitle').textContent = langData.ecoleSubtitle;
+            document.getElementById('p1-title').textContent = langData.p1Title;
+            document.getElementById('p1-desc').textContent = langData.p1Desc;
+            document.getElementById('p2-title').textContent = langData.p2Title;
+            document.getElementById('p2-desc').textContent = langData.p2Desc;
+            document.getElementById('p3-title').textContent = langData.p3Title;
+            document.getElementById('p3-desc').textContent = langData.p3Desc;
+
+            
+            document.getElementById('labs-title').textContent = langData.labsTitle;
+            document.getElementById('labs-subtitle').textContent = langData.labsSubtitle;
+            document.getElementById('lbl-aws-title').textContent = langData.lblAwsTitle;
+            document.getElementById('lbl-aws-desc').textContent = langData.lblAwsDesc;
+            document.getElementById('lbl-linux-title').textContent = langData.lblLinuxTitle;
+            document.getElementById('lbl-linux-desc').textContent = langData.lblLinuxDesc;
+            document.getElementById('lbl-siem-title').textContent = langData.lblSiemTitle;
+            document.getElementById('lbl-siem-desc').textContent = langData.lblSiemDesc;
+            document.getElementById('lbl-devsecops-title').textContent = langData.lblDevsecopsTitle;
+            document.getElementById('lbl-devsecops-desc').textContent = langData.lblDevsecopsDesc;
+            document.getElementById('lbl-malware-title').textContent = langData.lblMalwareTitle;
+            document.getElementById('lbl-malware-desc').textContent = langData.lblMalwareDesc;
+            
+            document.getElementById('lbl-status-done1').textContent = langData.lblStatusDone1;
+            document.getElementById('lbl-status-done2').textContent = langData.lblStatusDone2;
+            document.getElementById('lbl-status-prog').textContent = langData.lblStatusProg;
+            document.getElementById('lbl-status-fut1').textContent = langData.lblStatusFut1;
+            document.getElementById('lbl-status-fut2').textContent = langData.lblStatusFut2;
+
+            
+            document.getElementById('ctf-title').textContent = langData.ctfTitle;
+            document.getElementById('ctf-subtitle').textContent = langData.ctfSubtitle;
+            document.getElementById('ctf1-title').textContent = langData.ctf1Title;
+            document.getElementById('ctf1-desc').textContent = langData.ctf1Desc;
+            document.getElementById('ctf2-title').textContent = langData.ctf2Title;
+            document.getElementById('ctf2-desc').textContent = langData.ctf2Desc;
+            document.getElementById('ctf3-title').textContent = langData.ctf3Title;
+            document.getElementById('ctf3-desc').textContent = langData.ctf3Desc;
+
+            document.getElementById('parcours-title').textContent = langData.parcoursTitle;
+            document.getElementById('parcours-subtitle').textContent = langData.parcoursSubtitle;
+            document.getElementById('exp-title').textContent = langData.expTitle;
+            document.getElementById('exp-desc').textContent = langData.expDesc;
+            document.getElementById('exp-company').textContent = langData.expCompany;
+            document.getElementById('exp-date').textContent = langData.expDate;
+            document.getElementById('cert1-title').textContent = langData.cert1Title;
+            document.getElementById('cert1-desc').textContent = langData.cert1Desc;
+            document.getElementById('cert2-title').textContent = langData.cert2Title;
+            document.getElementById('cert2-desc').textContent = langData.cert2Desc;
+
+            const preps1 = document.getElementsByClassName('class-status-prep-1');
+            if(preps1.length > 0) preps1[0].textContent = langData.statusPrep;
+            const preps2 = document.getElementsByClassName('class-status-prep-2');
+            if(preps2.length > 0) preps2[0].textContent = langData.statusPrep;
         }
     </script>
 </body>
