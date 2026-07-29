@@ -9,7 +9,6 @@
             --bg-dark: #030712;
             --text-light: #f8fafc;
             --text-muted: #94a3b8;
-            --primary-glow: rgba(99, 102, 241, 0.15);
             --border-alpha: rgba(255, 255, 255, 0.08);
             --accent-purple: #a5b4fc;
         }
@@ -134,7 +133,7 @@
 
         main {
             max-width: 1100px;
-            margin: 10rem auto 6rem auto;
+            margin: 8rem auto 6rem auto;
             padding: 0 1.5rem;
         }
 
@@ -147,33 +146,36 @@
             display: block;
         }
 
+        /* PROFILE LAYOUT WITH LEFT SIDEBAR FOR SKILLS */
         .profile-container {
             display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 4rem;
+            grid-template-columns: 300px 1fr;
+            gap: 3.5rem;
             align-items: start;
             background: rgba(255, 255, 255, 0.02);
             border: 1px solid var(--border-alpha);
-            padding: 3.5rem;
+            padding: 3rem;
             border-radius: 24px;
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 850px) {
             .profile-container {
                 grid-template-columns: 1fr;
                 gap: 2rem;
                 padding: 2rem;
-                text-align: center;
             }
             .nav-container, .nav-right {
                 flex-direction: column;
                 gap: 1rem;
             }
-            .contact-links {
-                justify-content: center;
-            }
+        }
+
+        .profile-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 1.8rem;
         }
 
         .profile-image-wrapper {
@@ -204,18 +206,34 @@
             filter: blur(15px);
         }
 
+        .sidebar-skills-block {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 1.25rem;
+        }
+
+        .sidebar-skills-title {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #a5b4fc;
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+        }
+
         .profile-info h1 {
-            font-size: 3.5rem;
+            font-size: 3.2rem;
             font-weight: 800;
             letter-spacing: -0.04em;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.3rem;
             background: linear-gradient(to right, #ffffff, #cbd5e1);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .profile-info h2 {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             color: #a5b4fc;
             font-weight: 500;
             margin-bottom: 1.5rem;
@@ -225,29 +243,15 @@
 
         .profile-info p {
             color: var(--text-muted);
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             margin-bottom: 1.5rem;
-        }
-
-        .skills-section {
-            margin-top: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .section-subtitle-small {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: #a5b4fc;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
         }
 
         .extra-info-grid {
             display: flex;
             flex-wrap: wrap;
-            gap: 1rem;
-            margin-top: 1rem;
+            gap: 0.8rem;
+            margin-top: 1.5rem;
             font-size: 0.9rem;
             color: var(--text-muted);
         }
@@ -269,7 +273,7 @@
         }
 
         .contact-title {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 0.05em;
             color: #a5b4fc;
@@ -280,7 +284,7 @@
         .contact-links {
             display: flex;
             flex-wrap: wrap;
-            gap: 1.5rem;
+            gap: 1.2rem;
             align-items: center;
         }
 
@@ -290,7 +294,7 @@
             gap: 0.5rem;
             color: var(--text-muted);
             text-decoration: none;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             transition: color 0.2s ease;
         }
 
@@ -309,11 +313,11 @@
 
         .tab-header {
             text-align: center;
-            margin-bottom: 4rem;
+            margin-bottom: 3.5rem;
         }
 
         .tab-header h2 {
-            font-size: 3rem;
+            font-size: 2.8rem;
             font-weight: 800;
             letter-spacing: -0.03em;
             margin-bottom: 0.5rem;
@@ -332,7 +336,7 @@
             background: rgba(255, 255, 255, 0.02);
             border: 1px solid var(--border-alpha);
             border-radius: 16px;
-            padding: 2.5rem;
+            padding: 2.2rem;
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -348,11 +352,10 @@
         }
 
         .project-card h3 {
-            font-size: 1.4rem;
+            font-size: 1.35rem;
             font-weight: 700;
             margin-bottom: 0.5rem;
             color: var(--text-light);
-            line-height: 1.3;
         }
 
         .project-card p {
@@ -454,14 +457,13 @@
         .tech-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: auto;
+            gap: 0.4rem;
         }
 
         .tag {
             font-size: 0.75rem;
             font-weight: 600;
-            padding: 0.35rem 0.75rem;
+            padding: 0.3rem 0.65rem;
             background: rgba(255, 255, 255, 0.04);
             color: #cbd5e1;
             border-radius: 6px;
@@ -472,6 +474,12 @@
             color: #e0e7ff;
             background: rgba(165, 180, 252, 0.1);
             border-color: rgba(165, 180, 252, 0.2);
+        }
+
+        .tag-hard {
+            color: #38bdf8;
+            background: rgba(56, 189, 248, 0.1);
+            border-color: rgba(56, 189, 248, 0.2);
         }
 
         .lab-links {
@@ -492,12 +500,12 @@
             color: #e0e7ff;
         }
 
-        /* --- STYLES PARCOURS (TIMELINE) --- */
+        /* TIMELINE STYLES */
         .timeline-container {
             position: relative;
             max-width: 900px;
             margin: 0 auto;
-            padding: 2rem 0;
+            padding: 1rem 0;
         }
 
         .timeline-container::before {
@@ -511,21 +519,18 @@
         }
 
         .timeline-section-title {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 700;
             color: #a5b4fc;
-            margin: 2.5rem 0 1.5rem 0;
+            margin: 2rem 0 1.5rem 0;
             padding-left: 50px;
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
         }
 
         .timeline-item {
             position: relative;
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
             padding-left: 50px;
         }
 
@@ -550,7 +555,7 @@
             background: rgba(255, 255, 255, 0.02);
             border: 1px solid var(--border-alpha);
             border-radius: 16px;
-            padding: 1.8rem;
+            padding: 1.5rem;
             backdrop-filter: blur(16px);
             transition: all 0.3s ease;
         }
@@ -564,11 +569,11 @@
             font-size: 0.85rem;
             font-weight: 600;
             color: #a5b4fc;
-            margin-bottom: 0.3rem;
+            margin-bottom: 0.2rem;
         }
 
         .timeline-title {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             font-weight: 700;
             color: var(--text-light);
             margin-bottom: 0.2rem;
@@ -578,13 +583,12 @@
             font-size: 0.95rem;
             color: #cbd5e1;
             font-weight: 500;
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.6rem;
         }
 
         .timeline-body {
             color: var(--text-muted);
             font-size: 0.95rem;
-            margin-bottom: 1rem;
         }
 
         footer {
@@ -631,23 +635,41 @@
         <!-- ONGLET ACCUEIL / PRESENTATION -->
         <div id="accueil" class="tab-content active">
             <div class="profile-container">
-                <div class="profile-image-wrapper">
-                    <img src="moi.png" alt="Bianca PONS" class="profile-image">
+                
+                <!-- COLONNE GAUCHE : PHOTO + SKILLS DE CV -->
+                <div class="profile-sidebar">
+                    <div class="profile-image-wrapper">
+                        <img src="moi.png" alt="Bianca PONS" class="profile-image">
+                    </div>
+
+                    <div class="sidebar-skills-block">
+                        <div class="sidebar-skills-title" id="title-soft">Soft Skills</div>
+                        <div class="tech-tags">
+                            <span class="tag tag-soft" id="sk-1">Travail d'Équipe</span>
+                            <span class="tag tag-soft" id="sk-2">Curiosité</span>
+                            <span class="tag tag-soft" id="sk-3">Autonomie</span>
+                            <span class="tag tag-soft" id="sk-4">Polyvalence</span>
+                            <span class="tag tag-soft" id="sk-5">Aisance Relationnelle</span>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-skills-block">
+                        <div class="sidebar-skills-title" id="title-hard">Hard Skills</div>
+                        <div class="tech-tags">
+                            <span class="tag tag-hard">Wireshark</span>
+                            <span class="tag tag-hard">Linux / Bash</span>
+                            <span class="tag tag-hard">Sécurité Réseau</span>
+                            <span class="tag tag-hard">Golang</span>
+                            <span class="tag tag-hard">HTML / CSS / JS</span>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- COLONNE DROITE : BIO + CONTACT -->
                 <div class="profile-info">
                     <h1>Bianca PONS</h1>
                     <h2 id="hero-title">Étudiante en B2 Cybersécurité & Réseaux</h2>
                     <p id="hero-desc">Je suis passionnée par la sécurité des infrastructures, le hacking éthique et l'analyse système. Actuellement en cursus au sein de Bordeaux Ynov Campus, je développe mes compétences techniques à travers des déploiements d'architectures sécurisées et la résolution constante de challenges CTF. Objectif : mettre cette rigueur au service de grands projets d'ingénierie et de technologies de pointe.</p>
-                    
-                    <div class="skills-section">
-                        <div class="section-subtitle-small" id="soft-skills-title">Qualités & Atouts</div>
-                        <div class="tech-tags">
-                            <span class="tag tag-soft" id="sk-1">Rigueur & Méthode</span>
-                            <span class="tag tag-soft" id="sk-2">Esprit d'équipe</span>
-                            <span class="tag tag-soft" id="sk-3">Curiosité Technique</span>
-                            <span class="tag tag-soft" id="sk-4">Autonomie</span>
-                        </div>
-                    </div>
 
                     <div class="tech-tags" style="margin-top: 1rem;">
                         <span class="tag" style="color: #a5b4fc; border-color: rgba(165, 180, 252, 0.2)">Bordeaux Ynov Campus</span>
@@ -656,31 +678,34 @@
 
                     <div class="extra-info-grid">
                         <div class="extra-info-item">
-                            🚗 <span id="info-driver">Permis B (Véhiculée)</span>
+                            🚗 <span id="info-driver">Permis B (Permifiée)</span>
                         </div>
                         <div class="extra-info-item">
-                            🌐 <span id="info-lang">Français (Maternelle) | Anglais (B2 / Technique)</span>
+                            🌐 <span id="info-lang">Français (Maternelle) | Anglais (Niveau B2)</span>
                         </div>
                     </div>
 
                     <div class="contact-section">
                         <div class="contact-title" id="contact-heading">Me contacter</div>
                         <div class="contact-links">
-                            <div class="contact-item">
+                            <a href="mailto:biancapons178@gmail.com" class="contact-item">
                                 <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                                <span id="contact-email">Mail : bianca.pons@example.com</span>
-                            </div>
+                                <span>biancapons178@gmail.com</span>
+                            </a>
                             <div class="contact-item">
                                 <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.15 15.15 0 0 0 6.59 6.59l2.2-2.2c.28-.28.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-                                <span id="contact-phone">Téléphone : 06 00 00 00 00</span>
+                                <span>06 73 30 84 97</span>
                             </div>
-                            <a href="https://www.linkedin.com/in/bianca-pons-888a20383/?skipRedirect=true" target="_blank" class="contact-item">
+                            <a href="https://www.linkedin.com/in/bianca-pons-888a20383/" target="_blank" class="contact-item">
                                 <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
                                 <span>LinkedIn</span>
                             </a>
                             <a href="https://github.com/BiancaPONS" target="_blank" class="contact-item">
                                 <svg viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.1.39-1.99 1.03-2.69-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.7 1.03 1.6 1.03 2.69 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
                                 <span>GitHub</span>
+                            </a>
+                            <a href="https://tryhackme.com/p/bianca.pons" target="_blank" class="contact-item">
+                                <span>🚩 TryHackMe</span>
                             </a>
                             <a href="https://profile.hackthebox.com/profile/019f41be-5718-70d6-8b74-34639415c36a" target="_blank" class="contact-item">
                                 <svg viewBox="0 0 24 24" style="fill: #9fef00;"><path d="M11.996 0L1.137 6.264v11.458L12 24l10.863-6.278V6.264L11.996 0zm7.986 16.035l-7.986 4.61-7.987-4.61V7.951l7.987-4.609 7.986 4.61v8.084zm-3.993-5.767l-3.993 2.305-3.993-2.305V5.649l3.993-2.305 3.993 2.305v4.619z"/></svg>
@@ -702,20 +727,37 @@
             <div class="project-grid">
                 <div class="project-card">
                     <div class="card-header-flex">
-                        <h3 id="p1-title">CyberClash — Messagerie Locale</h3>
+                        <h3 id="p1-title">Send Security — Messagerie Sécurisée</h3>
                         <span class="badge badge-done" id="p1-status">Terminé</span>
                     </div>
-                    <p id="p1-desc">Création en binôme d'une application de messagerie sécurisée fonctionnant exclusivement sur réseau local, pensée pour le milieu d'entreprise.</p>
+                    <p id="p1-desc">Conception en binôme d'une messagerie sécurisée client-serveur avec chiffrement des messages et authentification renforcée.</p>
                     <ul id="p1-list">
-                        <li>Double authentification (2FA) par mail</li>
-                        <li>Lecture d'une clé USB contenant un token chiffré</li>
-                        <li>Stockage des utilisateurs sur base SQLite</li>
+                        <li>Authentification forte par clé USB (token chiffré)</li>
+                        <li>Chiffrement de bout en bout des échanges</li>
+                        <li>Gestion de la base d'utilisateurs sécurisée</li>
                     </ul>
                     <div class="tech-tags">
                         <span class="tag">Sécurité Applicative</span>
                         <span class="tag">Authentification USB</span>
-                        <span class="tag">2FA OTP</span>
-                        <span class="tag">SQLite</span>
+                        <span class="tag">Chiffrement</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="card-header-flex">
+                        <h3 id="p3-title">Projet RED — Jeu en Terminal</h3>
+                        <span class="badge badge-done" id="p3-status">Terminé</span>
+                    </div>
+                    <p id="p3-desc">Programmation en équipe d'un jeu de rôle complet se jouant exclusivement dans un terminal de commande.</p>
+                    <ul id="p3-list">
+                        <li>Développement intégral en langage Golang</li>
+                        <li>Gestion dynamique du scénario et des inventaires</li>
+                        <li>Travail collaboratif et versionnage sous Git</li>
+                    </ul>
+                    <div class="tech-tags">
+                        <span class="tag">Golang</span>
+                        <span class="tag">Algorithmique</span>
+                        <span class="tag">Git</span>
                     </div>
                 </div>
 
@@ -724,36 +766,14 @@
                         <h3 id="p2-title">Forum Gaming & Matchmaking</h3>
                         <span class="badge badge-done" id="p2-status">Terminé</span>
                     </div>
-                    <p id="p2-desc">Développement d'une plateforme communautaire Web pour connecter les joueurs selon leurs jeux préférés et leurs styles.</p>
+                    <p id="p2-desc">Développement d'une plateforme communautaire Web pour connecter les joueurs selon leurs profils de jeux.</p>
                     <ul id="p2-list">
-                        <li>Système de "Match & Swipe" entre profils</li>
-                        <li>Connexion via Google SSO et API Steam</li>
-                        <li><i>Idée future :</i> Algorithme de score anti-toxicité</li>
+                        <li>Système de "Match & Swipe" entre joueurs</li>
+                        <li>Connexion sécurisée SSO Google / API Steam</li>
                     </ul>
                     <div class="tech-tags">
-                        <span class="tag">Intégration API</span>
+                        <span class="tag">HTML / CSS / JS</span>
                         <span class="tag">OAuth / SSO</span>
-                        <span class="tag">Web Dev</span>
-                        <span class="tag">Base de Données</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="card-header-flex">
-                        <h3 id="p3-title">RPG Textuel en Terminal</h3>
-                        <span class="badge badge-done" id="p3-status">Terminé</span>
-                    </div>
-                    <p id="p3-desc">Projet de groupe (3 personnes) réalisé en une semaine pour concevoir un jeu de rôle complet jouable en ligne de commande.</p>
-                    <ul id="p3-list">
-                        <li>Arbres de choix logiques et scénario dynamique</li>
-                        <li>Gestion des combats au tour par tour</li>
-                        <li>Système d'inventaire et de fabrication (craft)</li>
-                    </ul>
-                    <div class="tech-tags">
-                        <span class="tag">Golang</span>
-                        <span class="tag">Algorithmique Pure</span>
-                        <span class="tag">Git Workflow</span>
-                        <span class="tag">Méthode Agile</span>
                     </div>
                 </div>
             </div>
@@ -775,12 +795,10 @@
                     <div class="tech-tags">
                         <span class="tag">AWS IAM</span>
                         <span class="tag">EC2</span>
-                        <span class="tag">S3 Private</span>
                         <span class="tag">CloudTrail</span>
                     </div>
                     <div class="lab-links">
-                        <a href="https://github.com/BiancaPONS/aws-security-lab" target="_blank">GitHub ↗</a>
-                        <a href="https://raw.githubusercontent.com/BiancaPONS/aws-security-lab/refs/heads/main/architecture.png" target="_blank">Architecture 🖼️</a>
+                        <a href="https://github.com/BiancaPONS" target="_blank">GitHub ↗</a>
                     </div>
                 </div>
 
@@ -793,11 +811,10 @@
                     <div class="tech-tags">
                         <span class="tag">Linux Ubuntu</span>
                         <span class="tag">SSH Hardening</span>
-                        <span class="tag">UFW Firewall</span>
                         <span class="tag">Log Analysis</span>
                     </div>
                     <div class="lab-links">
-                        <a href="https://github.com/BiancaPONS/linux-security-lab" target="_blank">GitHub ↗</a>
+                        <a href="https://github.com/BiancaPONS" target="_blank">GitHub ↗</a>
                     </div>
                 </div>
 
@@ -806,40 +823,10 @@
                         <h3 id="lbl-siem-title">Déploiement SIEM & Mini-SOC Domestique</h3>
                         <span class="badge badge-progress" id="lbl-status-prog">En cours</span>
                     </div>
-                    <p id="lbl-siem-desc">Centralisation des événements de sécurité à l'aide de la stack Wazuh (SIEM open-source). Configuration d'agents de collecte, création de règles de détection (Brute-force, élévation de privilèges) et création de tableaux de bord d'analyse.</p>
+                    <p id="lbl-siem-desc">Centralisation des événements de sécurité à l'aide de la stack Wazuh (SIEM open-source). Configuration d'agents de collecte, création de règles de détection et tableaux de bord d'analyse.</p>
                     <div class="tech-tags">
                         <span class="tag">Wazuh SIEM</span>
-                        <span class="tag">ELK Stack</span>
-                        <span class="tag">SOC Analyst</span>
                         <span class="tag">Threat Detection</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="card-header-flex">
-                        <h3 id="lbl-devsecops-title">Sécurisation de Pipelines CI/CD (DevSecOps)</h3>
-                        <span class="badge badge-future" id="lbl-status-fut1">À venir</span>
-                    </div>
-                    <p id="lbl-devsecops-desc">Intégration d'outils de sécurité automatisés au sein de workflows GitHub Actions : scanners de vulnérabilités (Trivy), détection de secrets fuis (Gitleaks) et audit de code statique (SonarQube).</p>
-                    <div class="tech-tags">
-                        <span class="tag">GitHub Actions</span>
-                        <span class="tag">DevSecOps</span>
-                        <span class="tag">Trivy</span>
-                        <span class="tag">Securing Code</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="card-header-flex">
-                        <h3 id="lbl-malware-title">Laboratoire d'Analyse de Menaces & Sandbox</h3>
-                        <span class="badge badge-future" id="lbl-status-fut2">À venir</span>
-                    </div>
-                    <p id="lbl-malware-desc">Mise en place d'un environnement virtualisé isolé (Sandbox) pour l'observation comportementale sécurisée de scripts hostiles et l'extraction d'Indicateurs de Compromission (IOCs).</p>
-                    <div class="tech-tags">
-                        <span class="tag">Malware Analysis</span>
-                        <span class="tag">Malware Sandbox</span>
-                        <span class="tag">Reverse Engineering</span>
-                        <span class="tag">IOCs</span>
                     </div>
                 </div>
             </div>
@@ -873,7 +860,6 @@
                         <span class="tag">Autopsy</span>
                         <span class="tag">Digital Forensics</span>
                         <span class="tag">OSINT</span>
-                        <span class="tag">Investigation</span>
                     </div>
                 </div>
 
@@ -895,98 +881,123 @@
                     <p id="ctf2-desc">Participation à la compétition phare de l'école réunissant plus de 150 participants. Résolution d'épreuves Jeopardy en équipe : Web, Reverse, Réseau et Cryptographie.</p>
                     <div class="tech-tags">
                         <span class="tag">Jeopardy</span>
-                        <span class="tag">Web & Network</span>
+                        <span class="tag">Network</span>
                         <span class="tag">Teamwork</span>
-                        <span class="tag">Time Management</span>
                     </div>
                 </div>
 
                 <div class="project-card">
                     <div class="card-header-flex">
-                        <h3 id="ctf3-title">Membre du Labo SSI & Entraînements</h3>
+                        <h3 id="ctf3-title">Membre de l'Équipe CTF & Labo SSI</h3>
                         <span class="badge badge-done" id="ctf3-diff">Régulier</span>
                     </div>
                     <div class="card-meta-line">
-                        <span>📍 <span id="ctf3-loc">Ynov Bordeaux / En Ligne</span></span>
+                        <span>📍 <span id="ctf3-loc">Ynov Bordeaux</span></span>
                         <span>📅 <span id="ctf3-date">2024 - Présent</span></span>
                     </div>
-                    <p id="ctf3-desc">Intégration du laboratoire de Sécurité des Systèmes d'Information. Entraînements hebdomadaires sur Hack The Box et TryHackMe, partages de connaissances et veille sur les vulnérabilités CVE.</p>
+                    <p id="ctf3-desc">Membre de l'équipe CTF de l'école. Entraînements hebdomadaires sur Hack The Box et TryHackMe, partages de connaissances et veille sur les vulnérabilités CVE.</p>
                     <div class="tech-tags">
                         <span class="tag">Hack The Box</span>
                         <span class="tag">TryHackMe</span>
                         <span class="tag">Veille CVE</span>
-                        <span class="tag">Blue/Red Team</span>
                     </div>
                 </div>
 
             </div>
         </div>
 
-        <!-- ONGLET PARCOURS (TIMELINE CHRONOLOGIQUE) -->
+        <!-- ONGLET PARCOURS (FIDÈLE À TON CV) -->
         <div id="parcours" class="tab-content">
             <div class="tab-header">
                 <h2 id="parcours-title">Mon Parcours</h2>
-                <p id="parcours-subtitle" style="color: var(--text-muted);">Frise chronologique de ma formation, de mes certifications et de mes expériences du monde du travail.</p>
+                <p id="parcours-subtitle" style="color: var(--text-muted);">Frise chronologique complète issue de mon CV, mise à jour du plus récent au plus ancien.</p>
             </div>
 
             <div class="timeline-container">
                 
-                <!-- SECTION FORMATION & CERTS -->
-                <div class="timeline-section-title" id="sec-edu-title">🎓 Formation & Certifications</div>
+                <!-- FORMATION -->
+                <div class="timeline-section-title" id="sec-edu-title">🎓 Formations</div>
 
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <div class="timeline-date" id="t1-date">Prévu Été 2026</div>
-                        <div class="timeline-title" id="t1-title">HTB Certified Junior Cybersecurity Analyst (CJCA) & CDSA</div>
-                        <div class="timeline-org">Hack The Box Academy</div>
-                        <div class="timeline-body" id="t1-body">Certifications pratiques axées sur l'analyse de logs, la réponse aux incidents de premier niveau, l'analyse SOC avancée et le Threat Hunting.</div>
-                        <div class="tech-tags">
-                            <span class="tag tag-soft" id="t1-tag">En cours de préparation</span>
-                        </div>
+                        <div class="timeline-date">09/2025 - 05/2026 (En cours)</div>
+                        <div class="timeline-title">Bachelor Cybersécurité (B2)</div>
+                        <div class="timeline-org">Ynov Campus — Bordeaux (33)</div>
+                        <div class="timeline-body">Actuellement en 2ème année. Membre de l'équipe CTF. Compétences développées : administration réseaux sécurisées, sécurité système, programmation et analyse de vulnérabilités.</div>
                     </div>
                 </div>
 
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <div class="timeline-date" id="t2-date">2024 - En cours (Diplôme prévu 2028)</div>
-                        <div class="timeline-title" id="t2-title">Bachelor Cybersécurité & Réseaux</div>
-                        <div class="timeline-org">Bordeaux Ynov Campus</div>
-                        <div class="timeline-body" id="t2-body">Actuellement en B2. Compétences en administration système Linux/Windows, architecture réseaux sécurisées, programmation (Go, Python, SQL) et hacking éthique.</div>
+                        <div class="timeline-date">2024 - 2025</div>
+                        <div class="timeline-title">1ère Année de Licence de Droit</div>
+                        <div class="timeline-org">Université de Bordeaux — Bordeaux (33)</div>
+                        <div class="timeline-body">Acquisition d'une rigueur d'analyse, de méthodes de raisonnement structurées et de connaissances fondamentales utiles au droit du numérique et de la cybersécurité.</div>
                     </div>
                 </div>
 
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <div class="timeline-date">2023</div>
-                        <div class="timeline-title" id="t3-title">Baccalauréat Scientifique (Général)</div>
-                        <div class="timeline-org">Lycée General</div>
-                        <div class="timeline-body" id="t3-body">Spécialités Scientifiques. Obtention du diplôme marquant le début de la spécialisation en informatique et technologies.</div>
+                        <div class="timeline-date">2024</div>
+                        <div class="timeline-title">Baccalauréat Général</div>
+                        <div class="timeline-org">Lycée Jean Dautet — La Rochelle (17)</div>
+                        <div class="timeline-body">Spécialités Mathématiques et Physique.</div>
                     </div>
                 </div>
 
-                <!-- SECTION EXPÉRIENCES PRO & SAISONS -->
-                <div class="timeline-section-title" id="sec-pro-title">💼 Expériences Professionnelles & Saisons</div>
+                <!-- EXPÉRIENCES PROFESSIONNELLES -->
+                <div class="timeline-section-title" id="sec-pro-title">💼 Expériences Professionnelles & Stages</div>
 
                 <div class="timeline-item">
                     <div class="timeline-dot pro"></div>
                     <div class="timeline-content">
-                        <div class="timeline-date" id="t4-date">2024 (1 Semaine - Initiative Personnelle)</div>
-                        <div class="timeline-title" id="t4-title">Stage Immersif – Sécurisation Infrastructures & Réseaux</div>
-                        <div class="timeline-org">DEKRA (Bordeaux)</div>
-                        <div class="timeline-body" id="t4-body">Immersion au sein de l'équipe IT / Cybersécurité : observation de l'administration réseau, gestion Active Directory (AD) et détection de malwares au sein d'un grand groupe.</div>
+                        <div class="timeline-date">2025 (Initiative Personnelle B1)</div>
+                        <div class="timeline-title">Stage Immersif – Sécurisation Infrastructures & Réseaux</div>
+                        <div class="timeline-org">DEKRA — Bordeaux (33)</div>
+                        <div class="timeline-body">Stage réalisé par initiative personnelle dès la 1ère année. Immersion au sein de l'équipe IT/Cybersécurité : observation de la gestion réseau, Active Directory (AD) et détection de menaces.</div>
                     </div>
                 </div>
 
                 <div class="timeline-item">
                     <div class="timeline-dot pro"></div>
                     <div class="timeline-content">
-                        <div class="timeline-date" id="t5-date">Saisons Estivales (2022 - 2024)</div>
-                        <div class="timeline-title" id="t5-title">Emplois Saisonniers Estifs</div>
-                        <div class="timeline-org" id="t5-org">Secteur Service & Commerce</div>
-                        <div class="timeline-body" id="t5-body">Expérience du travail en équipe, gestion de la relation client sous pression, rigueur opérationnelle et ponctualité développées dès le plus jeune âge.</div>
+                        <div class="timeline-date">07/2024 - 08/2024 & 07/2025 - 08/2025</div>
+                        <div class="timeline-title">Vendeuse en Pâtisserie</div>
+                        <div class="timeline-org">Pâtisserie Payerat — Biscarrosse (40)</div>
+                        <div class="timeline-body">Accueil et conseil client, mise en valeur des produits, prise de commande, maîtrise des règles d'hygiène alimentaire, encaissements.</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot pro"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">12/2024 - 03/2025</div>
+                        <div class="timeline-title">Vendeuse en Boutique</div>
+                        <div class="timeline-org">Promod Mériadeck — Bordeaux (33)</div>
+                        <div class="timeline-body">Conseils personnalisés, facing, encaissements, gestion des stocks et polyvalence.</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot pro"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">12/2024 - 01/2025</div>
+                        <div class="timeline-title">Hôtesse de Caisse</div>
+                        <div class="timeline-org">Picard Mériadeck — Bordeaux (33)</div>
+                        <div class="timeline-body">Encaissement, accueil et information client, gestion de la caisse, travail en équipe et vigilance.</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot pro"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">07/2023 - 08/2023</div>
+                        <div class="timeline-title">Serveuse</div>
+                        <div class="timeline-org">Beach Burger — Biscarrosse (40)</div>
+                        <div class="timeline-body">Gestion de la clientèle en période de forte affluence (14 juillet/15 août), travail en équipe et grande autonomie.</div>
                     </div>
                 </div>
 
@@ -1001,7 +1012,6 @@
     <script>
         const translations = {
             fr: {
-                langCode: "FR 🇫🇷",
                 btnAccueil: "Présentation",
                 btnEcole: "Projets École",
                 btnLabs: "Labs Perso",
@@ -1009,85 +1019,32 @@
                 btnParcours: "Parcours",
                 heroTitle: "Étudiante en B2 Cybersécurité & Réseaux",
                 heroDesc: "Je suis passionnée par la sécurité des infrastructures, le hacking éthique et l'analyse système. Actuellement en cursus au sein de Bordeaux Ynov Campus, je développe mes compétences techniques à travers des déploiements d'architectures sécurisées et la résolution constante de challenges CTF. Objectif : mettre cette rigueur au service de grands projets d'ingénierie et de technologies de pointe.",
-                softSkillsTitle: "Qualités & Atouts",
-                sk1: "Rigueur & Méthode",
-                sk2: "Esprit d'équipe",
-                sk3: "Curiosité Technique",
-                sk4: "Autonomie",
+                titleSoft: "Soft Skills",
+                titleHard: "Hard Skills",
+                sk1: "Travail d'Équipe",
+                sk2: "Curiosité",
+                sk3: "Autonomie",
+                sk4: "Polyvalence",
+                sk5: "Aisance Relationnelle",
                 tagSearch: "Recherche de Stage 2027",
-                infoDriver: "Permis B (Véhiculée)",
-                infoLang: "Français (Maternelle) | Anglais (B2 / Technique)",
+                infoDriver: "Permis B (Permifiée)",
+                infoLang: "Français (Maternelle) | Anglais (Niveau B2)",
                 contactHeading: "Me contacter",
                 ecoleTitle: "Projets Académiques",
                 ecoleSubtitle: "Livrables et applications développés au cours de mon cursus informatique.",
-                p1Title: "CyberClash — Messagerie Locale",
-                p1Desc: "Création en binôme d'une application de messagerie sécurisée fonctionnant exclusivement sur réseau local, pensée pour le milieu d'entreprise.",
-                p1List: "<li>Double authentification (2FA) par mail</li><li>Lecture d'une clé USB contenant un token chiffré</li><li>Stockage des utilisateurs sur base SQLite</li>",
-                p2Title: "Forum Gaming & Matchmaking",
-                p2Desc: "Développement d'une plateforme communautaire Web pour connecter les joueurs selon leurs jeux préférés et leurs styles.",
-                p2List: "<li>Système de \"Match & Swipe\" entre profils</li><li>Connexion via Google SSO et API Steam</li><li><i>Idée future :</i> Algorithme de score anti-toxicité</li>",
-                p3Title: "RPG Textuel en Terminal",
-                p3Desc: "Projet de groupe (3 personnes) réalisé en une semaine pour concevoir un jeu de rôle complet jouable en ligne de commande.",
-                p3List: "<li>Arbres de choix logiques et scénario dynamique</li><li>Gestion des combats au tour par tour</li><li>Système d'inventaire et de fabrication (craft)</li>",
                 labsTitle: "Laboratoires Personnels",
                 labsSubtitle: "Infrastructures réseaux et environnements de tests de vulnérabilités.",
-                lblAwsTitle: "Sécurisation d'Infrastructures Cloud AWS",
-                lblAwsDesc: "Conception et durcissement d'une infrastructure AWS respectant le principe du moindre privilège : profils IAM limités, instance EC2 Ubuntu cloisonnée (UFW, Security Groups) et traçabilité CloudTrail complète.",
-                lblLinuxTitle: "Durcissement Système Linux",
-                lblLinuxDesc: "Mise en place de mécanismes fondamentaux de défense OS sur serveur Ubuntu : gestion des privilèges (chmod/chown), cloisonnement SSH, pare-feu UFW et corrélation des journaux système auth.log.",
-                lblSiemTitle: "Déploiement SIEM & Mini-SOC Domestique",
-                lblSiemDesc: "Centralisation des événements de sécurité à l'aide de la stack Wazuh (SIEM open-source). Configuration d'agents de collecte, création de règles de détection (Brute-force, élévation de privilèges) et création de tableaux de bord d'analyse.",
-                lblDevsecopsTitle: "Sécurisation de Pipelines CI/CD (DevSecOps)",
-                lblDevsecopsDesc: "Intégration d'outils de sécurité automatisés au sein de workflows GitHub Actions : scanners de vulnérabilités (Trivy), détection de secrets fuis (Gitleaks) et audit de code statique (SonarQube).",
-                lblMalwareTitle: "Laboratoire d'Analyse de Menaces & Sandbox",
-                lblMalwareDesc: "Mise en place d'un environnement virtualisé isolé (Sandbox) pour l'observation comportementale sécurisée de scripts hostiles et l'extraction d'Indicateurs de Compromission (IOCs).",
                 ctfTitle: "Compétitions & Capture The Flag",
                 ctfSubtitle: "Résolutions d'épreuves, classements, méthodologie et esprit de compétition.",
-                ctf1Title: "CTF Forensic & OSINT — Investigation Judiciaire",
-                ctf1Diff: "Intermédiaire",
-                ctf1Loc: "Bordeaux (48h Non-Stop)",
-                ctf1Date: "Édition 2025",
-                ctf1Rank: "3ème Place",
-                ctf1RankLbl: "Équipes B1/B2",
-                ctf1Desc: "Scénario d'espionnage industriel (Drones militaires). Analyse de dumps de 3 smartphones cibles via Autopsy. Recherche de preuves, analyse d'artefacts et reconstruction de la timeline d'infection.",
-                ctf2Title: "CTF La Stack 2026",
-                ctf2Diff: "Avancé",
-                ctf2Loc: "Bordeaux Ynov Campus",
-                ctf2Date: "Février 2026",
-                ctf2Rank: "Top 34%",
-                ctf2RankLbl: "Classement Général",
-                ctf2Desc: "Participation à la compétition phare de l'école réunissant plus de 150 participants. Résolution d'épreuves Jeopardy en équipe : Web, Reverse, Réseau et Cryptographie.",
-                ctf3Title: "Membre du Labo SSI & Entraînements",
-                ctf3Diff: "Régulier",
-                ctf3Loc: "Ynov Bordeaux / En Ligne",
-                ctf3Date: "2024 - Présent",
-                ctf3Desc: "Intégration du laboratoire de Sécurité des Systèmes d'Information. Entraînements hebdomadaires sur Hack The Box et TryHackMe, partages de connaissances et veille sur les vulnérabilités CVE.",
                 parcoursTitle: "Mon Parcours",
-                parcoursSubtitle: "Frise chronologique de ma formation, de mes certifications et de mes expériences du monde du travail.",
-                secEduTitle: "🎓 Formation & Certifications",
-                secProTitle: "💼 Expériences Professionnelles & Saisons",
-                t1Date: "Prévu Été 2026",
-                t1Title: "HTB Certified Junior Cybersecurity Analyst (CJCA) & CDSA",
-                t1Body: "Certifications pratiques axées sur l'analyse de logs, la réponse aux incidents de premier niveau, l'analyse SOC avancée et le Threat Hunting.",
-                t1Tag: "En cours de préparation",
-                t2Date: "2024 - En cours (Diplôme prévu 2028)",
-                t2Title: "Bachelor Cybersécurité & Réseaux",
-                t2Body: "Actuellement en B2. Compétences en administration système Linux/Windows, architecture réseaux sécurisées, programmation (Go, Python, SQL) et hacking éthique.",
-                t3Title: "Baccalauréat Scientifique (Général)",
-                t3Body: "Spécialités Scientifiques. Obtention du diplôme marquant le début de la spécialisation en informatique et technologies.",
-                t4Date: "2024 (1 Semaine - Initiative Personnelle)",
-                t4Title: "Stage Immersif – Sécurisation Infrastructures & Réseaux",
-                t4Body: "Immersion au sein de l'équipe IT / Cybersécurité : observation de l'administration réseau, gestion Active Directory (AD) et détection de malwares au sein d'un grand groupe.",
-                t5Date: "Saisons Estivales (2022 - 2024)",
-                t5Title: "Emplois Saisonniers Estifs",
-                t5Org: "Secteur Service & Commerce",
-                t5Body: "Expérience du travail en équipe, gestion de la relation client sous pression, rigueur opérationnelle et ponctualité développées dès le plus jeune âge.",
+                parcoursSubtitle: "Frise chronologique complète issue de mon CV, mise à jour du plus récent au plus ancien.",
+                secEduTitle: "🎓 Formations",
+                secProTitle: "💼 Expériences Professionnelles & Stages",
                 statusDone: "Terminé",
                 statusProg: "En cours",
                 statusFut: "À venir"
             },
             en: {
-                langCode: "EN 🇬🇧",
                 btnAccueil: "Overview",
                 btnEcole: "Academic Projects",
                 btnLabs: "Personal Labs",
@@ -1095,79 +1052,27 @@
                 btnParcours: "Background",
                 heroTitle: "B2 Cybersecurity & Networks Student",
                 heroDesc: "I am passionate about infrastructure security, ethical hacking, and system analysis. Currently pursuing my studies at Bordeaux Ynov Campus, I build technical skills through secure architecture deployments and continuously solving CTF challenges. Goal: apply this rigor to major engineering projects and cutting-edge tech.",
-                softSkillsTitle: "Key Strengths & Soft Skills",
-                sk1: "Rigor & Methodology",
-                sk2: "Teamwork",
-                sk3: "Technical Curiosity",
-                sk4: "Autonomy",
+                titleSoft: "Soft Skills",
+                titleHard: "Hard Skills",
+                sk1: "Teamwork",
+                sk2: "Curiosity",
+                sk3: "Autonomy",
+                sk4: "Versatility",
+                sk5: "Interpersonal Skills",
                 tagSearch: "Internship Search 2027",
                 infoDriver: "Driver's License (Vehicle owner)",
-                infoLang: "French (Native) | English (B2 / Technical)",
+                infoLang: "French (Native) | English (Level B2)",
                 contactHeading: "Contact me",
                 ecoleTitle: "Academic Projects",
                 ecoleSubtitle: "Deliverables and applications developed during my IT curriculum.",
-                p1Title: "CyberClash — Local Messaging App",
-                p1Desc: "Pair project building a secure messaging application operating exclusively on a local network, designed for corporate environments.",
-                p1List: "<li>Two-factor authentication (2FA) via email</li><li>Reading an encrypted token from a USB key</li><li>User storage on SQLite database</li>",
-                p2Title: "Gaming Forum & Matchmaking",
-                p2Desc: "Development of a web community platform to connect players based on their gaming profiles and styles.",
-                p2List: "<li>'Match & Swipe' system between profiles</li><li>Login via Google SSO and Steam API</li><li><i>Future idea:</i> Anti-toxicity scoring algorithm</li>",
-                p3Title: "Text-Based RPG in Terminal",
-                p3Desc: "Group project (3 people) completed in one week to design a full role-playing game playable in the command line.",
-                p3List: "<li>Logical choice trees and dynamic scenario</li><li>Turn-based combat system</li><li>Inventory and crafting system</li>",
                 labsTitle: "Personal Labs",
                 labsSubtitle: "Network infrastructures and vulnerability testing environments.",
-                lblAwsTitle: "Securing AWS Cloud Infrastructures",
-                lblAwsDesc: "Design and hardening of an AWS infrastructure respecting the principle of least privilege: limited IAM profiles, isolated Ubuntu EC2 instance (UFW, Security Groups), and full CloudTrail audit logging.",
-                lblLinuxTitle: "Linux System Hardening",
-                lblLinuxDesc: "Implementation of core OS defense mechanisms on an Ubuntu server: privilege management (chmod/chown), SSH isolation, UFW firewall, and auth.log system log correlation.",
-                lblSiemTitle: "SIEM Deployment & Home Mini-SOC",
-                lblSiemDesc: "Centralization of security events using the open-source Wazuh SIEM stack. Configuration of collection agents, creation of detection rules (Brute-force, privilege escalation), and building analysis dashboards.",
-                lblDevsecopsTitle: "Securing CI/CD Pipelines (DevSecOps)",
-                lblDevsecopsDesc: "Integration of automated security tools within GitHub Actions workflows: vulnerability scanners (Trivy), leaked secret detection (Gitleaks), and static code analysis (SonarQube).",
-                lblMalwareTitle: "Threat Analysis Lab & Sandbox",
-                lblMalwareDesc: "Setting up an isolated virtualized environment (Sandbox) for the safe behavioral observation of malicious scripts and Indicator of Compromise (IOC) extraction.",
                 ctfTitle: "Competitions & Capture The Flag",
                 ctfSubtitle: "Challenge write-ups, rankings, methodology and competitive mindset.",
-                ctf1Title: "Forensic & OSINT CTF — Forensic Investigation",
-                ctf1Diff: "Intermediate",
-                ctf1Loc: "Bordeaux (48h Non-Stop)",
-                ctf1Date: "2025 Edition",
-                ctf1Rank: "3rd Place",
-                ctf1RankLbl: "B1/B2 Teams",
-                ctf1Desc: "Industrial espionage scenario (Military drones). Dump analysis of 3 target smartphones using Autopsy. Evidence gathering, artifact analysis, and infection timeline reconstruction.",
-                ctf2Title: "La Stack 2026 CTF",
-                ctf2Diff: "Advanced",
-                ctf2Loc: "Bordeaux Ynov Campus",
-                ctf2Date: "February 2026",
-                ctf2Rank: "Top 34%",
-                ctf2RankLbl: "Overall Ranking",
-                ctf2Desc: "Participated in the school's flagship competition bringing together 150+ players. Solving Jeopardy challenges in teams: Web, Reverse, Networking, and Cryptography.",
-                ctf3Title: "SSI Lab Member & Regular Practice",
-                ctf3Diff: "Regular",
-                ctf3Loc: "Ynov Bordeaux / Online",
-                ctf3Date: "2024 - Present",
-                ctf3Desc: "Joined the Information Systems Security laboratory. Weekly training sessions on Hack The Box & TryHackMe, knowledge sharing, and CVE vulnerability monitoring.",
                 parcoursTitle: "My Background",
-                parcoursSubtitle: "Chronological timeline of my education, certifications, and work experiences.",
-                secEduTitle: "🎓 Education & Certifications",
-                secProTitle: "💼 Work Experience & Seasonal Jobs",
-                t1Date: "Expected Summer 2026",
-                t1Title: "HTB Certified Junior Cybersecurity Analyst (CJCA) & CDSA",
-                t1Body: "Hands-on certifications focusing on log analysis, tier-1 incident response, advanced SOC operations, and Threat Hunting.",
-                t1Tag: "Currently preparing",
-                t2Date: "2024 - Present (Graduation expected 2028)",
-                t2Title: "Bachelor in Cybersecurity & Networks",
-                t2Body: "Currently in 2nd year. Skills in Linux/Windows system administration, secure network architecture, programming (Go, Python, SQL), and ethical hacking.",
-                t3Title: "Scientific High School Diploma",
-                t3Body: "Scientific specialization. Diploma marking the beginning of specialization in computer science and technology.",
-                t4Date: "2024 (1 Week - Personal Initiative)",
-                t4Title: "Immersive Internship – Infrastructure & Network Security",
-                t4Body: "Embedded within the IT / Cybersecurity team: observing network administration, Active Directory (AD) management, and malware detection inside a global corporation.",
-                t5Date: "Summer Seasons (2022 - 2024)",
-                t5Title: "Seasonal Summer Jobs",
-                t5Org: "Service & Retail Sector",
-                t5Body: "Teamwork experience, customer relations under pressure, operational rigor, and punctuality developed from an early age.",
+                parcoursSubtitle: "Complete chronological timeline from my resume, updated from most recent to oldest.",
+                secEduTitle: "🎓 Education",
+                secProTitle: "💼 Work Experience & Internships",
                 statusDone: "Completed",
                 statusProg: "In progress",
                 statusFut: "Upcoming"
@@ -1199,114 +1104,36 @@
 
             document.getElementById('lang-switcher').innerHTML = `<span>${currentLang.toUpperCase()}</span> ${currentLang === 'fr' ? '🇫🇷' : '🇬🇧'}`;
 
-            // Menu
             document.getElementById('btn-accueil').innerText = langData.btnAccueil;
             document.getElementById('btn-ecole').innerText = langData.btnEcole;
             document.getElementById('btn-labs').innerText = langData.btnLabs;
             document.getElementById('btn-ctf').innerText = langData.btnCtf;
             document.getElementById('btn-parcours').innerText = langData.btnParcours;
 
-            // Accueil
             document.getElementById('hero-title').innerText = langData.heroTitle;
             document.getElementById('hero-desc').innerText = langData.heroDesc;
-            document.getElementById('soft-skills-title').innerText = langData.softSkillsTitle;
+            document.getElementById('title-soft').innerText = langData.titleSoft;
+            document.getElementById('title-hard').innerText = langData.titleHard;
             document.getElementById('sk-1').innerText = langData.sk1;
             document.getElementById('sk-2').innerText = langData.sk2;
             document.getElementById('sk-3').innerText = langData.sk3;
             document.getElementById('sk-4').innerText = langData.sk4;
+            document.getElementById('sk-5').innerText = langData.sk5;
             document.getElementById('tag-search').innerText = langData.tagSearch;
             document.getElementById('info-driver').innerText = langData.infoDriver;
             document.getElementById('info-lang').innerText = langData.infoLang;
             document.getElementById('contact-heading').innerText = langData.contactHeading;
 
-            // Projets École
             document.getElementById('ecole-title').innerText = langData.ecoleTitle;
             document.getElementById('ecole-subtitle').innerText = langData.ecoleSubtitle;
-            document.getElementById('p1-title').innerText = langData.p1Title;
-            document.getElementById('p1-desc').innerText = langData.p1Desc;
-            document.getElementById('p1-list').innerHTML = langData.p1List;
-            document.getElementById('p2-title').innerText = langData.p2Title;
-            document.getElementById('p2-desc').innerText = langData.p2Desc;
-            document.getElementById('p2-list').innerHTML = langData.p2List;
-            document.getElementById('p3-title').innerText = langData.p3Title;
-            document.getElementById('p3-desc').innerText = langData.p3Desc;
-            document.getElementById('p3-list').innerHTML = langData.p3List;
-
-            // Labs
             document.getElementById('labs-title').innerText = langData.labsTitle;
             document.getElementById('labs-subtitle').innerText = langData.labsSubtitle;
-            document.getElementById('lbl-aws-title').innerText = langData.lblAwsTitle;
-            document.getElementById('lbl-aws-desc').innerText = langData.lblAwsDesc;
-            document.getElementById('lbl-linux-title').innerText = langData.lblLinuxTitle;
-            document.getElementById('lbl-linux-desc').innerText = langData.lblLinuxDesc;
-            document.getElementById('lbl-siem-title').innerText = langData.lblSiemTitle;
-            document.getElementById('lbl-siem-desc').innerText = langData.lblSiemDesc;
-            document.getElementById('lbl-devsecops-title').innerText = langData.lblDevsecopsTitle;
-            document.getElementById('lbl-devsecops-desc').innerText = langData.lblDevsecopsDesc;
-            document.getElementById('lbl-malware-title').innerText = langData.lblMalwareTitle;
-            document.getElementById('lbl-malware-desc').innerText = langData.lblMalwareDesc;
-
-            // Badges Status
-            document.getElementById('p1-status').innerText = langData.statusDone;
-            document.getElementById('p2-status').innerText = langData.statusDone;
-            document.getElementById('p3-status').innerText = langData.statusDone;
-            document.getElementById('lbl-status-done1').innerText = langData.statusDone;
-            document.getElementById('lbl-status-done2').innerText = langData.statusDone;
-            document.getElementById('lbl-status-prog').innerText = langData.statusProg;
-            document.getElementById('lbl-status-fut1').innerText = langData.statusFut;
-            document.getElementById('lbl-status-fut2').innerText = langData.statusFut;
-
-            // CTF
             document.getElementById('ctf-title').innerText = langData.ctfTitle;
             document.getElementById('ctf-subtitle').innerText = langData.ctfSubtitle;
-            document.getElementById('ctf1-title').innerText = langData.ctf1Title;
-            document.getElementById('ctf1-diff').innerText = langData.ctf1Diff;
-            document.getElementById('ctf1-loc').innerText = langData.ctf1Loc;
-            document.getElementById('ctf1-date').innerText = langData.ctf1Date;
-            document.getElementById('ctf1-rank').innerText = langData.ctf1Rank;
-            document.getElementById('ctf1-rank-lbl').innerText = langData.ctf1RankLbl;
-            document.getElementById('ctf1-desc').innerText = langData.ctf1Desc;
-
-            document.getElementById('ctf2-title').innerText = langData.ctf2Title;
-            document.getElementById('ctf2-diff').innerText = langData.ctf2Diff;
-            document.getElementById('ctf2-loc').innerText = langData.ctf2Loc;
-            document.getElementById('ctf2-date').innerText = langData.ctf2Date;
-            document.getElementById('ctf2-rank').innerText = langData.ctf2Rank;
-            document.getElementById('ctf2-rank-lbl').innerText = langData.ctf2RankLbl;
-            document.getElementById('ctf2-desc').innerText = langData.ctf2Desc;
-
-            document.getElementById('ctf3-title').innerText = langData.ctf3Title;
-            document.getElementById('ctf3-diff').innerText = langData.ctf3Diff;
-            document.getElementById('ctf3-loc').innerText = langData.ctf3Loc;
-            document.getElementById('ctf3-date').innerText = langData.ctf3Date;
-            document.getElementById('ctf3-desc').innerText = langData.ctf3Desc;
-
-            // Parcours
             document.getElementById('parcours-title').innerText = langData.parcoursTitle;
             document.getElementById('parcours-subtitle').innerText = langData.parcoursSubtitle;
             document.getElementById('sec-edu-title').innerText = langData.secEduTitle;
             document.getElementById('sec-pro-title').innerText = langData.secProTitle;
-
-            document.getElementById('t1-date').innerText = langData.t1Date;
-            document.getElementById('t1-title').innerText = langData.t1Title;
-            document.getElementById('t1-body').innerText = langData.t1Body;
-            document.getElementById('t1-tag').innerText = langData.t1Tag;
-
-            document.getElementById('t2-date').innerText = langData.t2Date;
-            document.getElementById('t2-title').innerText = langData.t2Title;
-            document.getElementById('t2-body').innerText = langData.t2Body;
-
-            document.getElementById('t3-title').innerText = langData.t3Title;
-            document.getElementById('t3-body').innerText = langData.t3Body;
-
-            document.getElementById('t4-date').innerText = langData.t4Date;
-            document.getElementById('t4-title').innerText = langData.t4Title;
-            document.getElementById('t4-body').innerText = langData.t4Body;
-
-            document.getElementById('t5-date').innerText = langData.t5Date;
-            document.getElementById('t5-title').innerText = langData.t5Title;
-            document.getElementById('t5-org').innerText = langData.t5Org;
-            document.getElementById('t5-body').innerText = langData.t5Body;
         }
     </script>
 </body>
