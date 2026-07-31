@@ -802,62 +802,106 @@
         </div>
 
         <!-- ONGLET LABS PERSO -->
-        <div id="labs" class="tab-content">
-            <div class="tab-header">
-                <h2 id="labs-title">Laboratoires Personnels</h2>
-                <p id="labs-subtitle" style="color: var(--text-muted);">Infrastructures réseaux et environnements de tests de vulnérabilités.</p>
+           <div id="labs" class="tab-content">
+        <div class="tab-header">
+            <h2 id="labs-title">Labs & Certifications</h2>
+            <p id="labs-subtitle" style="color: var(--text-muted);">Laboratoires pratiques, environnements de test et objectifs de certification en cybersécurité.</p>
+        </div>
+    
+        <div style="display: flex; flex-direction: column; gap: 3rem;">
+            <div>
+                <div style="font-size: 1.05rem; font-weight: 700; color: #a5b4fc; margin-bottom: 1.2rem; text-transform: uppercase; letter-spacing: 0.05em;" id="labs-section-title">
+                    Labs
+                </div>
+    
+                <div class="project-grid">
+                    <div class="project-card">
+                        <div class="card-header-flex">
+                            <h3 id="lbl-aws-title">Sécurisation d'Infrastructures Cloud AWS</h3>
+                            <span class="badge badge-done" id="lbl-status-done1">Terminé</span>
+                        </div>
+                        <p id="lbl-aws-desc">Conception et durcissement d'une infrastructure AWS respectant le principe du moindre privilège : profils IAM limités, instance EC2 Ubuntu cloisonnée et traçabilité CloudTrail complète.</p>
+                        <div class="tech-tags">
+                            <span class="tag">AWS IAM</span>
+                            <span class="tag">EC2</span>
+                            <span class="tag">S3 Private</span>
+                            <span class="tag">CloudTrail</span>
+                        </div>
+                        <div class="lab-links">
+                            <a href="https://github.com/BiancaPONS/aws-security-lab" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+                        </div>
+                    </div>
+    
+                    <div class="project-card">
+                        <div class="card-header-flex">
+                            <h3 id="lbl-linux-title">Durcissement Système Linux</h3>
+                            <span class="badge badge-done" id="lbl-status-done2">Terminé</span>
+                        </div>
+                        <p id="lbl-linux-desc">Mise en place de mécanismes fondamentaux de défense OS sur serveur Ubuntu : gestion des privilèges (chmod/chown), cloisonnement SSH, pare-feu UFW et corrélation des journaux système auth.log.</p>
+                        <div class="tech-tags">
+                            <span class="tag">Linux Ubuntu</span>
+                            <span class="tag">SSH Hardening</span>
+                            <span class="tag">UFW Firewall</span>
+                            <span class="tag">Log Analysis</span>
+                        </div>
+                        <div class="lab-links">
+                            <a href="https://github.com/BiancaPONS/linux-security-lab" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+                        </div>
+                    </div>
+    
+                    <div class="project-card">
+                        <div class="card-header-flex">
+                            <h3 id="lbl-siem-title">Déploiement SIEM & Mini-SOC Domestique</h3>
+                            <span class="badge badge-progress" id="lbl-status-prog">En cours</span>
+                        </div>
+                        <p id="lbl-siem-desc">Centralisation des événements de sécurité à l'aide de la stack Wazuh (SIEM open-source). Configuration d'agents de collecte, création de règles de détection et tableaux de bord d'analyse.</p>
+                        <div class="tech-tags">
+                            <span class="tag">Wazuh SIEM</span>
+                            <span class="tag">ELK Stack</span>
+                            <span class="tag">SOC Analyst</span>
+                            <span class="tag">Threat Detection</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="project-grid">
-                <div class="project-card">
-                    <div class="card-header-flex">
-                        <h3 id="lbl-aws-title">Sécurisation d'Infrastructures Cloud AWS</h3>
-                        <span class="badge badge-done" id="lbl-status-done1">Terminé</span>
-                    </div>
-                    <p id="lbl-aws-desc">Conception et durcissement d'une infrastructure AWS respectant le principe du moindre privilège : profils IAM limités, instance EC2 Ubuntu cloisonnée et traçabilité CloudTrail complète.</p>
-                    <div class="tech-tags">
-                        <span class="tag">AWS IAM</span>
-                        <span class="tag">EC2</span>
-                        <span class="tag">S3 Private</span>
-                        <span class="tag">CloudTrail</span>
-                    </div>
-                    <div class="lab-links">
-                        <a href="https://github.com/BiancaPONS/aws-security-lab" target="_blank">GitHub ↗</a>
-                    </div>
+    
+            <div>
+                <div style="font-size: 1.05rem; font-weight: 700; color: #a5b4fc; margin-bottom: 1.2rem; text-transform: uppercase; letter-spacing: 0.05em;" id="certs-section-title">
+                    Certifications
                 </div>
-
-                <div class="project-card">
-                    <div class="card-header-flex">
-                        <h3 id="lbl-linux-title">Durcissement Système Linux</h3>
-                        <span class="badge badge-done" id="lbl-status-done2">Terminé</span>
+    
+                <div class="project-grid">
+                    <div class="project-card">
+                        <div class="card-header-flex">
+                            <h3 id="cert1-title">HTB CJCA — Junior Cybersecurity Analyst</h3>
+                            <span class="badge badge-progress" id="cert1-status">En cours de passage</span>
+                        </div>
+                        <p id="cert1-desc">Parcours orienté pratique couvrant les fondamentaux de la cybersécurité, les systèmes d'exploitation, les outils offensifs et défensifs, l'analyse de logs, les tactiques d'attaque ainsi que les méthodologies utilisées en pentest et en SOC. Objectif visé pour l'été.</p>
+                        <div class="tech-tags">
+                            <span class="tag">Hack The Box</span>
+                            <span class="tag">Log Analysis</span>
+                            <span class="tag">Offensive & Defensive</span>
+                            <span class="tag">SOC Basics</span>
+                        </div>
                     </div>
-                    <p id="lbl-linux-desc">Mise en place de mécanismes fondamentaux de défense OS sur serveur Ubuntu : gestion des privilèges (chmod/chown), cloisonnement SSH, pare-feu UFW et corrélation des journaux système auth.log.</p>
-                    <div class="tech-tags">
-                        <span class="tag">Linux Ubuntu</span>
-                        <span class="tag">SSH Hardening</span>
-                        <span class="tag">UFW Firewall</span>
-                        <span class="tag">Log Analysis</span>
-                    </div>
-                    <div class="lab-links">
-                        <a href="https://github.com/BiancaPONS/linux-security-lab" target="_blank">GitHub ↗</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="card-header-flex">
-                        <h3 id="lbl-siem-title">Déploiement SIEM & Mini-SOC Domestique</h3>
-                        <span class="badge badge-progress" id="lbl-status-prog">En cours</span>
-                    </div>
-                    <p id="lbl-siem-desc">Centralisation des événements de sécurité à l'aide de la stack Wazuh (SIEM open-source). Configuration d'agents de collecte, création de règles de détection et tableaux de bord d'analyse.</p>
-                    <div class="tech-tags">
-                        <span class="tag">Wazuh SIEM</span>
-                        <span class="tag">ELK Stack</span>
-                        <span class="tag">SOC Analyst</span>
-                        <span class="tag">Threat Detection</span>
+    
+                    <div class="project-card">
+                        <div class="card-header-flex">
+                            <h3 id="cert2-title">HTB CDSA — SOC Analyst</h3>
+                            <span class="badge badge-future" id="cert2-status">En projet</span>
+                        </div>
+                        <p id="cert2-desc">Certification visée après la CJCA afin d'approfondir mes compétences en détection, investigation, corrélation d'événements et analyse opérationnelle en environnement SOC.</p>
+                        <div class="tech-tags">
+                            <span class="tag">SOC</span>
+                            <span class="tag">Threat Detection</span>
+                            <span class="tag">Investigation</span>
+                            <span class="tag">Blue Team</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-
+    </div>
                 <!-- ONGLET CTF GAMIFIÉ -->
                 <div id="ctf" class="tab-content">
             <div class="tab-header">
