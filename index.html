@@ -1305,125 +1305,115 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     
-        function toggleLanguage() {
-            currentLang = currentLang === 'fr' ? 'en' : 'fr';
+                function toggleLanguage() {
+            currentLang = currentLang === "fr" ? "en" : "fr";
             const langData = translations[currentLang];
-    
-            // Mettre à jour l'indicateur de langue
-            const switcher = document.getElementById('lang-switcher');
+        
+            const switcher = document.getElementById("lang-switcher");
             if (switcher) switcher.innerText = langData.langCode;
-    
-            // Fonction helper pour éviter les erreurs si un ID n'existe pas
+        
             const setText = (id, text) => {
                 const el = document.getElementById(id);
                 if (el && text !== undefined) el.innerText = text;
             };
-    
+        
             const setHTML = (id, html) => {
                 const el = document.getElementById(id);
                 if (el && html !== undefined) el.innerHTML = html;
             };
-    
-            // Menu
-            setText('btn-accueil', langData.btnAccueil);
-            setText('btn-ecole', langData.btnEcole);
-            setText('btn-labs', langData.btnLabs);
-            setText('btn-ctf', langData.btnCtf);
-            setText('btn-parcours', langData.btnParcours);
-    
-            // Accueil
-            setText('hero-title', langData.heroTitle);
-            setText('hero-desc', langData.heroDesc);
-            setText('title-hard-skills', langData.titleHardSkills);
-            setText('title-soft-skills', langData.titleSoftSkills);
-            setText('sk-1', langData.sk1);
-            setText('sk-2', langData.sk2);
-            setText('sk-3', langData.sk3);
-            setText('sk-4', langData.sk4);
-            setText('sk-5', langData.sk5);
-            setText('sk-6', langData.sk6);
-            setText('tag-search', langData.tagSearch);
-            setText('info-driver', langData.infoDriver);
-            setText('info-lang', langData.infoLang);
-            setText('contact-heading', langData.contactHeading);
-    
-            // Projets École
-            setText('ecole-title', langData.ecoleTitle);
-            setText('ecole-subtitle', langData.ecoleSubtitle);
-            setText('p1-title', langData.p1Title);
-            setText('p1-desc', langData.p1Desc);
-            setHTML('p1-list', langData.p1List);
-            setText('p2-title', langData.p2Title);
-            setText('p2-desc', langData.p2Desc);
-            setHTML('p2-list', langData.p2List);
-            setText('p3-title', langData.p3Title);
-            setText('p3-desc', langData.p3Desc);
-            setHTML('p3-list', langData.p3List);
-    
-            // Labs
-            setText('labs-title', langData.labsTitle);
-            setText('labs-subtitle', langData.labsSubtitle);
-            setText('lbl-aws-title', langData.lblAwsTitle);
-            setText('lbl-aws-desc', langData.lblAwsDesc);
-            setText('lbl-linux-title', langData.lblLinuxTitle);
-            setText('lbl-linux-desc', langData.lblLinuxDesc);
-            setText('lbl-siem-title', langData.lblSiemTitle);
-            setText('lbl-siem-desc', langData.lblSiemDesc);
-    
-            // CTF
-            setText('ctf-title', langData.ctfTitle);
-            setText('ctf-subtitle', langData.ctfSubtitle);
-            setText('ctf1-title', langData.ctf1Title);
-            setText('ctf1-diff', langData.ctf1Diff);
-            setText('ctf1-loc', langData.ctf1Loc);
-            setText('ctf1-date', langData.ctf1Date);
-            setText('ctf1-desc', langData.ctf1Desc);
-    
-            setText('ctf2-title', langData.ctf2Title);
-            setText('ctf2-diff', langData.ctf2Diff);
-            setText('ctf2-loc', langData.ctf2Loc);
-            setText('ctf2-date', langData.ctf2Date);
-            setText('ctf2-rank', langData.ctf2Rank);
-            setText('ctf2-rank-lbl', langData.ctf2RankLbl);
-            setText('ctf2-desc', langData.ctf2Desc);
-    
-            setText('ctf3-title', langData.ctf3Title);
-            setText('ctf3-diff', langData.ctf3Diff);
-            setText('ctf3-loc', langData.ctf3Loc);
-            setText('ctf3-date', langData.ctf3Date);
-            setText('ctf3-desc', langData.ctf3Desc);
-    
-            // Parcours
-            setText('parcours-title', langData.parcoursTitle);
-            setText('parcours-subtitle', langData.parcoursSubtitle);
-            setText('sec-edu-title', langData.secEduTitle);
-            setText('sec-pro-title', langData.secProTitle);
-    
-            setText('t1-date', langData.t1Date);
-            setText('t1-title', langData.t1Title);
-            setText('t1-body', langData.t1Body);
-    
-            setText('t2-title', langData.t2Title);
-            setText('t2-body', langData.t2Body);
-    
-            setText('t3-title', langData.t3Title);
-            setText('t3-body', langData.t3Body);
-    
-            setText('t4-date', langData.t4Date);
-            setText('t4-title', langData.t4Title);
-            setText('t4-body', langData.t4Body);
-    
-            setText('t5-title', langData.t5Title);
-            setText('t5-body', langData.t5Body);
-    
-            setText('t6-title', langData.t6Title);
-            setText('t6-body', langData.t6Body);
-    
-            setText('t7-title', langData.t7Title);
-            setText('t7-body', langData.t7Body);
-    
-            setText('t8-title', langData.t8Title);
-            setText('t8-body', langData.t8Body);
+        
+            setText("btn-accueil", langData.btnAccueil);
+            setText("btn-ecole", langData.btnEcole);
+            setText("btn-labs", langData.btnLabs);
+            setText("btn-ctf", langData.btnCtf);
+            setText("btn-parcours", langData.btnParcours);
+        
+            setText("hero-title", langData.heroTitle);
+            setText("hero-desc", langData.heroDesc);
+            setText("title-hard-skills", langData.titleHardSkills);
+            setText("title-soft-skills", langData.titleSoftSkills);
+            setText("sk-1", langData.sk1);
+            setText("sk-2", langData.sk2);
+            setText("sk-3", langData.sk3);
+            setText("sk-4", langData.sk4);
+            setText("sk-5", langData.sk5);
+            setText("sk-6", langData.sk6);
+            setText("tag-search", langData.tagSearch);
+            setText("info-driver", langData.infoDriver);
+            setText("info-lang", langData.infoLang);
+            setText("contact-heading", langData.contactHeading);
+        
+            setText("ecole-title", langData.ecoleTitle);
+            setText("ecole-subtitle", langData.ecoleSubtitle);
+            setText("p1-title", langData.p1Title);
+            setText("p1-desc", langData.p1Desc);
+            setHTML("p1-list", langData.p1List);
+            setText("p2-title", langData.p2Title);
+            setText("p2-desc", langData.p2Desc);
+            setHTML("p2-list", langData.p2List);
+            setText("p3-title", langData.p3Title);
+            setText("p3-desc", langData.p3Desc);
+            setHTML("p3-list", langData.p3List);
+        
+            setText("labs-title", langData.labsTitle);
+            setText("labs-subtitle", langData.labsSubtitle);
+            setText("labs-section-title", langData.labsSectionTitle);
+            setText("certs-section-title", langData.certsSectionTitle);
+            setText("lbl-aws-title", langData.lblAwsTitle);
+            setText("lbl-aws-desc", langData.lblAwsDesc);
+            setText("lbl-linux-title", langData.lblLinuxTitle);
+            setText("lbl-linux-desc", langData.lblLinuxDesc);
+            setText("lbl-siem-title", langData.lblSiemTitle);
+            setText("lbl-siem-desc", langData.lblSiemDesc);
+            setText("cert1-title", langData.cert1Title);
+            setText("cert1-status", langData.statusExam);
+            setText("cert1-desc", langData.cert1Desc);
+            setText("cert2-title", langData.cert2Title);
+            setText("cert2-status", langData.statusPlanned);
+            setText("cert2-desc", langData.cert2Desc);
+        
+            setText("ctf-title", langData.ctfTitle);
+            setText("ctf-subtitle", langData.ctfSubtitle);
+            setText("ctf1-title", langData.ctf1Title);
+            setText("ctf1-diff", langData.ctf1Diff);
+            setText("ctf1-loc", langData.ctf1Loc);
+            setText("ctf1-date", langData.ctf1Date);
+            setText("ctf1-desc", langData.ctf1Desc);
+            setText("ctf2-title", langData.ctf2Title);
+            setText("ctf2-diff", langData.ctf2Diff);
+            setText("ctf2-loc", langData.ctf2Loc);
+            setText("ctf2-date", langData.ctf2Date);
+            setText("ctf2-rank", langData.ctf2Rank);
+            setText("ctf2-rank-lbl", langData.ctf2RankLbl);
+            setText("ctf2-desc", langData.ctf2Desc);
+            setText("ctf3-title", langData.ctf3Title);
+            setText("ctf3-diff", langData.ctf3Diff);
+            setText("ctf3-loc", langData.ctf3Loc);
+            setText("ctf3-date", langData.ctf3Date);
+            setText("ctf3-desc", langData.ctf3Desc);
+        
+            setText("parcours-title", langData.parcoursTitle);
+            setText("parcours-subtitle", langData.parcoursSubtitle);
+            setText("sec-edu-title", langData.secEduTitle);
+            setText("sec-pro-title", langData.secProTitle);
+            setText("t1-date", langData.t1Date);
+            setText("t1-title", langData.t1Title);
+            setText("t1-body", langData.t1Body);
+            setText("t2-title", langData.t2Title);
+            setText("t2-body", langData.t2Body);
+            setText("t3-title", langData.t3Title);
+            setText("t3-body", langData.t3Body);
+            setText("t4-date", langData.t4Date);
+            setText("t4-title", langData.t4Title);
+            setText("t4-body", langData.t4Body);
+            setText("t5-title", langData.t5Title);
+            setText("t5-body", langData.t5Body);
+            setText("t6-title", langData.t6Title);
+            setText("t6-body", langData.t6Body);
+            setText("t7-title", langData.t7Title);
+            setText("t7-body", langData.t7Body);
+            setText("t8-title", langData.t8Title);
+            setText("t8-body", langData.t8Body);
         }
     </script>
 </body>
