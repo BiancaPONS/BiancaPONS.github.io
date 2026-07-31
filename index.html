@@ -1045,314 +1045,326 @@
         <p>&copy; 2026 Bianca PONS. Tous droits réservés.</p>
     </footer>
 
-    <script>
-            const translations = {
-                    fr: {
-                        langCode: "FR 🇫🇷",
-                        btnAccueil: "Présentation",
-                        btnEcole: "Projets École",
-                        btnLabs: "Labs Perso",
-                        btnCtf: "CTF",
-                        btnParcours: "Parcours",
-                        heroTitle: "Étudiante en B2 Cybersécurité & Réseaux",
-                        heroDesc: "Je suis passionnée par la sécurité informatique et les infrastructures réseaux depuis mon plus jeune âge. Grâce à mes différentes expériences professionnelles et mon cursus au sein de Bordeaux Ynov Campus, j'ai acquis une réelle polyvalence et une capacité à m'adapter rapidement aux environnements techniques. Membre active de l'équipe CTF, je développe mes compétences à travers des exercices pratiques et la résolution continue de challenges.",
-                        titleHardSkills: "Hard Skills",
-                        titleSoftSkills: "Soft Skills",
-                        sk1: "Travail d'équipe",
-                        sk2: "Aisance relationnelle",
-                        sk3: "Polyvalence",
-                        sk4: "Autonomie",
-                        sk5: "Curiosité",
-                        sk6: "Rigueur",
-                        tagSearch: "Recherche de Stage 2027",
-                        infoDriver: "Permis B (Permifiée)",
-                        infoLang: "Français (Maternelle) | Anglais (B2)",
-                        contactHeading: "Me contacter",
-                        ecoleTitle: "Projets Académiques",
-                        ecoleSubtitle: "Livrables et applications développés au cours de mon cursus informatique.",
-                        p1Title: "Send Security — Messagerie Sécurisée",
-                        p1Desc: "Conception d'une application de messagerie sécurisée client-serveur opérant avec chiffrement des messages et authentification renforcée.",
-                        p1List: "<li>Chiffrement des communications de bout en bout</li><li>Authentification sécurisée par clé USB</li><li>Gestion de la base de données utilisateurs</li>",
-                        p2Title: "Forum Gaming & Matchmaking",
-                        p2Desc: "Développement d'une plateforme communautaire Web pour connecter les joueurs selon leurs profils de jeux.",
-                        p2List: "<li>Système de \"Match & Swipe\" entre profils</li><li>Connexion via Google SSO et API Steam</li><li>Intégration HTML/CSS/JavaScript</li>",
-                        p3Title: "Projet RED — Jeu en Terminal",
-                        p3Desc: "Programmation en équipe d'un jeu de rôle complet jouable directement dans le terminal de commande.",
-                        p3List: "<li>Arbres de choix logiques et scénario dynamique</li><li>Gestion des combats au tour par tour</li><li>Développement structuré en langage Golang</li>",
-                        labsTitle: "Laboratoires Personnels",
-                        labsSubtitle: "Infrastructures réseaux et environnements de tests de vulnérabilités.",
-                        lblAwsTitle: "Sécurisation d'Infrastructures Cloud AWS",
-                        lblAwsDesc: "Conception et durcissement d'une infrastructure AWS respectant le principe du moindre privilège : profils IAM limités, instance EC2 Ubuntu cloisonnée et traçabilité CloudTrail complète.",
-                        lblLinuxTitle: "Durcissement Système Linux",
-                        lblLinuxDesc: "Mise en place de mécanismes fondamentaux de défense OS sur serveur Ubuntu : gestion des privilèges (chmod/chown), cloisonnement SSH, pare-feu UFW et corrélation des journaux système auth.log.",
-                        lblSiemTitle: "Déploiement SIEM & Mini-SOC Domestique",
-                        lblSiemDesc: "Centralisation des événements de sécurité à l'aide de la stack Wazuh (SIEM open-source). Configuration d'agents de collecte, création de règles de détection et tableaux de bord d'analyse.",
-                        ctfTitle: "Compétitions & Capture The Flag",
-                        ctfSubtitle: "Résolutions d'épreuves, classements, méthodologie et esprit de compétition.",
-                        ctf1Title: "CTF Forensic & OSINT — Investigation Judiciaire",
-                        ctf1Diff: "Intermédiaire",
-                        ctf1Loc: "Bordeaux (48h Non-Stop)",
-                        ctf1Date: "Édition 2025/2026",
-                        ctf1Desc: "Scénario d'espionnage industriel (drones militaires) organisé par Ynov en partenariat avec une entreprise dont c'est la spécialité. Analyse de dumps de 3 smartphones cibles via Autopsy. Recherche de preuves, analyse d'artefacts et reconstruction de la timeline d'infection.",
-                        ctf2Title: "CTF La Sthack 2026",
-                        ctf2Diff: "Avancé",
-                        ctf2Loc: "Mairie de Bordeaux",
-                        ctf2Date: "Mai 2026",
-                        ctf2Rank: "9 ème",
-                        ctf2RankLbl: "Sur 30 équipes",
-                        ctf2Desc: "Participation à la compétition phare de Bordeaux réunissant plus de 150 participants. J'ai été invitée par l'équipe Féminine CEFCYS (Cercle des Femmes de la Cybersécurité).",
-                        ctf3Title: "Membre de l'Équipe CTF (Labo SSI Ynov)",
-                        ctf3Diff: "Régulier",
-                        ctf3Loc: "Ynov Bordeaux",
-                        ctf3Date: "2025 - Présent",
-                        ctf3Desc: "Intégration officielle de l'équipe de CTF du labo SSI de l'école. Entraînements hebdomadaires sur Hack The Box, partages de connaissances sur les vulnérabilités et entraide inter-promotions. Participation à des CTF tout au long de l'année.",
-                        parcoursTitle: "Mon Parcours",
-                        parcoursSubtitle: "Frise chronologique de mes formations académiques, de mon stage d'initiative et de mes expériences professionnelles.",
-                        secEduTitle: "🎓 Formations Académiques",
-                        secProTitle: "💼 Expériences Professionnelles & Stage",
-                        t1Date: "09/2024 - En cours (Diplôme prévu 2028)",
-                        t1Title: "Bachelor Cybersécurité & Réseaux",
-                        t1Org: "Bordeaux Ynov Campus (33)",
-                        t1Body: "Actuellement en B2 + Membre actif de l'équipe CTF. Compétences en administration réseau, sécurité des infrastructures, Linux, programmation et analyse système.",
-                        t2Date: "2024 - 2025",
-                        t2Title: "1ère Année de Licence de Droit",
-                        t2Org: "Université de Bordeaux (33)",
-                        t2Body: "Analyse de cas et rigueur juridique, développement de capacités d'analyse de textes réglementaires et de méthodologie stricte.",
-                        t3Date: "2021 - 2024",
-                        t3Title: "Baccalauréat Général",
-                        t3Org: "Lycée (33)",
-                        t3Body: "Spécialités Mathématiques et Physique-Chimie. Baccalauréat marquant le début d'un cursus orienté vers les sciences et la technique.",
-                        t4Date: "Stage B1 (Initiative Personnelle)",
-                        t4Title: "Stage Immersif – Réseaux D'entreprise & Infrastructure",
-                        t4Body: "Stage non-obligatoire réalisé par pure volonté d'apprentissage. Immersion sur le terrain : découverte pratique de l'architecture des réseaux d'entreprise, administration de bases Active Directory (AD) et appréhension du fonctionnement/paramétrage des Reverse Proxies.",
-                        t5Title: "Vendeuse en Pâtisserie",
-                        t5Body: "Accueil et conseil client, mise en valeur des produits, prises de commande, maîtrise des règles d'hygiène alimentaire et gestion des encaissements.",
-                        t6Title: "Vendeuse en Boutique",
-                        t6Body: "Conseils personnalisés, facing, encaissements, gestion des stocks et polyvalence en période de forte affluence.",
-                        t7Title: "Hôtesse de Caisse",
-                        t7Body: "Encaissement, accueil et information client, gestion de la caisse, travail d'équipe et vigilance.",
-                        t8Title: "Serveuse",
-                        t8Body: "Gestion de la clientèle en période de forte affluence estivale, travail en équipe sous pression et grande autonomie.",
-                        statusDone: "Terminé",
-                        statusProg: "En cours"
-                    },
-                    en: {
-                        langCode: "EN 🇬🇧",
-                        btnAccueil: "Overview",
-                        btnEcole: "Academic Projects",
-                        btnLabs: "Personal Labs",
-                        btnCtf: "CTF Challenges",
-                        btnParcours: "Background",
-                        heroTitle: "B2 Cybersecurity & Networks Student",
-                        heroDesc: "I have been passionate about IT security and network infrastructures from an early age. Through my professional experiences and my studies at Bordeaux Ynov Campus, I have developed versatility and the ability to adapt quickly to technical environments. As an active member of the CTF team, I improve my skills through hands-on exercises and continuous challenge solving.",
-                        titleHardSkills: "Hard Skills",
-                        titleSoftSkills: "Soft Skills",
-                        sk1: "Teamwork",
-                        sk2: "Interpersonal skills",
-                        sk3: "Versatility",
-                        sk4: "Autonomy",
-                        sk5: "Curiosity",
-                        sk6: "Rigor",
-                        tagSearch: "Internship Search 2027",
-                        infoDriver: "Driver's license (Category B)",
-                        infoLang: "French (Native) | English (B2)",
-                        contactHeading: "Contact me",
-                        ecoleTitle: "Academic Projects",
-                        ecoleSubtitle: "Deliverables and applications developed during my IT curriculum.",
-                        p1Title: "Send Security — Secure Messaging App",
-                        p1Desc: "Design of a secure client-server messaging application operating with message encryption and strengthened authentication.",
-                        p1List: "<li>End-to-end message encryption</li><li>Secure authentication via USB key</li><li>User database management</li>",
-                        p2Title: "Gaming Forum & Matchmaking",
-                        p2Desc: "Development of a web community platform to connect players according to their gaming profiles.",
-                        p2List: "<li>'Match & Swipe' profile system</li><li>Login via Google SSO and Steam API</li><li>HTML/CSS/JavaScript integration</li>",
-                        p3Title: "Project RED — Terminal RPG",
-                        p3Desc: "Team-developed role-playing game playable directly from the command terminal.",
-                        p3List: "<li>Logical decision trees and dynamic scenarios</li><li>Turn-based combat system</li><li>Structured development in Golang</li>",
-                        labsTitle: "Personal Labs",
-                        labsSubtitle: "Network infrastructures and vulnerability testing environments.",
-                        lblAwsTitle: "Securing AWS Cloud Infrastructures",
-                        lblAwsDesc: "Design and hardening of an AWS infrastructure following the principle of least privilege: limited IAM profiles, isolated Ubuntu EC2 instance, and full CloudTrail traceability.",
-                        lblLinuxTitle: "Linux System Hardening",
-                        lblLinuxDesc: "Implementation of core OS defense mechanisms on Ubuntu servers: privilege management (chmod/chown), SSH partitioning, UFW firewall, and auth.log system log correlation.",
-                        lblSiemTitle: "SIEM Deployment & Home Mini-SOC",
-                        lblSiemDesc: "Centralization of security events using the Wazuh stack (open-source SIEM). Collection agent configuration, creation of detection rules, and analysis dashboards.",
-                        ctfTitle: "Competitions & Capture The Flag",
-                        ctfSubtitle: "Challenge solving, rankings, methodology, and competitive spirit.",
-                        ctf1Title: "Forensic & OSINT CTF — Judicial Investigation",
-                        ctf1Diff: "Intermediate",
-                        ctf1Loc: "Bordeaux (48h Non-Stop)",
-                        ctf1Date: "2025/2026 Edition",
-                        ctf1Desc: "Industrial espionage scenario (military drones) organized by Ynov in partnership with a specialized company. Analysis of dumps from 3 target smartphones using Autopsy. Evidence recovery, artifact analysis, and infection timeline reconstruction.",
-                        ctf2Title: "CTF La Sthack 2026",
-                        ctf2Diff: "Advanced",
-                        ctf2Loc: "Bordeaux City Hall",
-                        ctf2Date: "May 2026",
-                        ctf2Rank: "9th",
-                        ctf2RankLbl: "Out of 30 teams",
-                        ctf2Desc: "Participation in Bordeaux's flagship competition gathering over 150 participants. I was invited by the CEFCYS Women's Team (Women in Cybersecurity Circle).",
-                        ctf3Title: "Member of the CTF Team (Ynov SSI Lab)",
-                        ctf3Diff: "Regular",
-                        ctf3Loc: "Ynov Bordeaux",
-                        ctf3Date: "2025 - Present",
-                        ctf3Desc: "Official member of the school's SSI Lab CTF team. Weekly training on Hack The Box, knowledge sharing on vulnerabilities, and cross-class support. Active CTF participation throughout the year.",
-                        parcoursTitle: "My Background",
-                        parcoursSubtitle: "Timeline of my education, personal initiative internship, and professional experiences.",
-                        secEduTitle: "🎓 Academic Background",
-                        secProTitle: "💼 Professional Experiences & Internship",
-                        t1Date: "09/2024 - Ongoing (Degree expected 2028)",
-                        t1Title: "Bachelor in Cybersecurity & Networks",
-                        t1Org: "Bordeaux Ynov Campus (33)",
-                        t1Body: "Currently in B2 + Active member of the CTF team. Skills in network administration, infrastructure security, Linux, programming, and system analysis.",
-                        t2Date: "2024 - 2025",
-                        t2Title: "1st Year Law Degree",
-                        t2Org: "University of Bordeaux (33)",
-                        t2Body: "Case analysis and legal rigor, development of analytical skills for regulatory texts and strict methodology.",
-                        t3Date: "2021 - 2024",
-                        t3Title: "General Baccalaureate",
-                        t3Org: "High School (33)",
-                        t3Body: "Specialties: Mathematics and Physics-Chemistry. Baccalaureate marking the start of a science and technology-oriented path.",
-                        t4Date: "B1 Internship (Personal Initiative)",
-                        t4Title: "Immersive Internship – Corporate Networks & Infrastructure",
-                        t4Body: "Non-mandatory internship driven by personal initiative. Field immersion: practical discovery of corporate network architecture, Active Directory (AD) administration, and reverse proxy configuration/operation.",
-                        t5Title: "Pastry Shop Assistant",
-                        t5Body: "Customer service, product presentation, order taking, food safety rules, and cash management.",
-                        t6Title: "Retail Sales Associate",
-                        t6Body: "Personalized advice, shelf presentation, cash handling, stock management, and versatility during high-traffic periods.",
-                        t7Title: "Cashier",
-                        t7Body: "Checkout, customer welcome and information, cash register management, teamwork, and attentiveness.",
-                        t8Title: "Waitress",
-                        t8Body: "Customer service during summer peak season, working under pressure, and strong autonomy.",
-                        statusDone: "Completed",
-                        statusProg: "In progress"
-                    }
-                };
+       <script>
+        const translations = {
+            fr: {
+                langCode: "FR 🇫🇷",
+                btnAccueil: "Présentation",
+                btnEcole: "Projets École",
+                btnLabs: "Labs Perso",
+                btnCtf: "CTF",
+                btnParcours: "Parcours",
+                heroTitle: "Étudiante en B2 Cybersécurité & Réseaux",
+                heroDesc: "Je suis passionnée par la sécurité informatique et les infrastructures réseaux depuis mon plus jeune âge. Grâce à mes différentes expériences professionnelles et mon cursus au sein de Bordeaux Ynov Campus, j'ai acquis une réelle polyvalence et une capacité à m'adapter rapidement aux environnements techniques. Membre active de l'équipe CTF, je développe mes compétences à travers des exercices pratiques et la résolution continuous de challenges.",
+                titleHardSkills: "Hard Skills",
+                titleSoftSkills: "Soft Skills",
+                sk1: "Travail d'équipe",
+                sk2: "Aisance relationnelle",
+                sk3: "Polyvalence",
+                sk4: "Autonomie",
+                sk5: "Curiosité",
+                sk6: "Rigueur",
+                tagSearch: "Recherche de Stage 2027",
+                infoDriver: "Permis B (Permifiée)",
+                infoLang: "Français (Maternelle) | Anglais (B2)",
+                contactHeading: "Me contacter",
+                ecoleTitle: "Projets Académiques",
+                ecoleSubtitle: "Livrables et applications développés au cours de mon cursus informatique.",
+                p1Title: "Send Security — Messagerie Sécurisée",
+                p1Desc: "Conception d'une application de messagerie sécurisée client-serveur opérant avec chiffrement des messages et authentification renforcée.",
+                p1List: "<li>Chiffrement des communications de bout en bout</li><li>Authentification sécurisée par clé USB</li><li>Gestion de la base de données utilisateurs</li>",
+                p2Title: "Forum Gaming & Matchmaking",
+                p2Desc: "Développement d'une plateforme communautaire Web pour connecter les joueurs selon leurs profils de jeux.",
+                p2List: "<li>Système de \"Match & Swipe\" entre profils</li><li>Connexion via Google SSO et API Steam</li><li>Intégration HTML/CSS/JavaScript</li>",
+                p3Title: "Projet RED — Jeu en Terminal",
+                p3Desc: "Programmation en équipe d'un jeu de rôle complet jouable directement dans le terminal de commande.",
+                p3List: "<li>Arbres de choix logiques et scénario dynamique</li><li>Gestion des combats au tour par tour</li><li>Développement structuré en langage Golang</li>",
+                labsTitle: "Laboratoires Personnels",
+                labsSubtitle: "Infrastructures réseaux et environnements de tests de vulnérabilités.",
+                lblAwsTitle: "Sécurisation d'Infrastructures Cloud AWS",
+                lblAwsDesc: "Conception et durcissement d'une infrastructure AWS respectant le principe du moindre privilège : profils IAM limités, instance EC2 Ubuntu cloisonnée et traçabilité CloudTrail complète.",
+                lblLinuxTitle: "Durcissement Système Linux",
+                lblLinuxDesc: "Mise en place de mécanismes fondamentaux de défense OS sur serveur Ubuntu : gestion des privilèges (chmod/chown), cloisonnement SSH, pare-feu UFW et corrélation des journaux système auth.log.",
+                lblSiemTitle: "Déploiement SIEM & Mini-SOC Domestique",
+                lblSiemDesc: "Centralisation des événements de sécurité à l'aide de la stack Wazuh (SIEM open-source). Configuration d'agents de collecte, création de règles de détection et tableaux de bord d'analyse.",
+                ctfTitle: "Compétitions & Capture The Flag",
+                ctfSubtitle: "Résolutions d'épreuves, classements, méthodologie et esprit de compétition.",
+                ctf1Title: "CTF Forensic & OSINT — Investigation Judiciaire",
+                ctf1Diff: "Intermédiaire",
+                ctf1Loc: "Bordeaux (48h Non-Stop)",
+                ctf1Date: "Édition 2025/2026",
+                ctf1Desc: "Scénario d'espionnage industriel (drones militaires) organisé par Ynov en partenariat avec une entreprise dont c'est la spécialité. Analyse de dumps de 3 smartphones cibles via Autopsy. Recherche de preuves, analyse d'artefacts et reconstruction de la timeline d'infection.",
+                ctf2Title: "CTF La Sthack 2026",
+                ctf2Diff: "Avancé",
+                ctf2Loc: "Mairie de Bordeaux",
+                ctf2Date: "Mai 2026",
+                ctf2Rank: "9 ème",
+                ctf2RankLbl: "Sur 30 équipes",
+                ctf2Desc: "Participation à la compétition phare de Bordeaux réunissant plus de 150 participants. J'ai été invitée par l'équipe Féminine CEFCYS (Cercle des Femmes de la Cybersécurité).",
+                ctf3Title: "Membre de l'Équipe CTF (Labo SSI Ynov)",
+                ctf3Diff: "Régulier",
+                ctf3Loc: "Ynov Bordeaux",
+                ctf3Date: "2025 - Présent",
+                ctf3Desc: "Intégration officielle de l'équipe de CTF du labo SSI de l'école. Entraînements hebdomadaires sur Hack The Box, partages de connaissances sur les vulnérabilités et entraide inter-promotions. Participation à des CTF tout au long de l'année.",
+                parcoursTitle: "Mon Parcours",
+                parcoursSubtitle: "Frise chronologique de mes formations académiques, de mon stage d'initiative et de mes expériences professionnelles.",
+                secEduTitle: "🎓 Formations Académiques",
+                secProTitle: "💼 Expériences Professionnelles & Stage",
+                t1Date: "09/2024 - En cours (Diplôme prévu 2028)",
+                t1Title: "Bachelor Cybersécurité & Réseaux",
+                t1Org: "Bordeaux Ynov Campus (33)",
+                t1Body: "Actuellement en B2 + Membre actif de l'équipe CTF. Compétences en administration réseau, sécurité des infrastructures, Linux, programmation et analyse système.",
+                t2Date: "2024 - 2025",
+                t2Title: "1ère Année de Licence de Droit",
+                t2Org: "Université de Bordeaux (33)",
+                t2Body: "Analyse de cas et rigueur juridique, développement de capacités d'analyse de textes réglementaires et de méthodologie stricte.",
+                t3Date: "2021 - 2024",
+                t3Title: "Baccalauréat Général",
+                t3Org: "Lycée (33)",
+                t3Body: "Spécialités Mathématiques et Physique-Chimie. Baccalauréat marquant le début d'un cursus orienté vers les sciences et la technique.",
+                t4Date: "Stage B1 (Initiative Personnelle)",
+                t4Title: "Stage Immersif – Réseaux D'entreprise & Infrastructure",
+                t4Body: "Stage non-obligatoire réalisé par pure volonté d'apprentissage. Immersion sur le terrain : découverte pratique de l'architecture des réseaux d'entreprise, administration de bases Active Directory (AD) et appréhension du fonctionnement/paramétrage des Reverse Proxies.",
+                t5Title: "Vendeuse en Pâtisserie",
+                t5Body: "Accueil et conseil client, mise en valeur des produits, prises de commande, maîtrise des règles d'hygiène alimentaire et gestion des encaissements.",
+                t6Title: "Vendeuse en Boutique",
+                t6Body: "Conseils personnalisés, facing, encaissements, gestion des stocks et polyvalence en période de forte affluence.",
+                t7Title: "Hôtesse de Caisse",
+                t7Body: "Encaissement, accueil et information client, gestion de la caisse, travail d'équipe et vigilance.",
+                t8Title: "Serveuse",
+                t8Body: "Gestion de la clientèle en période de forte affluence estivale, travail en équipe sous pression et grande autonomie.",
+                statusDone: "Terminé",
+                statusProg: "En cours"
+            },
+            en: {
+                langCode: "EN 🇬🇧",
+                btnAccueil: "Overview",
+                btnEcole: "Academic Projects",
+                btnLabs: "Personal Labs",
+                btnCtf: "CTF Challenges",
+                btnParcours: "Background",
+                heroTitle: "B2 Cybersecurity & Networks Student",
+                heroDesc: "I have been passionate about IT security and network infrastructures from an early age. Through my professional experiences and my studies at Bordeaux Ynov Campus, I have developed versatility and the ability to adapt quickly to technical environments. As an active member of the CTF team, I improve my skills through hands-on exercises and continuous challenge solving.",
+                titleHardSkills: "Hard Skills",
+                titleSoftSkills: "Soft Skills",
+                sk1: "Teamwork",
+                sk2: "Interpersonal skills",
+                sk3: "Versatility",
+                sk4: "Autonomy",
+                sk5: "Curiosity",
+                sk6: "Rigor",
+                tagSearch: "Internship Search 2027",
+                infoDriver: "Driver's license (Category B)",
+                infoLang: "French (Native) | English (B2)",
+                contactHeading: "Contact me",
+                ecoleTitle: "Academic Projects",
+                ecoleSubtitle: "Deliverables and applications developed during my IT curriculum.",
+                p1Title: "Send Security — Secure Messaging App",
+                p1Desc: "Design of a secure client-server messaging application operating with message encryption and strengthened authentication.",
+                p1List: "<li>End-to-end message encryption</li><li>Secure authentication via USB key</li><li>User database management</li>",
+                p2Title: "Gaming Forum & Matchmaking",
+                p2Desc: "Development of a web community platform to connect players according to their gaming profiles.",
+                p2List: "<li>'Match & Swipe' profile system</li><li>Login via Google SSO and Steam API</li><li>HTML/CSS/JavaScript integration</li>",
+                p3Title: "Project RED — Terminal RPG",
+                p3Desc: "Team-developed role-playing game playable directly from the command terminal.",
+                p3List: "<li>Logical decision trees and dynamic scenarios</li><li>Turn-based combat system</li><li>Structured development in Golang</li>",
+                labsTitle: "Personal Labs",
+                labsSubtitle: "Network infrastructures and vulnerability testing environments.",
+                lblAwsTitle: "Securing AWS Cloud Infrastructures",
+                lblAwsDesc: "Design and hardening of an AWS infrastructure following the principle of least privilege: limited IAM profiles, isolated Ubuntu EC2 instance, and full CloudTrail traceability.",
+                lblLinuxTitle: "Linux System Hardening",
+                lblLinuxDesc: "Implementation of core OS defense mechanisms on Ubuntu servers: privilege management (chmod/chown), SSH partitioning, UFW firewall, and auth.log system log correlation.",
+                lblSiemTitle: "SIEM Deployment & Home Mini-SOC",
+                lblSiemDesc: "Centralization of security events using the Wazuh stack (open-source SIEM). Collection agent configuration, creation of detection rules, and analysis dashboards.",
+                ctfTitle: "Competitions & Capture The Flag",
+                ctfSubtitle: "Challenge solving, rankings, methodology, and competitive spirit.",
+                ctf1Title: "Forensic & OSINT CTF — Judicial Investigation",
+                ctf1Diff: "Intermediate",
+                ctf1Loc: "Bordeaux (48h Non-Stop)",
+                ctf1Date: "2025/2026 Edition",
+                ctf1Desc: "Industrial espionage scenario (military drones) organized by Ynov in partnership with a specialized company. Analysis of dumps from 3 target smartphones using Autopsy. Evidence recovery, artifact analysis, and infection timeline reconstruction.",
+                ctf2Title: "CTF La Sthack 2026",
+                ctf2Diff: "Advanced",
+                ctf2Loc: "Bordeaux City Hall",
+                ctf2Date: "May 2026",
+                ctf2Rank: "9th",
+                ctf2RankLbl: "Out of 30 teams",
+                ctf2Desc: "Participation in Bordeaux's flagship competition gathering over 150 participants. I was invited by the CEFCYS Women's Team (Women in Cybersecurity Circle).",
+                ctf3Title: "Member of the CTF Team (Ynov SSI Lab)",
+                ctf3Diff: "Regular",
+                ctf3Loc: "Ynov Bordeaux",
+                ctf3Date: "2025 - Present",
+                ctf3Desc: "Official member of the school's SSI Lab CTF team. Weekly training on Hack The Box, knowledge sharing on vulnerabilities, and cross-class support. Active CTF participation throughout the year.",
+                parcoursTitle: "My Background",
+                parcoursSubtitle: "Timeline of my education, personal initiative internship, and professional experiences.",
+                secEduTitle: "🎓 Academic Background",
+                secProTitle: "💼 Professional Experiences & Internship",
+                t1Date: "09/2024 - Ongoing (Degree expected 2028)",
+                t1Title: "Bachelor in Cybersecurity & Networks",
+                t1Org: "Bordeaux Ynov Campus (33)",
+                t1Body: "Currently in B2 + Active member of the CTF team. Skills in network administration, infrastructure security, Linux, programming, and system analysis.",
+                t2Date: "2024 - 2025",
+                t2Title: "1st Year Law Degree",
+                t2Org: "University of Bordeaux (33)",
+                t2Body: "Case analysis and legal rigor, development of analytical skills for regulatory texts and strict methodology.",
+                t3Date: "2021 - 2024",
+                t3Title: "General Baccalaureate",
+                t3Org: "High School (33)",
+                t3Body: "Specialties: Mathematics and Physics-Chemistry. Baccalaureate marking the start of a science and technology-oriented path.",
+                t4Date: "B1 Internship (Personal Initiative)",
+                t4Title: "Immersive Internship – Corporate Networks & Infrastructure",
+                t4Body: "Non-mandatory internship driven by personal initiative. Field immersion: practical discovery of corporate network architecture, Active Directory (AD) administration, and reverse proxy configuration/operation.",
+                t5Title: "Pastry Shop Assistant",
+                t5Body: "Customer service, product presentation, order taking, food safety rules, and cash management.",
+                t6Title: "Retail Sales Associate",
+                t6Body: "Personalized advice, shelf presentation, cash handling, stock management, and versatility during high-traffic periods.",
+                t7Title: "Cashier",
+                t7Body: "Checkout, customer welcome and information, cash register management, teamwork, and attentiveness.",
+                t8Title: "Waitress",
+                t8Body: "Customer service during summer peak season, working under pressure, and strong autonomy.",
+                statusDone: "Completed",
+                statusProg: "In progress"
+            }
+        };
+    
         let currentLang = 'fr';
-
+    
         function openTab(evt, tabName) {
             const tabContents = document.getElementsByClassName("tab-content");
             for (let i = 0; i < tabContents.length; i++) {
                 tabContents[i].classList.remove("active");
             }
-
+    
             const tabBtns = document.getElementsByClassName("tab-btn");
             for (let i = 0; i < tabBtns.length; i++) {
                 tabBtns[i].classList.remove("active");
             }
-
+    
             document.getElementById(tabName).classList.add("active");
             evt.currentTarget.classList.add("active");
             
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
-
+    
         function toggleLanguage() {
             currentLang = currentLang === 'fr' ? 'en' : 'fr';
             const langData = translations[currentLang];
-
-            document.getElementById('lang-switcher').innerHTML = `<span>${currentLang.toUpperCase()}</span> ${currentLang === 'fr' ? '🇫🇷' : '🇬🇧'}`;
-
+    
+            // Mettre à jour l'indicateur de langue
+            const switcher = document.getElementById('lang-switcher');
+            if (switcher) switcher.innerText = langData.langCode;
+    
+            // Fonction helper pour éviter les erreurs si un ID n'existe pas
+            const setText = (id, text) => {
+                const el = document.getElementById(id);
+                if (el && text !== undefined) el.innerText = text;
+            };
+    
+            const setHTML = (id, html) => {
+                const el = document.getElementById(id);
+                if (el && html !== undefined) el.innerHTML = html;
+            };
+    
             // Menu
-            document.getElementById('btn-accueil').innerText = langData.btnAccueil;
-            document.getElementById('btn-ecole').innerText = langData.btnEcole;
-            document.getElementById('btn-labs').innerText = langData.btnLabs;
-            document.getElementById('btn-ctf').innerText = langData.btnCtf;
-            document.getElementById('btn-parcours').innerText = langData.btnParcours;
-
+            setText('btn-accueil', langData.btnAccueil);
+            setText('btn-ecole', langData.btnEcole);
+            setText('btn-labs', langData.btnLabs);
+            setText('btn-ctf', langData.btnCtf);
+            setText('btn-parcours', langData.btnParcours);
+    
             // Accueil
-            document.getElementById('hero-title').innerText = langData.heroTitle;
-            document.getElementById('hero-desc').innerText = langData.heroDesc;
-            document.getElementById('title-hard-skills').innerText = langData.titleHardSkills;
-            document.getElementById('title-soft-skills').innerText = langData.titleSoftSkills;
-            document.getElementById('sk-1').innerText = langData.sk1;
-            document.getElementById('sk-2').innerText = langData.sk2;
-            document.getElementById('sk-3').innerText = langData.sk3;
-            document.getElementById('sk-4').innerText = langData.sk4;
-            document.getElementById('sk-5').innerText = langData.sk5;
-            document.getElementById('sk-6').innerText = langData.sk6;
-            document.getElementById('tag-search').innerText = langData.tagSearch;
-            document.getElementById('info-driver').innerText = langData.infoDriver;
-            document.getElementById('info-lang').innerText = langData.infoLang;
-            document.getElementById('contact-heading').innerText = langData.contactHeading;
-
+            setText('hero-title', langData.heroTitle);
+            setText('hero-desc', langData.heroDesc);
+            setText('title-hard-skills', langData.titleHardSkills);
+            setText('title-soft-skills', langData.titleSoftSkills);
+            setText('sk-1', langData.sk1);
+            setText('sk-2', langData.sk2);
+            setText('sk-3', langData.sk3);
+            setText('sk-4', langData.sk4);
+            setText('sk-5', langData.sk5);
+            setText('sk-6', langData.sk6);
+            setText('tag-search', langData.tagSearch);
+            setText('info-driver', langData.infoDriver);
+            setText('info-lang', langData.infoLang);
+            setText('contact-heading', langData.contactHeading);
+    
             // Projets École
-            document.getElementById('ecole-title').innerText = langData.ecoleTitle;
-            document.getElementById('ecole-subtitle').innerText = langData.ecoleSubtitle;
-            document.getElementById('p1-title').innerText = langData.p1Title;
-            document.getElementById('p1-desc').innerText = langData.p1Desc;
-            document.getElementById('p1-list').innerHTML = langData.p1List;
-            document.getElementById('p2-title').innerText = langData.p2Title;
-            document.getElementById('p2-desc').innerText = langData.p2Desc;
-            document.getElementById('p2-list').innerHTML = langData.p2List;
-            document.getElementById('p3-title').innerText = langData.p3Title;
-            document.getElementById('p3-desc').innerText = langData.p3Desc;
-            document.getElementById('p3-list').innerHTML = langData.p3List;
-
+            setText('ecole-title', langData.ecoleTitle);
+            setText('ecole-subtitle', langData.ecoleSubtitle);
+            setText('p1-title', langData.p1Title);
+            setText('p1-desc', langData.p1Desc);
+            setHTML('p1-list', langData.p1List);
+            setText('p2-title', langData.p2Title);
+            setText('p2-desc', langData.p2Desc);
+            setHTML('p2-list', langData.p2List);
+            setText('p3-title', langData.p3Title);
+            setText('p3-desc', langData.p3Desc);
+            setHTML('p3-list', langData.p3List);
+    
             // Labs
-            document.getElementById('labs-title').innerText = langData.labsTitle;
-            document.getElementById('labs-subtitle').innerText = langData.labsSubtitle;
-            document.getElementById('lbl-aws-title').innerText = langData.lblAwsTitle;
-            document.getElementById('lbl-aws-desc').innerText = langData.lblAwsDesc;
-            document.getElementById('lbl-linux-title').innerText = langData.lblLinuxTitle;
-            document.getElementById('lbl-linux-desc').innerText = langData.lblLinuxDesc;
-            document.getElementById('lbl-siem-title').innerText = langData.lblSiemTitle;
-            document.getElementById('lbl-siem-desc').innerText = langData.lblSiemDesc;
-
+            setText('labs-title', langData.labsTitle);
+            setText('labs-subtitle', langData.labsSubtitle);
+            setText('lbl-aws-title', langData.lblAwsTitle);
+            setText('lbl-aws-desc', langData.lblAwsDesc);
+            setText('lbl-linux-title', langData.lblLinuxTitle);
+            setText('lbl-linux-desc', langData.lblLinuxDesc);
+            setText('lbl-siem-title', langData.lblSiemTitle);
+            setText('lbl-siem-desc', langData.lblSiemDesc);
+    
             // CTF
-            document.getElementById('ctf-title').innerText = langData.ctfTitle;
-            document.getElementById('ctf-subtitle').innerText = langData.ctfSubtitle;
-            document.getElementById('ctf1-title').innerText = langData.ctf1Title;
-            document.getElementById('ctf1-diff').innerText = langData.ctf1Diff;
-            document.getElementById('ctf1-loc').innerText = langData.ctf1Loc;
-            document.getElementById('ctf1-date').innerText = langData.ctf1Date;
-            document.getElementById('ctf1-rank').innerText = langData.ctf1Rank;
-            document.getElementById('ctf1-rank-lbl').innerText = langData.ctf1RankLbl;
-            document.getElementById('ctf1-desc').innerText = langData.ctf1Desc;
-
-            document.getElementById('ctf2-title').innerText = langData.ctf2Title;
-            document.getElementById('ctf2-diff').innerText = langData.ctf2Diff;
-            document.getElementById('ctf2-loc').innerText = langData.ctf2Loc;
-            document.getElementById('ctf2-date').innerText = langData.ctf2Date;
-            document.getElementById('ctf2-rank').innerText = langData.ctf2Rank;
-            document.getElementById('ctf2-rank-lbl').innerText = langData.ctf2RankLbl;
-            document.getElementById('ctf2-desc').innerText = langData.ctf2Desc;
-
-            document.getElementById('ctf3-title').innerText = langData.ctf3Title;
-            document.getElementById('ctf3-diff').innerText = langData.ctf3Diff;
-            document.getElementById('ctf3-loc').innerText = langData.ctf3Loc;
-            document.getElementById('ctf3-date').innerText = langData.ctf3Date;
-            document.getElementById('ctf3-desc').innerText = langData.ctf3Desc;
-
+            setText('ctf-title', langData.ctfTitle);
+            setText('ctf-subtitle', langData.ctfSubtitle);
+            setText('ctf1-title', langData.ctf1Title);
+            setText('ctf1-diff', langData.ctf1Diff);
+            setText('ctf1-loc', langData.ctf1Loc);
+            setText('ctf1-date', langData.ctf1Date);
+            setText('ctf1-desc', langData.ctf1Desc);
+    
+            setText('ctf2-title', langData.ctf2Title);
+            setText('ctf2-diff', langData.ctf2Diff);
+            setText('ctf2-loc', langData.ctf2Loc);
+            setText('ctf2-date', langData.ctf2Date);
+            setText('ctf2-rank', langData.ctf2Rank);
+            setText('ctf2-rank-lbl', langData.ctf2RankLbl);
+            setText('ctf2-desc', langData.ctf2Desc);
+    
+            setText('ctf3-title', langData.ctf3Title);
+            setText('ctf3-diff', langData.ctf3Diff);
+            setText('ctf3-loc', langData.ctf3Loc);
+            setText('ctf3-date', langData.ctf3Date);
+            setText('ctf3-desc', langData.ctf3Desc);
+    
             // Parcours
-            document.getElementById('parcours-title').innerText = langData.parcoursTitle;
-            document.getElementById('parcours-subtitle').innerText = langData.parcoursSubtitle;
-            document.getElementById('sec-edu-title').innerText = langData.secEduTitle;
-            document.getElementById('sec-pro-title').innerText = langData.secProTitle;
-
-            document.getElementById('t1-date').innerText = langData.t1Date;
-            document.getElementById('t1-title').innerText = langData.t1Title;
-            document.getElementById('t1-body').innerText = langData.t1Body;
-
-            document.getElementById('t2-title').innerText = langData.t2Title;
-            document.getElementById('t2-body').innerText = langData.t2Body;
-
-            document.getElementById('t3-title').innerText = langData.t3Title;
-            document.getElementById('t3-body').innerText = langData.t3Body;
-
-            document.getElementById('t4-date').innerText = langData.t4Date;
-            document.getElementById('t4-title').innerText = langData.t4Title;
-            document.getElementById('t4-body').innerText = langData.t4Body;
-
-            document.getElementById('t5-title').innerText = langData.t5Title;
-            document.getElementById('t5-body').innerText = langData.t5Body;
-
-            document.getElementById('t6-title').innerText = langData.t6Title;
-            document.getElementById('t6-body').innerText = langData.t6Body;
-
-            document.getElementById('t7-title').innerText = langData.t7Title;
-            document.getElementById('t7-body').innerText = langData.t7Body;
-
-            document.getElementById('t8-title').innerText = langData.t8Title;
-            document.getElementById('t8-body').innerText = langData.t8Body;
+            setText('parcours-title', langData.parcoursTitle);
+            setText('parcours-subtitle', langData.parcoursSubtitle);
+            setText('sec-edu-title', langData.secEduTitle);
+            setText('sec-pro-title', langData.secProTitle);
+    
+            setText('t1-date', langData.t1Date);
+            setText('t1-title', langData.t1Title);
+            setText('t1-body', langData.t1Body);
+    
+            setText('t2-title', langData.t2Title);
+            setText('t2-body', langData.t2Body);
+    
+            setText('t3-title', langData.t3Title);
+            setText('t3-body', langData.t3Body);
+    
+            setText('t4-date', langData.t4Date);
+            setText('t4-title', langData.t4Title);
+            setText('t4-body', langData.t4Body);
+    
+            setText('t5-title', langData.t5Title);
+            setText('t5-body', langData.t5Body);
+    
+            setText('t6-title', langData.t6Title);
+            setText('t6-body', langData.t6Body);
+    
+            setText('t7-title', langData.t7Title);
+            setText('t7-body', langData.t7Body);
+    
+            setText('t8-title', langData.t8Title);
+            setText('t8-body', langData.t8Body);
         }
     </script>
 </body>
